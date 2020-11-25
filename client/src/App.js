@@ -7,15 +7,16 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing";
+import Navbar from "./components/layout/Navbar/Navbar";
+import Landing from "./components/layout/Landing/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
-
+import{ Reset } from './theme/reset'
+import GlobalFonts from './theme/theme';
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -39,6 +40,8 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        <GlobalFonts />
+          <Reset/>
         <Router>
           <div className="App">
             <Navbar />
