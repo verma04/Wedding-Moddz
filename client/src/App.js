@@ -18,6 +18,7 @@ import categories from './components/layout/Categories/Categories'
 import "./App.css";
 import{ Reset } from './theme/reset'
 import GlobalFonts from './theme/theme';
+import vendor from "./components/layout/vendor/vendor";
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -51,6 +52,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/stories" component={stories} />
             <Route exact path="/categories" component={categories} />
+            <Route exact path="/vendor" component={vendor} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

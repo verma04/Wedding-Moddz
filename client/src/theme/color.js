@@ -4,9 +4,11 @@ export const colors = {
       pink2: "#FF5976",
       purple:'802c6e',
       dark: "#262626",
+      dark1: "#3A3134",
       yellow: "#F7AA35",
   blue:'#2f1a25',
-      white:"#E8E8E8"
+      white:"#E8E8E8",
+      darkBrown:'#4E372A'
     },
     accent: {
       base: "#cd2553",
