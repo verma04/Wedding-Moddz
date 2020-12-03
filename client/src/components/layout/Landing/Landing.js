@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Slider } from './style'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import Search from '../SearchBox/Serach';
 
 
 import { withRouter } from "react-router";
@@ -43,7 +43,12 @@ import Img from 'react-cool-img';
                 </div>
                 
             </Carousel>
+
+          
+
             </div>
+
+            <Search/>
             </Slider>
         )
     }

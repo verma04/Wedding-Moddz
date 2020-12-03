@@ -14,6 +14,7 @@ justify-content:center;
     width:100%;
     top:0%;
 z-index:1;
+
             .flex {
                 width:48em;    
              display:flex;
@@ -81,10 +82,12 @@ button {
     width:100%;
     top:0%;
 z-index:1;
+background-color:white;
             .flex {
                 width:80em;    
              display:flex;
 justify-content:space-between;
+margin-bottom:2rem;
                   .left {
                       margin-top:1rem;
                       width:19rem;
@@ -101,6 +104,7 @@ justify-content:space-between;
   display: flex;
   justify-content: center;
   align-items: center;
+
   border-radius: 4px;
   background-color: #eceff1;
 }
@@ -117,7 +121,7 @@ justify-content:space-between;
     -ms-letter-spacing: .3em;
     letter-spacing: .3em;
     text-indent: .3em;
-    color:  white;
+    color:  black;
     border-bottom: 3px solid transparent
 }
 

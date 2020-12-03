@@ -29,7 +29,7 @@ class Navbar extends Component {
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/products"
+      to="/categories"
     >
       Categories
     </NavLink>

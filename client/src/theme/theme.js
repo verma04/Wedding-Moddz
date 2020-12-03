@@ -21,7 +21,13 @@ a {
   font-family:Quata;
 } 
 
-
+p {
+  line-height: 1.6;
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    color :  ${colors.primary.dark}
+}
   body {
       background-color:#F1F1F1;
       font-family:Quata;

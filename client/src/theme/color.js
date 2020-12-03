@@ -40,9 +40,9 @@ export const colors = {
       darlgrey:"#C8C8C8"
     },
     button: {
-      brown:'#9B643B',
-      yellow:'#F9BA4F',
-      darkBrown:'#4E372A'
+      
+      yellow:'#F7AA35',
+      
     }
   };
   

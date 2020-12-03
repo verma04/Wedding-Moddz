@@ -172,6 +172,7 @@ export const  Slider = styled.div`
        
     .center {
      height:100vh;
+     position:relative;
       width:100%;
       -webkit-box-shadow: 0 1rem 6px -6px grey;
 	   -moz-box-shadow: 0 1rem 6px -6px grey;
@@ -189,6 +190,16 @@ export const  Slider = styled.div`
    }
    
           }
+          
+          .input-field {
+           
+            position:fixed;
+    width:100%;
+    top:0%;
+z-index:1;
+          }
+ 
+
   }
   .carousel .control-dots .dot {
     transition: opacity .25s ease-in;
