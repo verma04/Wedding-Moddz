@@ -55,8 +55,10 @@ p {
   ul {
     list-style: none;
     li {
-    font-family:Quata;
+  
     cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    color :  ${colors.primary.dark}
 
   }
   }

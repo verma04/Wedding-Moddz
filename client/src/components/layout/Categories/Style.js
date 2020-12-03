@@ -65,6 +65,30 @@ margin-top:10rem;
       }
     }
 
+    .category {
+            display:grid;
+            grid-template-columns: auto auto auto;
+          
+            margin-top: 4rem;
+          grid-gap:3rem;
+
+        .img {
+          width:24rem;
+          border-radius:10px;
+        
+          img {
+            width:100%;
+            border-radius: 2rem;
+          }
+          h2 {
+           display:flex;
+           justify-content:center;
+           padding-top:0.5rem;
+          }
+
+        }
+    }
+
   }
 
 }

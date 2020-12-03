@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Section} from './Style'
+import { Section} from './Style';
+import Footer from '../footer/Footer';
 export default class Categories extends Component {
     render() {
         return (
+            <React.Fragment>
             <Section>
               <div className="flex" >
 
@@ -17,21 +19,36 @@ export default class Categories extends Component {
 
           </div>
 
-          <div className="cate" >
+          <div className="category" >
 
        <div className="img" >
 
- <img></img>
-
+ <img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
+<h2>ddsds</h2>
        </div>
+       <div className="img" >
+
+<img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
+<h2>ddsds</h2>
+      </div>
+      <div className="img" >
+
+<img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
+<h2>ddsds</h2>
+      </div>
+      <div className="img" >
+
+<img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
+<h2>ddsds</h2>
+      </div>
                
        <div className="img" >
-       <img></img>
-           
+       <img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
+       <h2>ddsds</h2>   
 </div>
  <div className="img" >
- <img></img>
-           
+ <img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
+ <h2>ddsds</h2>  
 </div>
           </div>
 
@@ -47,7 +64,11 @@ export default class Categories extends Component {
 
 
               </div>
+             
             </Section>
+
+<Footer/>
+</React.Fragment>
         )
     }
 }
