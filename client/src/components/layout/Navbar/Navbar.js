@@ -36,7 +36,7 @@ class Navbar extends Component {
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/contacts"
+      to="/stories"
     >
       Stories
     </NavLink>

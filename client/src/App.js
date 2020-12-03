@@ -6,6 +6,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
+import stories from './components/layout/stories/stories'
 
 import Navbar from "./components/layout/Navbar/Navbar";
 import Landing from "./components/layout/Landing/Landing";
@@ -48,6 +49,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/stories" component={stories} />
             <Route exact path="/categories" component={categories} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
