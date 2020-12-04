@@ -82,7 +82,7 @@ button {
     width:100%;
     top:0%;
 z-index:1;
-background-color:white;
+background-color:#FFB6C1;
             .flex {
                 width:80em;    
              display:flex;
@@ -121,7 +121,7 @@ margin-bottom:2rem;
     -ms-letter-spacing: .3em;
     letter-spacing: .3em;
     text-indent: .3em;
-    color:  black;
+    color:  white;
     border-bottom: 3px solid transparent
 }
 

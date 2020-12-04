@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-
+import  { LoginBox } from './Style'
 class Login extends Component {
   constructor() {
     super();
@@ -53,23 +53,21 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Login</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
-              </p>
-            </div>
+      <LoginBox>
+        <div  className="row">
+         
+             <div className="login-btn" >
+              <button> <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607063197/wedding%20Moodz/icons8-google-50_lsm4za.png'} ></img> <h2> Sign in with google  </h2></button>
+              <button><img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607063197/wedding%20Moodz/icons8-facebook-48_tqt1ll.png'} ></img> <h2> Sign in with facebook </h2> </button>
+             </div>
+
+             <div class="or-separator">OR</div>
+           
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+
+              <div className='input' >
+              <div className="input-field">
+              <label htmlFor="email">Email</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -80,13 +78,14 @@ class Login extends Component {
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
+              
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field">
+              <label htmlFor="password">Password</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -97,30 +96,51 @@ class Login extends Component {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
+               
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
               </div>
+                <button
+  
+                  type="submit"
+                  
+                >
+                  Login  <i class="fas fa-sign-in-alt"></i>
+                </button>
+         
             </form>
-          </div>
+         
         </div>
-      </div>
+         
+         <div className="bottom" >
+          
+          <h4> Forgot Password? </h4>
+ 
+   <h3>Don't have an account? Create one  <a>here</a> </h3>
+         </div>
+      
+
+
+
+         <div  className="bg" >
+                       <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972539/wedding%20Moodz/Asset_22_xvpdjl.svg'}  ></img>
+                   </div>
+                   <div  className="bg1" >
+                       <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972545/wedding%20Moodz/Asset_20_4x_xmpolj.png'} ></img>
+                   </div>
+   
+         
+
+
+
+
+
+
+
+        </LoginBox>
     );
   }
 }

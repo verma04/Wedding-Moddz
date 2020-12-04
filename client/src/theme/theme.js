@@ -17,8 +17,9 @@ import {colors } from './color';
 }
 a { 
   text-decoration: none; 
-  color:${colors.button.darkBrown};
-  font-family:Quata;
+  color:white;
+  font-family: 'Comfortaa', cursive;
+
 } 
 
 p {

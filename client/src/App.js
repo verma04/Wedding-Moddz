@@ -19,6 +19,8 @@ import "./App.css";
 import{ Reset } from './theme/reset'
 import GlobalFonts from './theme/theme';
 import vendor from "./components/layout/vendor/vendor";
+import Contact2 from './components/layout/Contactus/Contact2';
+import ContactUS from './components/layout/Contactus/Contact';
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -56,6 +58,8 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+            <Route exact path="/Contactus" component={ContactUS} /> 
+            <Route exact path="/Contactus/new" component={Contact2} /> 
           </div>
         </Router>
       </Provider>

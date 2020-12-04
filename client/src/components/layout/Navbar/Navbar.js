@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , Link } from "react-router-dom";
 
 import { Nav }  from './Style'
 
@@ -11,7 +11,7 @@ class Navbar extends Component {
 
    <div className='left' >
    
-   <img src={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606310657/asset_4x_akngst.png"} ></img>
+   <Link to='/'> <img src={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606310657/asset_4x_akngst.png"} ></img> </Link> 
 
    </div>
 
@@ -43,11 +43,11 @@ class Navbar extends Component {
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/contacts"
+      to="/contactus"
     >
       ContactUs
     </NavLink>
-    <button>SignUp</button>
+    <button   > <Link to="/Login" > SignUp</Link>  </button>
    </div>
 
         </div>
