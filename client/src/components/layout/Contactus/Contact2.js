@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import  { Section} from './Style'
+import  { Section} from './Style';
+
+import Footer from '../footer/Footer'
 
 export default class Contact extends Component {
    
@@ -42,6 +44,7 @@ export default class Contact extends Component {
       }
     render() {
         return (
+          <React.Fragment>
             <Section>
 
               
@@ -116,6 +119,8 @@ Available   Mon-Fri  </h4></li>
                    </div>
             
             </Section>
+            <Footer/>
+            </React.Fragment>
         )
     }
 }

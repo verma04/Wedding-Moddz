@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import  { Section} from './Style'
-import SingleMap from './Map'
+import SingleMap from './Map';
+
+import Footer from '../footer/Footer'
+
 
 export default class Contact extends Component {
    
@@ -790,7 +793,7 @@ export default class Contact extends Component {
 
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2838.999105444847!2d76.33536561800842!3d32.199974697104366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98dd162c6cd724ff!2sAmakein%20Technologies!5e0!3m2!1sen!2sin!4v1606126098334!5m2!1sen!2sin"  style={{width:"100%" , height:"20rem"}}></iframe>
-
+<Footer/>
             </React.Fragment>
         )
     }
