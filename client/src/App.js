@@ -14,7 +14,7 @@ import Landing from "./components/layout/Landing/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
+
 import categories from './components/layout/Categories/Categories'
 import "./App.css";
 import{ Reset } from './theme/reset'
@@ -23,6 +23,21 @@ import GlobalFonts from './theme/theme';
 import vendor from "./components/layout/vendor/vendor";
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
+
+
+
+//
+import adminDashboard from './components/admin/dashboard/dashboard';
+import adminCategory from './components/admin/categories/category';
+import adminCities from './components/admin/Cities/city'
+import  adminVendor from './components/admin/vendor/vendor'
+import  adminSetting from './components/admin/Setting/setting';
+import AdminSubcriptions from './components/admin/subcriptions/sub';
+import  adminRating   from './components/admin/subcriptions/sub';
+import   adminUser from './components/admin/Users/User';
+import adminbookinglist from './components/admin/booking/booking'
+import coupon from './components/admin/coupan/coupan'
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -60,12 +75,21 @@ class App extends Component {
             <Route exact path="/stories" component={stories} />
             <Route exact path="/categories" component={categories} />
             <Route exact path="/vendor" component={vendor} />
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
+           
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
-          </div>
+
+            <Route exact path="/admin/dashboard" component={adminDashboard} /> 
+           
+            <Route exact path="/admin/categories" component={adminCategory} /> 
+            <Route exact path="/admin/cities" component={adminCities} /> 
+            <Route exact path="/admin/vendor" component={adminVendor} /> 
+            <Route exact path="/admin/setting" component={adminSetting} /> 
+            <Route exact path="/admin/subcription-list" component={AdminSubcriptions} /> 
+            <Route exact path="/admin/Users-list" component={adminUser} /> 
+            <Route exact path="/admin/booking-list" component={adminbookinglist} /> 
+            <Route exact path="/admin/coupon" component={coupon} /> 
+ </div>
         </Router>
     
        

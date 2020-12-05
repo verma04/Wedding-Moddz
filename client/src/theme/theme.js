@@ -33,7 +33,7 @@ p {
   body {
       background-color:#F1F1F1;
      font-family: Comfortaa ;
-      overflow-x: hidden;
+     
       font-family: Comfortaa ;
       ::-webkit-scrollbar {
   width: 10px;
@@ -137,13 +137,13 @@ font-family:Quata;
   }
   @media only screen and (max-width: 767px) {
     body {
-      overflow-x: hidden;
+     
     }
   }
 
   @media only screen and (min-width: 768px) {
     body {
-      overflow-x: hidden;
+     
     }
     h1 {
       font-size: 1.75rem;
