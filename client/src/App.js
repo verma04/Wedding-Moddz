@@ -7,8 +7,9 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 import stories from './components/layout/stories/stories'
-import theme from './theme/theme'
-import Navbar from "./components/layout/Navbar/Navbar";
+
+
+
 import Landing from "./components/layout/Landing/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -18,7 +19,7 @@ import categories from './components/layout/Categories/Categories'
 import "./App.css";
 import{ Reset } from './theme/reset'
 import GlobalFonts from './theme/theme';
-import { ThemeProvider} from 'styled-components'
+
 import vendor from "./components/layout/vendor/vendor";
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
@@ -46,9 +47,10 @@ class App extends Component {
     return (
       <Provider store={store}>
        
-        <GlobalFonts />
+       <GlobalFonts />
+     
           <Reset/>
-          <ThemeProvider theme={theme}>
+         
         <Router>
           <div className="App">
             
@@ -65,7 +67,7 @@ class App extends Component {
             <Route exact path="/Contactus/new" component={Contact2} /> 
           </div>
         </Router>
-        </ThemeProvider>
+    
        
       </Provider>
     );

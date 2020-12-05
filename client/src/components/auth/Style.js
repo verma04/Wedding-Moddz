@@ -61,7 +61,7 @@ export const LoginBox = styled.section`
           h2 {
               padding-top:1rem;
               color:white;
-              font-family: Quata;
+              
           }
       }
 
