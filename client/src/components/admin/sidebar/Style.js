@@ -36,7 +36,7 @@ justify-content:center;
 
 .navbar__link {
     
-  height:3rem;
+  height:2.5rem;
  padding-left:10%;
   width: 90%;
   display:flex;
@@ -47,6 +47,7 @@ justify-content:center;
   border-bottom: 3px solid transparent;
   h3 {
     padding-left:1rem;
+    font-size:1rem;
   }
   
 }
