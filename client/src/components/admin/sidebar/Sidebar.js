@@ -41,6 +41,13 @@ export default class Sidebar extends Component {
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
+      to="/admin/request"
+    >
+    <i className="fas fa-bell"></i> <h3>Requset</h3> 
+    </NavLink>
+    <NavLink
+      activeClassName="navbar__link--active"
+      className="navbar__link"
       to="/admin/Users-list"
     >
  <i class="fas fa-users"></i>  <h3>User List</h3>  
