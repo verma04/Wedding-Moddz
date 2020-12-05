@@ -57,9 +57,11 @@ export const LoginBox = styled.section`
           justify-content:center;
           background-color:#FFB6C1;
           border: none;
+
           h2 {
               padding-top:1rem;
               color:white;
+              font-family: Quata;
           }
       }
 

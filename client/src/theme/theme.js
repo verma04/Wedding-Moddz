@@ -18,7 +18,7 @@ import {colors } from './color';
 a { 
   text-decoration: none; 
   color:white;
-  font-family: 'Comfortaa', cursive;
+font-family: Quata;
 
 } 
 
@@ -26,8 +26,9 @@ p {
   line-height: 1.6;
     font-size: 1.3rem;
     text-align: center;
-    font-family: 'Comfortaa', cursive;
+  font-family: Quata;
     color :  ${colors.primary.dark}
+    font-family: 'Comfortaa', cursive;
 }
   body {
       background-color:#F1F1F1;
@@ -58,7 +59,7 @@ p {
     li {
   
     cursor: pointer;
-    font-family: 'Comfortaa', cursive;
+  font-family: Quata;
     color :  ${colors.primary.dark}
 
   }

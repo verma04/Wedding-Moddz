@@ -112,7 +112,7 @@ margin-bottom:2rem;
 .navbar__link {
     margin: 1em;
     font-size: 1.3em;
-  
+    font-family: 'Comfortaa', cursive;
     cursor: pointer;
     -webkit-text-decoration: none;
     text-decoration: none;
