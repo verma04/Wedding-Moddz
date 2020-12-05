@@ -25,7 +25,7 @@ justify-content:center;
    .flex {
    width:100%;
   
-   height:7rem;
+   height:5rem;
    background-color:white;
    display:flex;
    justify-content:space-between;

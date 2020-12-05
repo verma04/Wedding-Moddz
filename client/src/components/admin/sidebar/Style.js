@@ -20,7 +20,7 @@ justify-content:center;
     height:100vh;
     left:0;
     width:20%;
-    top:7rem;
+    top:5rem;
     background-color:		#282828;
 
     
@@ -35,8 +35,8 @@ justify-content:center;
 
 
 .navbar__link {
-    height: 4rem;
-  
+    
+  height:3rem;
  padding-left:10%;
   width: 90%;
   display:flex;
