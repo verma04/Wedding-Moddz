@@ -27,7 +27,7 @@ p {
     font-size: 1.3rem;
     text-align: center;
   font-family: Quata;
-    color :  ${colors.primary.dark}
+    color :  ${colors.primary.dark};
     font-family: 'Comfortaa', cursive;
 }
   body {

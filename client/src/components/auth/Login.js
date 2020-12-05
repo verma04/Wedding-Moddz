@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-import  { LoginBox } from './Style'
+import  { LoginBox } from './Style';
+import Navbar from '../../components/layout/Navbar/Navbar';
 class Login extends Component {
   constructor() {
     super();
@@ -53,7 +54,10 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <LoginBox>
+      <React.Fragment>
+        <Navbar/>
+           <LoginBox>
+
         <div  className="row">
          
              <div className="login-btn" >
@@ -141,6 +145,8 @@ class Login extends Component {
 
 
         </LoginBox>
+        </React.Fragment>
+     
     );
   }
 }

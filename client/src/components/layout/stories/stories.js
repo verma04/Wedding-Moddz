@@ -7,7 +7,7 @@ import{ Item  }from './Slider';
 import Img from 'react-cool-img';
 import  { Section} from './Style'
 import { withRouter } from 'react-router';
-
+import Navbar from '../Navbar/Navbar'
 import List from './List'
 import Footer from '../footer/Footer'
 
@@ -46,6 +46,7 @@ navigate  = ( id) => {
       
     return (
 <React.Fragment>
+<Navbar/>
         <Section>
 
         <div className="head" >

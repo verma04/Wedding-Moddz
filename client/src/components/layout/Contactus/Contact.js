@@ -3,7 +3,7 @@ import  { Section} from './Style'
 import SingleMap from './Map';
 
 import Footer from '../footer/Footer'
-
+import Navbar from '../Navbar/Navbar'
 
 export default class Contact extends Component {
    
@@ -48,6 +48,7 @@ export default class Contact extends Component {
     render() {
         return (
           <React.Fragment>
+            <Navbar/>
             <Section>
                   <div className='flex' >
                       <div className='flex-1' >

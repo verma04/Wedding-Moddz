@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Section} from './Style';
 import Footer from '../footer/Footer';
+import Navbar from '../Navbar/Navbar'
 export default class Categories extends Component {
     render() {
         return (
             <React.Fragment>
+                 <Navbar/>
             <Section>
               <div className="flex" >
 

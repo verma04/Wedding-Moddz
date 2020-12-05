@@ -4,7 +4,7 @@ import { Slider } from './style'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Search from '../SearchBox/Serach';
-
+import Navbar from '../Navbar/Navbar'
 
 import { withRouter } from "react-router";
 
@@ -12,6 +12,8 @@ import Img from 'react-cool-img';
  class DemoCarousel extends Component {
     render() {
         return (
+            <React.Fragment>
+        <Navbar/>
             <Slider>
                 <div    className="center" >
               <Carousel   showThumbs={false} showStatus={false} useKeyboardArrows  autoPlay interval="2000">
@@ -50,6 +52,7 @@ import Img from 'react-cool-img';
 
             <Search/>
             </Slider>
+            </React.Fragment>
         )
     }
 }
