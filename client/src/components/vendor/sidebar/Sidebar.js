@@ -12,74 +12,67 @@ export default class Sidebar extends Component {
       exact
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/admin/dashboard"
+      to="/vendor/dashboard"
     >
-  <i class="fas fa-home"></i>  <h3>Dashboard</h3> 
+  <i className="fas fa-home"></i>  <h3>Dashboard</h3> 
     </NavLink>
     <NavLink
       exact
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/admin/dashboards"
+      to="/vendor/dashboards"
     >
-   <i class="fas fa-list"></i>  <h3>  Categories</h3> 
+  <i className="fas fa-envelope"></i>  <h3>  Inbox</h3> 
     </NavLink>
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/admin/cities"
     >
-    <i class="fas fa-city"></i>  <h3>Services Cities </h3>
+   <i className="fas fa-images"></i> <h3>Projects</h3>
     </NavLink>
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/admin/vendor"
     >
-     <i class="fas fa-school"></i>  <h3>Vendor List</h3> 
+    <i className="fas fa-info-circle"></i>  <h3>Information</h3> 
     </NavLink>
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/contacts"
     >
- <i class="fas fa-users"></i>  <h3>User List</h3>  
+ <i className="fas fa-comments"></i>  <h3>Reviews</h3>  
       </NavLink>
       <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/contacts"
     >
- <i class="far fa-list-alt"></i>  <h3> Booking List</h3> 
+<i className="far fa-credit-card"></i>  <h3> Membership Packages</h3> 
       </NavLink>
       <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/products"
     >
-   <i class="fas fa-money-check-alt"></i>  <h3>   Coupan</h3>
+<i className="fas fa-signal"></i>  <h3>  Statistics</h3>
     </NavLink>
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/products"
     >
-    <i class="fas fa-star"></i>  <h3>Ratings </h3>
+  <i className="fas fa-laptop-code"></i><h3>Widget </h3>
     </NavLink>
-    <NavLink
-      activeClassName="navbar__link--active"
-      className="navbar__link"
-      to="/products"
-    >
-    <i class="fas fa-credit-card"></i>  <h3>Subcriptions</h3>  
-    </NavLink>
-
+  
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/admin/setting"
     >
- <i class="fas fa-cog"></i> <h3>Setting</h3>  
+ <i className="fas fa-cog"></i> <h3>Setting</h3>  
       </NavLink>
     
     <NavLink
@@ -87,7 +80,7 @@ export default class Sidebar extends Component {
       className="navbar__link"
       to="/contacts"
     >
- <i class="fas fa-sign-out-alt"></i>   <h3>Logout</h3>
+ <i className="fas fa-sign-out-alt"></i>   <h3>Logout</h3>
       </NavLink>
 
             </Side>

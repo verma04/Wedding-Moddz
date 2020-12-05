@@ -84,21 +84,27 @@ button {
 z-index:1;
 background-color:#FFB6C1;
             .flex {
-                width:80em;    
-             display:flex;
-justify-content:space-between;
-margin-bottom:2rem;
+                width: 80em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1rem;
                   .left {
                       margin-top:1rem;
-                      width:19rem;
+                      width: 15rem;
                       img {
-                          width:100%;
+                        width: 85%;
                       }
                   }
             }
 
             .right {
-                margin-top:2.5rem;
+                margin-top: 1.5rem;
         
     .navbar {
   display: flex;
@@ -111,18 +117,22 @@ margin-bottom:2rem;
 
 .navbar__link {
     margin: 1em;
-    font-size: 1.3em;
-    font-family: 'Comfortaa', cursive;
+    font-size: 0.9em;
+    font-family: 'Comfortaa',cursive;
     cursor: pointer;
+    -webkit-text-decoration: none;
     -webkit-text-decoration: none;
     text-decoration: none;
     -webkit-letter-spacing: .3em;
     -moz-letter-spacing: .3em;
     -ms-letter-spacing: .3em;
+    -webkit-letter-spacing: .3em;
+    -moz-letter-spacing: .3em;
+    -ms-letter-spacing: .3em;
     letter-spacing: .3em;
     text-indent: .3em;
-    color:  white;
-    border-bottom: 3px solid transparent
+    color: white;
+    border-bottom: 3px solid transparent;
 }
 
 .navbar__link:hover {
@@ -138,7 +148,7 @@ button {
     color:${colors.primary.white};
 
     border: none;
-    font-size: 1.3rem;
+    font-size: 0.9em;
     padding: 0.5rem 1rem;
     margin-left: 2rem;
     border-radius:10px;

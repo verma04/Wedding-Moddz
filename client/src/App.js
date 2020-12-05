@@ -24,9 +24,12 @@ import vendor from "./components/layout/vendor/vendor";
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
 
+//vendor 
+import vendorDashboard from './components/vendor/dashboard/dashboard'
 
 
-//
+
+//admin
 import adminDashboard from './components/admin/dashboard/dashboard';
 import adminCategory from './components/admin/categories/category';
 import adminCities from './components/admin/Cities/city'
@@ -89,6 +92,8 @@ class App extends Component {
             <Route exact path="/admin/Users-list" component={adminUser} /> 
             <Route exact path="/admin/booking-list" component={adminbookinglist} /> 
             <Route exact path="/admin/coupon" component={coupon} /> 
+
+            <Route exact path="/vendor/dashboard" component={vendorDashboard} /> 
  </div>
         </Router>
     
