@@ -10,7 +10,7 @@ import {colors } from './color';
  export default   createGlobalStyle`
 
  @font-face {
-  font-family: Quata  ;
+  font-family: Comfortaa ;
   src: url(${pala}) format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -26,15 +26,15 @@ p {
   line-height: 1.6;
     font-size: 1.3rem;
     text-align: center;
-  font-family: Quata;
+    font-family: Comfortaa ;
     color :  ${colors.primary.dark};
-    font-family: 'Comfortaa', cursive;
+   
 }
   body {
       background-color:#F1F1F1;
-      font-family:Quata;
+     font-family: Comfortaa ;
       overflow-x: hidden;
-
+      font-family: Comfortaa ;
       ::-webkit-scrollbar {
   width: 10px;
 }
@@ -59,7 +59,7 @@ p {
     li {
   
     cursor: pointer;
-  font-family: Quata;
+ font-family: Comfortaa ;
     color :  ${colors.primary.dark}
 
   }
@@ -110,11 +110,11 @@ button {
     color:${colors.button.darkBrown};
   }
   select {
-    font-family:Quata;
+   font-family: Comfortaa ;
   }
   
   .date {
-    font-family:Quata;
+   font-family: Comfortaa ;
   }
   .card {
     border-radius:10px;
@@ -125,12 +125,12 @@ border-radius:5px;
 font-family:Quata;
   }
   input {
-    font-family:Quata;
+   font-family: Comfortaa ;
     border:1px solid #EFEAE4;
     background-color:#FFFFFF;
   }
   span {
-    font-family:Quata;
+   font-family: Comfortaa ;
   }
   i {
     color:${colors.button.darkBrown};
@@ -161,10 +161,10 @@ font-family:Quata;
   a { 
     text-decoration: none; 
     color:${colors.button.darkBrown};
-    font-family:Quata;
+   font-family: Comfortaa ;
 } 
 button {
-  font-family: Quata;
+ font-family: Comfortaa ;
 }
 
 li {

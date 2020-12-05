@@ -40,6 +40,8 @@ margin-top:10rem;
          padding-left: 8rem;
          padding-bottom:1rem;
          color: ${colors.primary.pink1};
+    font-family: 'Comfortaa';
+
      border-bottom: 4px solid  ${colors.primary.pink1};
      }
      button {
@@ -61,7 +63,9 @@ margin-top:10rem;
       p {
         line-height: 1.6;
     font-size: 1.3rem;
-    text-align: center
+    text-align: center;
+    font-family: 'Comfortaa';
+
       }
     }
 
@@ -84,6 +88,8 @@ margin-top:10rem;
            display:flex;
            justify-content:center;
            padding-top:0.5rem;
+    font-family: 'Comfortaa';
+
           }
 
         }

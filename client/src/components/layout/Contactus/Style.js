@@ -25,7 +25,7 @@ export const Section = styled.section`
          .hero{
         width:100%;
   h2 {
-    font-family: "AvenirNext-Bold";
+    font-family: 'Comfortaa';
     color: ${colors.button.darkBrown};
 
     text-transform: uppercase;
@@ -34,7 +34,7 @@ export const Section = styled.section`
     text-align:center;
   }
   h4 {
-  
+    font-family: 'Comfortaa';
     color: #897C76;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
@@ -193,7 +193,7 @@ export const Section = styled.section`
          .hero{
           width:48rem;
   h2 {
-    font-family: "AvenirNext-Bold";
+    font-family: 'Comfortaa';
     color: ${colors.button.darkBrown};
     font-size: 2rem;
     text-transform: uppercase;
@@ -354,7 +354,7 @@ export const Section = styled.section`
          .hero{
           width:48rem;
   h2 {
-    font-family: "AvenirNext-Bold";
+    font-family: 'Comfortaa';
     color: ${colors.primary.pink1};
     font-size: 2rem;
     text-transform: uppercase;
@@ -368,6 +368,7 @@ export const Section = styled.section`
     margin-bottom: 1rem;
     margin-top: 0.5rem;
     text-align:center;
+    font-family: 'Comfortaa';
   }
          }
          .select {
@@ -382,6 +383,7 @@ export const Section = styled.section`
              }
              label {
                  padding-bottom:0.2rem;
+                 font-family: 'Comfortaa';
              }
              select {
                 background-color: #FDFCFC;
@@ -393,13 +395,15 @@ export const Section = styled.section`
     border-radius: 4px;
     line-height: 4rem;
     outline: none;
-    vertical-align: middle
+    vertical-align: middle;
+    font-family: 'Comfortaa';
     
 
    
              }
              select option {
       height:3rem;
+      font-family: 'Comfortaa';
  
 }
       
@@ -408,6 +412,7 @@ export const Section = styled.section`
   .contact {
       display:flex;
       justify-content:space-between;
+      font-family: 'Comfortaa';
       button {
         text-decoration: none;
     text-transform: uppercase;
@@ -416,7 +421,7 @@ export const Section = styled.section`
     color: ${colors.primary.pink1};
     font-size: 14px;
     padding: 5px 10px 4px;
-    font-family: 'AvenirNext-CondensedBold';
+    font-family: 'Comfortaa';
     transition: background-color .2s;
     font-weight:1000;
       }
@@ -432,6 +437,7 @@ export const Section = styled.section`
     text-align: center;
     padding-bottom: 3rem;
     font-weight: bolder;
+    font-family: 'Comfortaa';
       }
       
       .drop {
@@ -448,10 +454,12 @@ export const Section = styled.section`
       }
       h4 {
           font-weight:900;
+          font-family: 'Comfortaa';
       }
           }
           .down {
               line-height:1.6rem;
+              font-family: 'Comfortaa';
           }
        
       }
@@ -466,20 +474,27 @@ export const Section = styled.section`
         justify-content:space-between;
         padding:1.5rem;
         height:5rem;
+        font-family: 'Comfortaa';
 
         .left {
           display:flex;
         justify-content:space-between;
+        font-family: 'Comfortaa';
          ul {
            padding-left:1rem;
            height:3rem;
            line-height:1.6;
+           font-family: 'Comfortaa';
+           li {
+            font-family: 'Comfortaa';
+           }
          }
          img {
            padding-top:0.7rem;
          }
         }
         .right {
+          font-family: 'Comfortaa';
           button {
             font-size:1.1rem;
             background-color: ${colors.primary.pink1};
@@ -487,6 +502,7 @@ export const Section = styled.section`
              border:none;
              margin-top:2rem;
              padding: 0.5rem 1rem;
+             font-family: 'Comfortaa';
           }
         }
         
