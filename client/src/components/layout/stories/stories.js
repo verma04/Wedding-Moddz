@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import TopBar from '../Topbar/topbar'
 import{ Item  }from './Slider';
 import Img from 'react-cool-img';
 import  { Section} from './Style'
@@ -46,6 +46,7 @@ navigate  = ( id) => {
       
     return (
 <React.Fragment>
+<TopBar/>
 <Navbar/>
         <Section>
 

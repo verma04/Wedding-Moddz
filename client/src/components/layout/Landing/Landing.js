@@ -4,7 +4,8 @@ import { Slider } from './style'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Search from '../SearchBox/Serach';
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar';
+import TopBar from '../Topbar/topbar'
 
 import { withRouter } from "react-router";
 
@@ -13,6 +14,7 @@ import Img from 'react-cool-img';
     render() {
         return (
             <React.Fragment>
+                <TopBar/>
         <Navbar/>
             <Slider>
                 <div    className="center" >
@@ -50,7 +52,7 @@ import Img from 'react-cool-img';
 
             </div>
 
-            <Search/>
+            {/* <Search/> */}
             </Slider>
             </React.Fragment>
         )

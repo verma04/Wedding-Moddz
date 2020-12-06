@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import  { Section} from './Style';
-
+import TopBar from '../Topbar/topbar'
 import Footer from '../footer/Footer'
 import Navbar from '../Navbar/Navbar'
 export default class Contact extends Component {
@@ -45,6 +45,7 @@ export default class Contact extends Component {
     render() {
         return (
           <React.Fragment>
+            <TopBar/>
               <Navbar/>
             <Section>
 

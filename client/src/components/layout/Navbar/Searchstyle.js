@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import  { colors } from '../../../theme/color'
 
-export const Nav = styled.nav`
+export const Sec = styled.section`
 display:flex;
 justify-content:center;
 @media  (max-width: 767px) {
@@ -10,175 +10,13 @@ justify-content:center;
 }
 @media (min-width: 768px) and (max-width: 1280px) {
 
-    position:fixed;
-    width:100%;
-    top:0%;
-z-index:1;
-
-            .flex {
-                width:48em;    
-             display:flex;
-justify-content:space-between;
-                  .left {
-                      margin-top:1.4rem;
-                      width:16rem;
-                      img {
-                          width:100%;
-                      }
-                  }
-            }
-
-            .right {
-                margin-top:2.5rem;
-        
-    .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  background-color: #eceff1;
-}
-
-.navbar__link {
-    margin: 1em;
-    
-    /* font-family: 'Roboto',sans-serif; */
-    cursor: pointer;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    -webkit-letter-spacing: .3em;
-    -moz-letter-spacing: .3em;
-    -ms-letter-spacing: .3em;
-   
-    text-indent: .3em;
-    color:  white;
-    border-bottom: 3px solid transparent
-}
-
-.navbar__link:hover {
-  transform: translateY(-2px);
-}
-
-.navbar__link--active {
-    color: ${colors.primary.pink1};
-  transition: border-bottom .5s ease-in-out;
-}
-button {
-    background-color:${colors.primary.pink1};
-    color:${colors.primary.white};
-
-    border: none;
-  
-    padding: 0.5rem 1rem;
-   
-    border-radius:10px;
-}
-            
-}
+ 
 
 }
 @media (min-width: 1281px) {
-    position:fixed;
-    width:100%;
-    top: 4%;
-z-index:1;
-background-color:#FFB6C1;
-         
-
-            .flex {
-                width: 80em;
-                height:3.5rem;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-
-                  .left {
-                     display:flex;
-                     justify-content:center;
-                     
-                     align-items:center;
-                   
-
-                      .wrapper {
-                        display:flex;
-                     justify-content:center;
-                       flex-direction:column;
-                     align-items:center;
-                      width: 15rem;
-
-                      img {
-                        width: 85%;
-                      }
-                      }
-
-.navbar__link {
-    margin: 1em;
-  margin-top:1.6rem;
-    font-size: 0.9em;
-    font-family: 'Comfortaa',cursive;
-    cursor: pointer;
-    -webkit-text-decoration: none;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    -webkit-letter-spacing: .3em;
-    -moz-letter-spacing: .3em;
-    -ms-letter-spacing: .3em;
-    -webkit-letter-spacing: .3em;
-    -moz-letter-spacing: .3em;
-    -ms-letter-spacing: .3em;
-    letter-spacing: .3em;
-    text-indent: .3em;
-    color: white;
-    border-bottom: 3px solid transparent;
-}
-
-.navbar__link:hover {
-  transform: translateY(-2px);
-}
-
-.navbar__link--active {
-    color: ${colors.primary.pink1};
-  transition: border-bottom .5s ease-in-out;
-}
-                  }
-            
-
-            .right {
-              display:flex;
-                     justify-content:center;
-                  
-                     align-items:center;
-        i {
-          color:white;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    background-color: #F0326E;
-    cursor:pointer;
-}
-
-
  
 
-button {
-    background-color:${colors.primary.pink1};
-    color:${colors.primary.white};
-
-    border: none;
-    font-size: 0.9em;
-    padding: 0.5rem 1rem;
-    margin-left: 2rem;
-    border-radius:10px;
-}
-            
-}
-            }
-
-            .search {
+           
               position:fixed;
               background-color:white;
               top:0;
@@ -406,9 +244,10 @@ left:0;
                  top:2rem;
                  left:3rem;
                   font-size:3rem;
-                    color:	#484848;
+                  color:	#484848;
+                  cursor:pointer;
                }
-            }
+            
 
 }
 `

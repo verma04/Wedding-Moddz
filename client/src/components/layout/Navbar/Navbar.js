@@ -1,22 +1,34 @@
 import React, { Component } from "react";
 import { NavLink , Link } from "react-router-dom";
 
-import { Nav }  from './Style'
+import { Nav }  from './Style';
+import Search from './Search'
 
 class Navbar extends Component {
+
+    state = {
+      active:false
+    }
+   
+    onSearch=() => {
+      this.setState({active:!this.state.active})
+    }
+   
+
   render() {
     return (
       <Nav>
+
+      
         <div className='flex' >
 
    <div className='left' >
+
+   <div className='wrapper' >
    
    <Link to='/'> <img src={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606310657/asset_4x_akngst.png"} ></img> </Link> 
 
-   </div>
-
-
-   <div className='right' >
+</div>
 
    <NavLink
       exact
@@ -47,11 +59,28 @@ class Navbar extends Component {
     >
       ContactUs
     </NavLink>
+  
+  
+  
+  
+  
+   </div>
+
+
+   <div className='right' >
+
+   <i onClick={this.onSearch}  class="fas fa-search"></i>
+  
     <button   > <Link to="/Login" > SignUp</Link>  </button>
    </div>
 
         </div>
          
+
+
+        {this.state.active && <Search   send={this.onSearch} />}
+      
+      
       </Nav>
     );
   }

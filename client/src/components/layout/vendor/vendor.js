@@ -7,7 +7,8 @@ import{ Item  }from './Slider';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Img from 'react-cool-img';
-
+import Navbar from '../Navbar/Navbar';
+import TopBar from '../Topbar/topbar'
 
 export default class vendor extends Component {
 
@@ -36,6 +37,8 @@ export default class vendor extends Component {
           };
         return (
             <React.Fragment>
+                  <TopBar/>
+        <Navbar/>
             <Section>
                 
   <div className="flex" >
