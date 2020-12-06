@@ -6,6 +6,7 @@ import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import  { LoginBox } from './Style';
 import Navbar from '../../components/layout/Navbar/Navbar';
+import Topvar from '../../components/layout/Topbar/topbar'
 class Login extends Component {
   constructor() {
     super();
@@ -55,6 +56,7 @@ class Login extends Component {
 
     return (
       <React.Fragment>
+        <Topvar/>
         <Navbar/>
            <LoginBox>
 
