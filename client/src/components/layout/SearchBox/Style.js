@@ -17,11 +17,28 @@ justify-content:center;
     position: absolute;
     bottom: 2rem;
   
-    top: 36rem;
+    top: 30rem;
     left: 1rem;
    
      width:100%;
-            .flex {
+    .head {
+        width:70rem;
+        padding-bottom:2rem;
+        display:flex;
+              justify-content:center;
+              align-items:center;
+              flex-direction: column;
+              h2 {
+                font-size: 2.5rem;
+    font-weight: 1000;
+                  color:white;
+              }
+              h3 {
+                  color:white;
+              }
+    }
+
+            .flex1 {
                 width:70em;    
                 height:2.5rem;
              display:flex;
