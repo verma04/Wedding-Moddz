@@ -71,7 +71,7 @@ class Navbar extends Component {
 
    <i onClick={this.onSearch}  class="fas fa-search"></i>
   
-    <button   > <Link to="/Login" > SignUp</Link>  </button>
+   <Link to="/Login" >  <button   >  SignUp </button></Link> 
    </div>
 
         </div>

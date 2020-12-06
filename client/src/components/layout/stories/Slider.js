@@ -13,6 +13,7 @@ export const  Item = styled.div`
    @media (max-width: 767px) {
     .center{
      width:100%;
+     z-index: -1;
      .img-wrapper {
        display:flex;
         justify-content:center;
@@ -57,7 +58,7 @@ export const  Item = styled.div`
   
    .center{
      width:80rem;
-     
+     z-index: -1;
      .img-wrapper {
        display:flex;
         justify-content:center;

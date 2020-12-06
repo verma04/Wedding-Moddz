@@ -13,6 +13,7 @@ export const Section = styled.section`
 
 }
 @media (min-width: 1281px) {
+    z-index:-1;
 
     margin-top:10rem;
     .head {

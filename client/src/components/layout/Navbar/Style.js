@@ -70,7 +70,7 @@ button {
     border: none;
   
     padding: 0.5rem 1rem;
-   
+   color:white;
     border-radius:10px;
 }
             
@@ -166,8 +166,8 @@ background-color:#FFB6C1;
 
 button {
     background-color:${colors.primary.pink1};
-    color:${colors.primary.white};
-
+    color:white;
+    
     border: none;
     font-size: 0.9em;
     padding: 0.5rem 1rem;
