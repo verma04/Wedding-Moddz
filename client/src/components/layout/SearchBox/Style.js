@@ -14,19 +14,21 @@ justify-content:center;
 
 }
 @media (min-width: 1281px) {
-    position:fixed;
-    width:100%;
-    top: 79%;
-
-z-index:1;
+    position: absolute;
+    bottom: 2rem;
+  
+    top: 36rem;
+    left: 1rem;
+   
+     width:100%;
             .flex {
-                width:80em;    
-                height:3rem;
+                width:70em;    
+                height:2.5rem;
              display:flex;
              border-radius:10px;
 justify-content:space-evenly;
-padding-top:1rem;
-padding-bottom:1rem;
+padding-top:0.5rem;
+padding-bottom:0.5rem;
 background-color:white;
 
 .flex-1{
@@ -35,7 +37,7 @@ background-color:white;
 
     display:flex;
     justify-content:space-between;
-    font-size:1.3rem;
+    font-size:1rem;
     background-color:#E0E0E0;
     img {
         height: 78%;
@@ -83,7 +85,7 @@ padding-left: 0.5rem;
         width:100%;
         height:100%;
         border:none;
-        font-size:1.3rem;
+        font-size:1rem;
         background-color:${colors.button.yellow};
 
     

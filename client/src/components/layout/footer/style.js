@@ -17,6 +17,7 @@ background-color:white;
     position:relative;
     display:flex;
     justify-content:center;
+    margin-top:5rem;
 
   .flex {
     z-index: 1;

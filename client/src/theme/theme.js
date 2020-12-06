@@ -19,6 +19,7 @@ a {
   text-decoration: none; 
   color:white;
 font-family: Quata;
+color:${colors.primary.dark1};
 
 } 
 
@@ -81,33 +82,38 @@ button {
   h2 {
     font-size: 1.4rem;
     line-height: var(--line-height-lg);
-    color:${colors.button.darkBrown};
+   
+    color:${colors.primary.dark1};
   }
 
   h3 {
     font-size: 1.2rem;
     line-height: var(--line-height-lg);
+    color:${colors.primary.dark1};
   }
 
 
   h4 {
     font-size: 1rem;
     line-height: var(--line-height-md);
+    color:${colors.primary.dark1};
   }
   h5 {
     font-size: 0.75;
     line-height: var(--line-height-md);
+    color:${colors.primary.dark1};
   }
 
   h6 {
     font-size: 0.6rem;
     line-height: var(--line-height-md);
+    color:${colors.primary.dark1};
   }
 
   p {
     font-size: 0.9rem;
     line-height: var(--line-height-md);
-    color:${colors.button.darkBrown};
+    color:${colors.primary.dark1};
   }
   select {
    font-family: Comfortaa ;
@@ -128,6 +134,7 @@ font-family:Quata;
    font-family: Comfortaa ;
     border:1px solid #EFEAE4;
     background-color:#FFFFFF;
+    color:${colors.primary.dark1};
   }
   span {
    font-family: Comfortaa ;
@@ -147,15 +154,18 @@ font-family:Quata;
     }
     h1 {
       font-size: 1.75rem;
+      color:${colors.primary.dark1};
     }
 
     h2 {
    
       color:${colors.button.darkBrown};
+      color:${colors.primary.dark1};
     }
 
     h3 {
       font-size: 1.25rem;
+      color:${colors.primary.dark1};
     }
   }
   a { 
