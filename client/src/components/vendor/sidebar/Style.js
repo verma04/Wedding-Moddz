@@ -48,6 +48,7 @@ justify-content:center;
   h3 {
     padding-left:1rem;
     font-size:1rem;
+    color:white;
   }
   
 }

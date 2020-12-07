@@ -34,7 +34,7 @@ export default class Sidebar extends Component {
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/admin/vendor"
+      to="/vendor/information"
     >
     <i className="fas fa-info-circle"></i>  <h3>Information</h3> 
     </NavLink>

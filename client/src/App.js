@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
-
+import { useNProgress } from '@tanem/react-nprogress'
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -24,8 +24,11 @@ import vendor from "./components/layout/vendor/vendor";
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
 
+import List from './components/layout/vendorList/List';
+
 //vendor 
-import vendorDashboard from './components/vendor/dashboard/dashboard'
+import vendorDashboard from './components/vendor/dashboard/dashboard';
+import vedndoInformation from './components/vendor/Information/information'
 
 
 
@@ -60,6 +63,8 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
+
 class App extends Component {
   render() {
     return (
@@ -81,7 +86,7 @@ class App extends Component {
            
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
-
+            <Route exact path="/vendors/:id" component={List} /> 
             <Route exact path="/admin/dashboard" component={adminDashboard} /> 
            
             <Route exact path="/admin/categories" component={adminCategory} /> 
@@ -94,6 +99,7 @@ class App extends Component {
             <Route exact path="/admin/coupon" component={coupon} /> 
 
             <Route exact path="/vendor/dashboard" component={vendorDashboard} /> 
+            <Route exact path="/vendor/information" component={vedndoInformation} /> 
  </div>
         </Router>
     
