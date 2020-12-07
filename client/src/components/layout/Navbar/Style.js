@@ -5,6 +5,7 @@ import  { colors } from '../../../theme/color'
 export const Nav = styled.nav`
 display:flex;
 justify-content:center;
+
 @media  (max-width: 767px) {
 
 }
@@ -78,7 +79,7 @@ button {
 
 }
 @media (min-width: 1281px) {
-  
+
     width:100%;
   
 z-index:1;

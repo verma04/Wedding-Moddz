@@ -9,6 +9,7 @@ import TopBar from '../Topbar/topbar'
 import Footer from '../footer/Footer';
 import VednorSlider from './vednorSlider/Slider'
 import Banner from './Banner/Banner'
+import PopularSearches from './Popular Searches/Popular'
 
 import { withRouter } from "react-router";
 
@@ -57,9 +58,10 @@ import Img from 'react-cool-img';
           
 
             </div>
-
+             
             </Slider>
             <Banner/>
+            <PopularSearches/>
             <VednorSlider/>
             <Category/>
             <Footer/>
