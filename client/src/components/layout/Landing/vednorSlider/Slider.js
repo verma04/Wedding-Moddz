@@ -133,21 +133,7 @@ navigate  = ( id) => {
             </div>
 
             
-  </div>4  <div >
-  <div className='img-wrapper'   >
-            <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
-            <div className="fade" >
-         <h3>Lawn /farmHosue</h3>
-          <ul>
-              <li></li>
-              <li>dfdfdf</li>
-                <li>sdsdds</li>
-              </ul>
-         </div>
-            </div>
-
-            
-  </div>
+  </div> 
 
   
 </Carousel>
