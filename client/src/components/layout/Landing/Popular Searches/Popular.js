@@ -150,7 +150,7 @@ import { withRouter } from 'react-router';
   </div>
   <div>
   <div className='img-wrapper'    >
-            <Img  placeholder={"https://res.cloudinary.com/pankaj-k-amakein-com/image/upload/v1606294995/LAZY_LOADING_NIR_LOGO22_qnfryj.png"}  cache  alt="sdd" ></Img>
+            <Img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
             <div className="fade" >
          <h2>number.category</h2>
          </div>

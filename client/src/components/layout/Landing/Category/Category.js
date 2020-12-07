@@ -241,7 +241,12 @@ export default class Category extends Component {
 
 
        </div>
-
+       <div  className="bg" >
+                       <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972539/wedding%20Moodz/Asset_23_i1yxo5.svg'}  ></img>
+                   </div>
+                   <div  className="bg1" >
+                       <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972542/wedding%20Moodz/Asset_23_4x_znpq7g.png'} ></img>
+                   </div>
             </Section>
         )
     }

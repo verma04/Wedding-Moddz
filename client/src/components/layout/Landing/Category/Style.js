@@ -14,6 +14,7 @@ justify-content:center;
 
 }
 @media (min-width: 1281px) {
+    position:relative;
 
     margin-top:5rem;
     .flex {
@@ -143,5 +144,26 @@ justify-content:center;
 
    
 }
+
+
+.bg {
+    position: absolute;
+    top: 12rem;
+    right: -4rem;
+    z-index: -1;
+      img {
+          width:16rem;
+      }
+  }
+  .bg1 {
+    bottom: 16rem;
+    left: -4rem;
+    z-index: 0;
+    z-index: -1;
+    position: absolute;
+    img {
+          width:16rem;
+      }
+  }
 }
 `
