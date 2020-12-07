@@ -78,9 +78,9 @@ button {
 
 }
 @media (min-width: 1281px) {
-    position:fixed;
+  
     width:100%;
-    top: 4%;
+  
 z-index:1;
 background-color:#FFB6C1;
          

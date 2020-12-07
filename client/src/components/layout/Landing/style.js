@@ -22,6 +22,7 @@ position:relative;
 	   -moz-box-shadow: 0 1rem 6px -6px grey;
 	        box-shadow: 0 1rem 6px -6px grey;
           .img-1 {
+            width:100%;
             position: relative;
     .img-wrapper {
       

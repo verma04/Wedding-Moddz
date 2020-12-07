@@ -77,9 +77,9 @@ button {
 
 }
 @media (min-width: 1281px) {
-    position:fixed;
+ 
     width:100%;
-    top:0%;
+   
 z-index:1;
 background-color:${colors.primary.pink1};
           .flex0 {
@@ -113,6 +113,7 @@ background-color:${colors.primary.pink1};
     width: 12rem;
     border-radius: 5px;
     border: none;
+    margin-bottom: 0.3rem
                    }
 
                   }

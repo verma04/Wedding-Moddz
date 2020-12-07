@@ -19,7 +19,7 @@ justify-content:center;
     .flex {
         width:80rem;
         height:40rem;
-      
+       
         display:flex;
         justify-content:center;
         flex-direction:column;
@@ -50,12 +50,13 @@ justify-content:center;
            
             width:100%;
             display:flex;
-        justify-content:space-between;
+        justify-content:flex-start;
         flex-direction:column;
         align-items:center;
         .category1 {
         width:100%;
         height:31%;
+      
        
         display:flex;
         justify-content:space-between;
@@ -64,6 +65,9 @@ justify-content:center;
         .set {
             width:49%;
         height:100%;
+        .set1 {
+            width:100%;
+        height:90%;
        
         display:flex;
         justify-content:space-between;
@@ -104,6 +108,26 @@ justify-content:center;
      color:white;
  }
         
+        }
+
+.down {
+    
+     background-color:white;
+    ul {
+        display:grid;
+        grid-template-columns: auto auto;
+       
+        li{
+            padding:1rem;
+            font-size:1rem;
+        }
+        #bold {
+            font-weight:900;
+        }
+    }
+}
+
+
         }
         #pink {
             background-color:${colors.primary.pink1}

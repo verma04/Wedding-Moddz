@@ -32,7 +32,7 @@ p {
    
 }
   body {
-      background-color:#F1F1F1;
+      background-color:#fbfbfb;
      font-family: Comfortaa ;
      
       font-family: Comfortaa ;

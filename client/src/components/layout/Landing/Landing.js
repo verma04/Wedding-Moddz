@@ -6,7 +6,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Search from '../SearchBox/Serach';
 import Navbar from '../Navbar/Navbar';
 import TopBar from '../Topbar/topbar'
-import Footer from '../footer/Footer'
+import Footer from '../footer/Footer';
+import VednorSlider from './vednorSlider/Slider'
+import Banner from './Banner/Banner'
 
 import { withRouter } from "react-router";
 
@@ -57,6 +59,8 @@ import Img from 'react-cool-img';
             </div>
 
             </Slider>
+            <Banner/>
+            <VednorSlider/>
             <Category/>
             <Footer/>
             </React.Fragment>
