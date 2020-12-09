@@ -17,7 +17,42 @@ export default class dashboard extends Component {
                      </div>
 
                      <div className='flex-2' >
- <h2>sd</h2>
+                          
+                          <div className="category" >
+
+                              <div className="input" >
+
+                                  <input  ></input>
+                                  <button>Add</button>
+                              </div>
+
+                              <div className="set" >
+                                  <div className="list" >
+
+                                      <div className="data" >
+
+                                      </div>
+
+                                      <div className="button" >
+                                          
+                                          </div>
+
+                                    
+                                  </div>
+                                  <div className="list" >
+
+                                    
+</div>
+<div className="list" >
+
+                                    
+</div>
+                                
+
+                              </div>
+
+
+                          </div>
 
                      </div>
                      

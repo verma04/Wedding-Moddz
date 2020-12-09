@@ -8,8 +8,9 @@ import Navbar from '../Navbar/Navbar';
 import TopBar from '../Topbar/topbar'
 import Footer from '../footer/Footer';
 import VednorSlider from './vednorSlider/Slider'
+import { getCity } from "../../../actions/adminActions";
 import Banner from './Banner/Banner'
-import PopularSearches from './Popular Searches/Popular'
+import PopularSearches from './Popular Searches/Popular';
 
 import { withRouter } from "react-router";
 

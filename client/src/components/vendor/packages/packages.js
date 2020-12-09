@@ -3,15 +3,8 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import  { Section  } from './Style';
 import Sidebar  from '../sidebar/Sidebar';
-import { getCity } from "../../../actions/adminActions";
 
-import   { connect} from 'react-redux';
-
- class city extends Component {
-
-    componentDidMount() {
-        this.props.getCity();
-    }
+export default class  packages extends Component {
     render() {
         return (
             <React.Fragment>
@@ -24,7 +17,7 @@ import   { connect} from 'react-redux';
                      </div>
 
                      <div className='flex-2' >
- <h2>sdffffffd</h2>
+ <h2>sd</h2>
 
                      </div>
                      
@@ -35,14 +28,3 @@ import   { connect} from 'react-redux';
         )
     }
 }
-
-
-const mapStateToProps = state => ({
-    auth: state.auth,
-    
-  });
-  
-  export default connect(
-    mapStateToProps,
-    { getCity }
-  )(city);

@@ -43,6 +43,7 @@ justify-content:center;
      margin-top:7rem;
       width: 80%;
       overflow: visible;
+      height:90vh;
       display:flex;
       overflow: auto;
    justify-content:flex-start;

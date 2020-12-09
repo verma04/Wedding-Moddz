@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../../actions/authActions";
+import { loginadmin } from "../../actions/authActions";
 import classnames from "classnames";
 import  { LoginBox } from './Style';
 import Navbar from '../../components/layout/Navbar/Navbar';
@@ -48,7 +48,7 @@ class Login extends Component {
       password: this.state.password
     };
 
-    this.props.loginUser(userData);
+    this.props.loginadmin(userData);
   };
 
   render() {
@@ -154,7 +154,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  loginUser: PropTypes.func.isRequired,
+  loginadmin: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -166,5 +166,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { loginUser }
+  { loginadmin }
 )(Login);

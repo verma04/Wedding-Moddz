@@ -21,7 +21,26 @@ export default class List extends Component {
                     <div className="up" >
 
                     <div className="wrapper" >
-                        <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607337813/fc19dae9-2394-432d-b22e-90cb97eb6785_eonclx.png'} ></img>
+                          <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607337813/fc19dae9-2394-432d-b22e-90cb97eb6785_eonclx.png'} ></img>
+                    <div className="about" >
+                
+                <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607404013/icons8-about-50_zrqehn.png'} ></img>
+
+                    </div>
+
+                    <div class="tooltiptext">
+                     <h4>About Vednor</h4>
+                    <p>
+
+                    Line 252:25:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+[1]  
+                    </p>
+                    </div>
+                     
+
+
+                    <div class="triangle-left"></div>
+
                         </div>   
                         <div className="data" >
 

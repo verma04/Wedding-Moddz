@@ -48,7 +48,7 @@ export default class Sidebar extends Component {
       <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/contacts"
+      to="/vendor/packages"
     >
 <i className="far fa-credit-card"></i>  <h3> Membership Packages</h3> 
       </NavLink>

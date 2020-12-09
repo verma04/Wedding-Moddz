@@ -3,6 +3,8 @@ import { NavLink , Link } from "react-router-dom";
 
 import { Nav }  from './Style';
 import Search from './Search'
+import { connect } from "react-redux";
+import { logoutUser , getCity } from "../../../actions/authActions";
 
 class Navbar extends Component {
 
@@ -13,9 +15,14 @@ class Navbar extends Component {
     onSearch=() => {
       this.setState({active:!this.state.active})
     }
+
+    componentDidMount() {
+      this.props.getCity()
+    }
    
 
   render() {
+    const { user , isAuthenticated } = this.props.auth;
     return (
       <Nav>
 
@@ -70,8 +77,21 @@ class Navbar extends Component {
    <div className='right' >
 
    <i onClick={this.onSearch}  class="fas fa-search"></i>
+
+
+   {(() => {
+   if (isAuthenticated === true) {
+          return (
+            <button  onClick={() => this.props.logoutUser()}  >    Logout</button>
+          )
+           } else {
+          return (
+            <Link to="/Login" >  <button   >  SignUp </button></Link> 
+          )
+        }
+      })()}
   
-   <Link to="/Login" >  <button   >  SignUp </button></Link> 
+  
    </div>
 
         </div>
@@ -86,4 +106,13 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser  , getCity }
+)(Navbar);
+

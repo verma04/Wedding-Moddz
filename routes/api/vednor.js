@@ -10,8 +10,11 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const User = require("../../models/User");
 const Vendor = require("../../models/Vednor");
+const User = require("../../models/User");
+
+
+
 
 // @route POST api/users/register
 // @desc Register user
@@ -25,31 +28,30 @@ router.post("/register", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
+  User.findOne({ email: req.body.email }).then(user => {
+   if ( user ) {
+    return res.status(400).json({ email: "Email Register As User use another" });
+   }
 
   Vendor.findOne({ email: req.body.email }).then(vendor => {
     if (vendor) {
       return res.status(400).json({ email: "Email already exists" });
-    }
-
-  User.findOne({ email: req.body.email }).then(user => {
-    if (user) {
-      return res.status(400).json({ email: "Email already exists" });
     } else {
-      const newUser = new User({
+      const newVendor = new Vendor({
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        role: "user"
+        role: "vendor"
       });
 
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
+        bcrypt.hash(newVendor.password, salt, (err, hash) => {
           if (err) throw err;
-          newUser.password = hash;
-          newUser
+          newVendor.password = hash;
+          newVendor
             .save()
-            .then(user => res.json(user))
+            .then(vendor=> res.json(vendor))
             .catch(err => console.log(err));
         });
       });
@@ -63,6 +65,7 @@ router.post("/register", (req, res) => {
 // @access Public
 router.post("/login", (req, res) => {
   // Form validation
+  console.log(req.body)
 
   const { errors, isValid } = validateLoginInput(req.body);
 
@@ -75,21 +78,21 @@ router.post("/login", (req, res) => {
   const password = req.body.password;
 
   // Find user by email
-  User.findOne({ email }).then(user => {
+  Vendor.findOne({ email }).then(vendor=> {
     // Check if user exists
-    if (!user) {
+    if (!vendor) {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
 
     // Check password
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(password,  vendor.password).then(isMatch => {
       if (isMatch) {
         // User matched
         // Create JWT Payload
         const payload = {
-          id: user.id,
-          name: user.name,
-          role: user.role
+          id: vendor.id,
+          name: vendor.name,
+          role: vendor.role
         };
 
         // Sign token
@@ -113,16 +116,6 @@ router.post("/login", (req, res) => {
       }
     });
   });
-});
-
-router.get("/getCity",   passport.authenticate('jwt', { session: false }),
-
-(req, res) => {
-  
-
-  console.log(req.user.category)
-
-
 });
 
 module.exports = router;

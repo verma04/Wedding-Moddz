@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import {  Footerr} from './style'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-export default class Footer extends Component {
+import { connect } from "react-redux";
+import { logoutUser } from "../../../actions/authActions";
+import {  Link } from 'react-router-dom';
+ class Footer extends Component {
     render() {
+        const { user , isAuthenticated } = this.props.auth;
         return (
             <Footerr>
                 <div className="flex" >
@@ -101,7 +103,17 @@ export default class Footer extends Component {
                <ul>
                    <li>wweew</li>
                    <li>wewe</li>
-                   <li>wewe</li>
+                   {(() => {
+        if (isAuthenticated === true) {
+          return (
+            <li  onClick={() => this.props.logoutUser()} >Logout</li>
+          )
+           } else {
+          return (
+            <li> <Link to="/login">Login </Link></li>
+          )
+        }
+      })()}
                </ul>
 
 
@@ -115,8 +127,8 @@ export default class Footer extends Component {
 
                     <div className="flex-2" >
                     
-                    <div className="flex-22" >
-                        <h4>
+                    <div   className="flex-22" >
+                        <h4   >
                     Copyright 2020 © All Rights Reserved   WeddingMoodz |
                     </h4>
 
@@ -146,3 +158,13 @@ export default class Footer extends Component {
         )
     }
 }
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { logoutUser  }
+  )(Footer);
+  

@@ -7,6 +7,8 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 import stories from './components/layout/stories/stories'
+import VednorLogin from './components/auth/VednorLogin';
+import VednorRegister from './components/auth/VednorRegister';
 
 
 
@@ -14,6 +16,8 @@ import Landing from "./components/layout/Landing/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import AdminRoute from './components/private-route/AdminRoute'
+import VendorRoute from './components/private-route/VednorRoute';
 
 import categories from './components/layout/Categories/Categories'
 import "./App.css";
@@ -25,10 +29,12 @@ import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
 
 import List from './components/layout/vendorList/List';
+import profile from './components/layout/profile/profile'
 
 //vendor 
 import vendorDashboard from './components/vendor/dashboard/dashboard';
-import vedndoInformation from './components/vendor/Information/information'
+import vedndoInformation from './components/vendor/Information/information';
+import packages from './components/vendor/packages/packages';
 
 
 
@@ -43,6 +49,7 @@ import  adminRating   from './components/admin/subcriptions/sub';
 import   adminUser from './components/admin/Users/User';
 import adminbookinglist from './components/admin/booking/booking'
 import coupon from './components/admin/coupan/coupan'
+import AdminLogin from "./components/auth/Adminlogin";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -80,6 +87,9 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+           
+            <Route exact path="/Wedding_Modzz-admin" component={AdminLogin} />
+           
             <Route exact path="/stories" component={stories} />
             <Route exact path="/categories" component={categories} />
             <Route exact path="/vendor" component={vendor} />
@@ -87,10 +97,12 @@ class App extends Component {
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
             <Route exact path="/vendors/:id" component={List} /> 
-            <Route exact path="/admin/dashboard" component={adminDashboard} /> 
+            <Route exact path="/profile" component={profile} /> 
+            <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 
            
             <Route exact path="/admin/categories" component={adminCategory} /> 
-            <Route exact path="/admin/cities" component={adminCities} /> 
+           
+            <AdminRoute exact path="/admin/cities" component={adminCities} /> 
             <Route exact path="/admin/vendor" component={adminVendor} /> 
             <Route exact path="/admin/setting" component={adminSetting} /> 
             <Route exact path="/admin/subcription-list" component={AdminSubcriptions} /> 
@@ -98,8 +110,12 @@ class App extends Component {
             <Route exact path="/admin/booking-list" component={adminbookinglist} /> 
             <Route exact path="/admin/coupon" component={coupon} /> 
 
-            <Route exact path="/vendor/dashboard" component={vendorDashboard} /> 
+            <VendorRoute exact path="/vendor/dashboard" component={vendorDashboard} /> 
             <Route exact path="/vendor/information" component={vedndoInformation} /> 
+            <Route exact path="/vendor/packages" component={packages} /> 
+
+            
+            
  </div>
         </Router>
     
