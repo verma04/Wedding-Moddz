@@ -186,7 +186,7 @@ export const LoginBox = styled.section`
     right: -4rem;
     z-index: -1;
       img {
-          width:30rem;
+          width: 18rem;
       }
   }
   .bg1 {
@@ -197,7 +197,7 @@ export const LoginBox = styled.section`
     z-index: -1;
     position: absolute;
     img {
-          width:30rem;
+          width: 18rem;
       }
   }
 

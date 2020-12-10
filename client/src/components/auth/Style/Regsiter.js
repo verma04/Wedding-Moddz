@@ -185,18 +185,22 @@ export const RegisterBox = styled.section`
     right: -4rem;
     z-index: -1;
       img {
-          width:30rem;
+       
+    width: 18rem;
+
       }
   }
   .bg1 {
     position:absolute;
-    bottom: 2rem;
+   
     left: -4rem;
     z-index: 0;
     z-index: -1;
     position: absolute;
     img {
-          width:30rem;
+          
+    width: 18rem;
+
       }
   }
    }

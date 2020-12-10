@@ -7,7 +7,9 @@ import Search from '../SearchBox/Serach';
 import Navbar from '../Navbar/Navbar';
 import TopBar from '../Topbar/topbar'
 import Footer from '../footer/Footer';
-import VednorSlider from './vednorSlider/Slider'
+import VednorSlider from './vednorSlider/Slider';
+
+import Top from '../Backtoptop/Top'
 
 import { getCity } from "../../../actions/adminActions";
 import Banner from './Banner/Banner'
@@ -67,6 +69,7 @@ import Img from 'react-cool-img';
             <VednorSlider/>
             <Category/>
             <Footer/>
+            <Top/>
             </React.Fragment>
         )
     }

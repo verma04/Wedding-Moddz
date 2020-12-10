@@ -87,8 +87,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact  path="/VednorLogin"  component={VednorLogin} /> 
-            <Route exact  path="/vednor-register"  component={VednorRegister} /> 
+            <Route exact  path="/vednor-login"  component={VednorLogin} /> 
+            <Route exact  path="/vendor-register"  component={VednorRegister} /> 
             <Route exact path="/Wedding_Modzz-admin" component={AdminLogin} />
            
             <Route exact path="/stories" component={stories} />

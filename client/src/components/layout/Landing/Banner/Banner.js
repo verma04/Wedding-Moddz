@@ -7,7 +7,7 @@ export default class Banner extends Component {
         return (
             <Section>
                   <div className="flex" >
-                <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319272/wedding%20Moodz/Bridaloutfit_up7wf2.png'} ></img>
+                <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607599196/wedding%20Moodz/456_Template_f5sssr.jpg'} ></img>
                 </div>
             </Section>
         )

@@ -5,6 +5,7 @@ import  { colors } from '../../../../theme/color'
 export const Section = styled.section`
 display:flex;
 justify-content:center;
+
 @media  (max-width: 767px) {
 
 }
@@ -17,11 +18,13 @@ justify-content:center;
     display:flex;
     justify-content:center;
     margin-top:5rem;
+    z-index: 1;
 
     .flex {
         width:80rem;
         img {
             width:100%;
+            z-index: 1;
         }
     }
 
