@@ -355,10 +355,15 @@ left:0;
                      margin-bottom:0.5rem;
                      margin-top:0.5rem;
                      border-radius: 2rem;
+  
+                
                    }
+                 
                    button {
                          margin-left:2rem;
                    }
+   
+           
                    .btn1 {
                      margin-left:0.1rem;;
 

@@ -15,6 +15,15 @@ import {colors } from './color';
   font-weight: normal;
   font-style: normal;
 }
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  transform: scale(1.1); 
+
+}
+button {
+  transition: transform .8s;
+}
+  
 a { 
   text-decoration: none; 
   color:white;
