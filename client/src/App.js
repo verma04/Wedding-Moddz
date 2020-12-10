@@ -87,7 +87,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-           
+            <Route exact  path="/VednorLogin"  component={VednorLogin} /> 
+            <Route exact  path="/vednor-register"  component={VednorRegister} /> 
             <Route exact path="/Wedding_Modzz-admin" component={AdminLogin} />
            
             <Route exact path="/stories" component={stories} />
@@ -100,7 +101,7 @@ class App extends Component {
             <Route exact path="/profile" component={profile} /> 
             <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 
            
-            <Route exact path="/admin/categories" component={adminCategory} /> 
+            <AdminRoute exact path="/admin/categories" component={adminCategory} /> 
            
             <AdminRoute exact path="/admin/cities" component={adminCities} /> 
             <Route exact path="/admin/vendor" component={adminVendor} /> 

@@ -4,6 +4,12 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registervednor } from "../../actions/authActions";
 import classnames from "classnames";
+import Topbar from '../layout/Topbar/topbar';
+import NavbAr from '../layout/Navbar/Navbar';
+import Footer from '../layout/footer/Footer';
+import {  getCatgory, getCity} from '../../actions/UserActions'
+
+import { RegisterBox} from './Style/Regsiter'
 
 class Register extends Component {
   constructor() {
@@ -17,11 +23,13 @@ class Register extends Component {
     };
   }
 
-  componentDidMount() {
+ async componentDidMount() {
     // If logged in and user navigates to Register page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/");
     }
+    await this.props.getCatgory();
+    await this.props.getCity();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,25 +59,37 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
+    const {  category , city  } = this.props.user;
+
+    if ( category === null || city === null){
+      return (
+        null
+      )
+    }
 
     return (
-      <div className="container">
+      <React.Fragment>
+        <Topbar/>
+        <NavbAr/>
+      <RegisterBox>
+  <div className='flex' >
+  
+  
+
         <div className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
-            </div>
+
+          <div className="head" >
+     <h2>"Grow your Business with WeddingMoodz"</h2>
+     <h3>Sign Up to access your Dashboard</h3>
+
+          </div>
+        
+           
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+            <div className='input' >
+          
+              <div className="input-field">
+              <label htmlFor="name">Name</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.name}
@@ -80,10 +100,12 @@ class Register extends Component {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+             
                 <span className="red-text">{errors.name}</span>
               </div>
-              <div className="input-field col s12">
+
+              <div className="input-field">
+              <label htmlFor="email">Email</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -94,10 +116,56 @@ class Register extends Component {
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
+               
                 <span className="red-text">{errors.email}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field">
+              <label htmlFor="email">Phone</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="number"
+                  className={classnames("", {
+                    invalid: errors.email
+                  })}
+                />
+               
+                <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field">
+              <label htmlFor="email">City</label>
+              <select>
+                <option>  City ( Choose your base city here  ) </option>
+              {city.map((number) =>
+              
+              
+              <option value="A">{number.city}</option>
+            
+         
+                     
+              )}
+            </select>
+                <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field">
+              <label htmlFor="email">Category</label>
+              <select>
+              <option>Select Vendor Type  </option>
+              {category.map((number) =>
+              
+           
+              <option value="A">{number.category}</option>
+             
+                     
+              )}
+            </select>
+               
+                <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field">
+              <label htmlFor="password">Password</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -108,10 +176,12 @@ class Register extends Component {
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
+              
                 <span className="red-text">{errors.password}</span>
               </div>
-              <div className="input-field col s12">
+            
+              <div className="input-field">
+              <label htmlFor="password2">Confirm Password</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.password2}
@@ -122,27 +192,49 @@ class Register extends Component {
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
+            
                 <span className="red-text">{errors.password2}</span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              </div>
                 <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
+                  
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                
                 >
                   Sign up
                 </button>
-              </div>
+       
             </form>
-          </div>
+         
+            <div className="footer" >
+
+   
+   <h3>Are you a customer?</h3>
+
+   <button>Business Sign In</button>
+               
+
+
+            </div>
+       
+       
         </div>
-      </div>
+      
+ 
+
+        </div>
+    
+
+     <div  className="bg" >
+                       <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972539/wedding%20Moodz/Asset_22_xvpdjl.svg'}  ></img>
+                   </div>
+                   <div  className="bg1" >
+                       <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972545/wedding%20Moodz/Asset_20_4x_xmpolj.png'} ></img>
+                   </div>
+   
+      </RegisterBox>
+      <Footer/>
+      </React.Fragment>
     );
   }
 }
@@ -155,10 +247,12 @@ Register.propTypes = {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
+  user: state.user
+  
 });
 
 export default connect(
   mapStateToProps,
-  { registervednor }
+  { registervednor ,   getCatgory, getCity }
 )(withRouter(Register));

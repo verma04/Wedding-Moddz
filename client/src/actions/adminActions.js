@@ -1,12 +1,12 @@
 import axios from "axios";
 
 
-import { GET_ERRORS, CITY } from "./types";
+import { GET_ERRORS, CITY , CATEGORY } from "./types";
 
 // Register User
 export const registerCity = (userData) => dispatch => {
   axios
-    .post("/api/users/postCity", userData)
+    .post("/api/admin/postCity", userData)
     .then(res => 
         dispatch({
             type: CITY,
@@ -38,5 +38,37 @@ export const  getCity = () => dispatch => {
     
   };
   
+  export const getCatgory = () => dispatch => {
+    axios
+      .get("/api/admin/getCatgory")
+      .then(res => 
+        dispatch({
+            type: CATEGORY,
+            payload: res.data
+          })
+        )
+      .catch(err =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+      );
+    
+  };
 
+  export const postCategory = (userData) => dispatch => {
+    axios
+      .post("/api/admin/postCategory", userData)
+      .then(res => 
+          dispatch({
+              type: CATEGORY,
+              payload: res.data
+            }))
+      .catch(err =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+      );
+  };
   

@@ -14,7 +14,7 @@ justify-content:center;
 }
 @media (min-width: 1281px) {
 
-   display:flex;
+  display:flex;
    justify-content:center;
    .flex {
    width:100%;
@@ -61,7 +61,7 @@ justify-content:center;
    flex-direction:column;
    
    border: 1px solid red;
-   .input {
+   form {
             
             width:100%;
             height:20%;
@@ -107,6 +107,7 @@ justify-content:center;
    }
  }
    }
+  
   
 }
 `

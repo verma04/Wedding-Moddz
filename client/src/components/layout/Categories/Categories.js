@@ -2,8 +2,17 @@ import React, { Component } from 'react'
 import { Section} from './Style';
 import Footer from '../footer/Footer';
 import Navbar from '../Navbar/Navbar';
-import TopBar from '../Topbar/topbar'
-export default class Categories extends Component {
+import TopBar from '../Topbar/topbar';
+import { getCatgory } from "../../../actions/UserActions";
+import   { connect} from 'react-redux';
+
+
+
+ class Categories extends Component {
+
+    componentDidMount() {
+        this.props.getCatgory();
+    }
     render() {
         return (
             <React.Fragment>
@@ -76,3 +85,15 @@ export default class Categories extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+    admin: state.admin
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { getCatgory }
+  )(Categories );
+  

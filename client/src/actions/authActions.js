@@ -20,7 +20,7 @@ export const registerUser = (userData, history) => dispatch => {
   
 export const registervednor = (userData, history) => dispatch => {
   axios
-    .post("/vendor/register", userData)
+    .post("/api/users/vednorregister", userData)
     .then(res => history.push("/vednorlogin"))
     .catch(err =>
       dispatch({
@@ -34,7 +34,7 @@ export const registervednor = (userData, history) => dispatch => {
 export const loginvendor = userData => dispatch => {
   console.log(userData)
   axios
-    .post("/api/vendor/login", userData)
+    .post("/api/users/VednorLogin", userData)
     .then(res => {
       // Save to localStorage
 
@@ -47,6 +47,7 @@ export const loginvendor = userData => dispatch => {
       const decoded = jwt_decode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
+     
     })
     .catch(err =>
       dispatch({

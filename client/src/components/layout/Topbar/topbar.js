@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { NavLink , Link } from "react-router-dom";
 
-import { Nav }  from './Style'
+import { Nav }  from './Style';
+import { connect } from "react-redux";
+import { logoutUser , getCity } from "../../../actions/authActions";
 
-class Navbar extends Component {
+
+class Topbar extends Component {
+  componentDidMount() {
+    this.props.getCity()
+  }
+ 
+
   render() {
+
+    const { city } = this.props.admin;
     return (
       <Nav>
 
@@ -15,12 +25,39 @@ class Navbar extends Component {
    
    <h2>India's Favourite Wedding Marketplace</h2>
 
-   <select name="cars" id="cars">
-    <option value="volvo">All Cities</option>
-    <option value="saab">Dharmshala</option>
+   
+
+    {(() => {
+        if ( city === null ) {
+          return (
+            <select name="cars" id="cars">
+            <option value="volvo">All city</option>
+             <option value="saab">Dharmshala</option>
     <option value="opel">Palampur</option>
     <option value="audi">Audi</option>
-  </select>
+
+
+    </select>
+          )
+        }  else {
+          return (
+         
+            <select name="cars" id="cars">
+               <option value="volvo">All city</option>
+            {city.map((number) =>
+           
+            <option value="saab"> {number.city}</option>
+            
+          
+            )}
+          
+    </select>
+  
+          )
+        }
+      })()}
+  
+ 
    </div>
 
 
@@ -37,4 +74,13 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors,
+  admin: state.admin
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser  , getCity }
+)(Topbar);

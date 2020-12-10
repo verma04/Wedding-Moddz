@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Section } from './Style'
+import { getCatgory } from "../../../../actions/UserActions";
+import   { connect} from 'react-redux';
 
-export default class Category extends Component {
+ class Category extends Component {
        
     state ={
         active1: false,
@@ -14,8 +16,11 @@ export default class Category extends Component {
 
     }
  
+
     render() {
 
+            const { category }  = this.props.user
+       
             
 
         return (
@@ -30,8 +35,10 @@ export default class Category extends Component {
 </h3>
 
    </div>
-
+      
    <div className="category" >
+ 
+ 
     
    <div className="category1" >
      <div className="set" >
@@ -251,3 +258,15 @@ export default class Category extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+    admin: state.admin,
+    user:state.user
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { getCatgory }
+  )(Category);

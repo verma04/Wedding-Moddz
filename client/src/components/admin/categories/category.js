@@ -3,8 +3,31 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import  { Section  } from './Style';
 import Sidebar  from '../sidebar/Sidebar';
+import { getCatgory  , postCategory} from "../../../actions/adminActions";
+import   { connect} from 'react-redux';
+class category extends Component {
 
-export default class dashboard extends Component {
+    state ={
+        category:''
+    }
+
+    componentDidMount() {
+        this.props.getCatgory();
+    }
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
+      };
+      onSubmit =  async e => {
+        e.preventDefault();
+    
+        const userData = {
+          category: this.state.category,
+          
+        };
+   
+       await  this.props.postCategory(userData);
+       await this.setState({category:''});
+      };
     render() {
         return (
             <React.Fragment>
@@ -20,11 +43,15 @@ export default class dashboard extends Component {
                           
                           <div className="category" >
 
-                              <div className="input" >
+                          <form noValidate onSubmit={this.onSubmit}>
 
-                                  <input  ></input>
-                                  <button>Add</button>
-                              </div>
+<input
+    onChange={this.onChange}
+    value={this.state.category}
+    id="category"
+></input>
+<button>Add</button>
+</form>
 
                               <div className="set" >
                                   <div className="list" >
@@ -63,3 +90,14 @@ export default class dashboard extends Component {
         )
     }
 }
+
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    
+  });
+  
+  export default connect(
+    mapStateToProps,
+    {  getCatgory , postCategory}
+  )(category);

@@ -6,14 +6,20 @@ import 'react-multi-carousel/lib/styles.css';
 import{ Item  }from './Style';
 import Img from 'react-cool-img';
 import { withRouter } from 'react-router';
+import { getCatgory } from "../../../../actions/UserActions";
+import   { connect} from 'react-redux';
+
 
 
  class Responsive extends Component {
 
-
+  componentDidMount() {
+    this.props.getCatgory();
+}
 
  
   render() {
+    const { category }  = this.props.user
     // var settings = {
     //   dots: true,
     //   infinite: false,
@@ -67,9 +73,15 @@ import { withRouter } from 'react-router';
         items: 1
       }
     };
-   
+    if( category === null) {
+      return (
+        null
+      )
+    }
 
     return (
+
+    
 
       
       <Item>
@@ -77,88 +89,18 @@ import { withRouter } from 'react-router';
          <div className="centerr" >
   
          <Carousel responsive={responsive}>
-        
+        {category.map((number) => 
   <div>
   <div className='img-wrapper'    >
             <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
             <div className="fade" >
-         <h2>number.category</h2>
+        <h2>{number.category}</h2>
          </div>
             </div>
 
             
   </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-  <div>
-  <div className='img-wrapper'    >
-            <Img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
-            <div className="fade" >
-         <h2>number.category</h2>
-         </div>
-            </div>
-
-            
-  </div>
-
+        )}
   
 </Carousel>
 
@@ -204,5 +146,14 @@ import { withRouter } from 'react-router';
 }
 
 
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors,
+  admin: state.admin,
+  user:state.user
+});
 
-export default  ( withRouter(Responsive) );
+export default connect(
+  mapStateToProps,
+  { getCatgory }
+)(withRouter(Responsive) );

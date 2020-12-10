@@ -25,7 +25,7 @@ const Admin = require("./models/Admin");
 mongoose
   .connect(
     db,
-    { useNewUrlParser: true  ,  useUnifiedTopology: true}
+    { useNewUrlParser: true  ,  useUnifiedTopology: true , useFindAndModify:false}
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));

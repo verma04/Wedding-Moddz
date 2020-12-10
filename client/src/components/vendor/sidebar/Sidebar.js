@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import { Side  } from './Style'
 import { NavLink } from 'react-router-dom';
-
-export default class Sidebar extends Component {
+import { connect } from "react-redux";
+import { logoutUser  } from "../../../actions/authActions";
+ class Sidebar extends Component {
     render() {
         return (
             <Side>
@@ -75,15 +76,26 @@ export default class Sidebar extends Component {
  <i className="fas fa-cog"></i> <h3>Setting</h3>  
       </NavLink>
     
-    <NavLink
+    <a
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/contacts"
+      
+    onClick={() => this.props.logoutUser() }
     >
- <i className="fas fa-sign-out-alt"></i>   <h3>Logout</h3>
-      </NavLink>
+ <i  className="fas fa-sign-out-alt"></i>   <h3>Logout</h3>
+      </a>
 
             </Side>
         )
     }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser   }
+)(Sidebar );

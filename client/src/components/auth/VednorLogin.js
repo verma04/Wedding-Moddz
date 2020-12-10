@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginadmin } from "../../actions/authActions";
+import { loginvendor } from "../../actions/authActions";
 import classnames from "classnames";
 import  { LoginBox } from './Style';
 import Navbar from '../../components/layout/Navbar/Navbar';
 import Topvar from '../../components/layout/Topbar/topbar'
+
+import {  getCatgory, getCity} from '../../actions/UserActions'
 class Login extends Component {
   constructor() {
     super();
@@ -17,11 +19,15 @@ class Login extends Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/");
+
     }
+    await this.props.getCatgory();
+    await this.props.getCity();
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,7 +54,7 @@ class Login extends Component {
       password: this.state.password
     };
 
-    this.props.loginadmin(userData);
+    this.props.loginvendor(userData);
   };
 
   render() {
@@ -154,7 +160,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  loginadmin: PropTypes.func.isRequired,
+  loginvendor: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -166,5 +172,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { loginadmin }
+  { loginvendor ,  getCatgory, getCity }
 )(Login);

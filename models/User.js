@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
 
 // Create Schema
@@ -21,7 +22,40 @@ const UserSchema = new Schema({
   },
    role: {
     type: String,
-  }
+  },
+  cities: [
+    {
+      city :{
+        type: String,
+        required: true
+      },
+    
+  },
+  ],
+  category: [
+    {
+      category :{
+        type: String,
+        required: true,
+          
+          subcategory: [
+            {
+              subcategory :{
+                type: String,
+                required: true,
+                  
+              },
+            
+          },
+        ]
+      },
+    
+  },
+
+
+
+]
+,
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

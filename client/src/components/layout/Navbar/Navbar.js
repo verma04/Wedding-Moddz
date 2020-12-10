@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink , Link } from "react-router-dom";
+import { NavLink , Link, Redirect } from "react-router-dom";
 
 import { Nav }  from './Style';
 import Search from './Search'
@@ -16,14 +16,22 @@ class Navbar extends Component {
       this.setState({active:!this.state.active})
     }
 
-    componentDidMount() {
-      this.props.getCity()
-    }
-   
+ 
 
   render() {
     const { user , isAuthenticated } = this.props.auth;
+        
+    if(user.role==="admin"){
+       return (
+         <Redirect to='/admin/dashboard' ></Redirect>
+       )
+    }
+      
+
     return (
+            
+      
+
       <Nav>
 
       
