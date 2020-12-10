@@ -20,17 +20,7 @@ margin-top:10rem;
     bottom:4rem;
     left:3rem;
 
-   i {
-    font-weight: 900;
-    background: ${ colors.primary.pink2};
-    font-size: 3rem;
-    height: 3rem;
-    /* width: 3rem; */
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    color: white
-   }
-
+ 
   
 
 }

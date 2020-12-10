@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { Section } from './Style'
+import { Section } from './Style';
+import ScrollToTop from "react-scroll-to-top";
 
 export default class Top extends Component {
     render() {
         return (
             <Section>
                 <div className='flex' >
-                <i  onClick={() => window.scrollTo(0, 0)} class="fas fa-angle-up"></i>
-
+               
+                <ScrollToTop smooth />
                 </div>
             </Section>
         )
