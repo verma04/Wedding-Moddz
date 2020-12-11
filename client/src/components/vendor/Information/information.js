@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import  { Section  } from './Style';
 import Sidebar  from '../sidebar/Sidebar';
+import { Redirect } from 'react-router-dom';
+import   { connect} from 'react-redux';
 
-export default class dashboard extends Component {
+ class information extends Component {
     render() {
+    
+        const { user } =this.props.auth;
+         
         return (
             <React.Fragment>
                 <Navbar/>
@@ -39,17 +44,26 @@ export default class dashboard extends Component {
              
              <div className="input-field" > 
               <label>Login email ID </label>
-              <input>
+              <input 
+               
+               value={user.email}
+               readOnly
+              />
               
-              </input>
+           
              
              </div>
 
              <div className="input-field" > 
               <label>Brand Name*</label>
-              <input>
+              <input
+                value={user.name}
+                readOnly
               
-              </input>
+              
+              />
+              
+              
              
              </div>
                    <div className="input-field" > 
@@ -194,3 +208,17 @@ export default class dashboard extends Component {
         )
     }
 }
+
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+    admin: state.admin,
+    vendors: state.vendors
+  });
+  
+  export default connect(
+    mapStateToProps,
+    {    }
+  )(information);
+  
