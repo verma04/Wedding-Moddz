@@ -131,7 +131,7 @@ router.post("/vednorregister", (req, res) => {
       
       var mailOptions = {
         from: 'WedddingMoodz',
-        to:  'pankaj.k@amakein.com',
+        to:  req.body.email,
         subject: 'EatWell security alert: Sign-in from new device detected',
         html: "  <style>div { background-color: coral; }</style><div class='dd' >  <h1>Welcome to WeddingMoodz </h1><h2>Your one times Email Verfictaion OTP</h2> <p>43221</p> </div>"  + val,
       };
