@@ -17,6 +17,8 @@ import PopularSearches from './Popular Searches/Popular';
 
 import { withRouter } from "react-router";
 
+import Bottom from '../bottomNavigation/Bottom'
+
 import Category from './Category/Category'
 
 import Img from 'react-cool-img';
@@ -70,6 +72,7 @@ import Img from 'react-cool-img';
             <Category/>
             <Footer/>
             <Top/>
+            <Bottom/>
             </React.Fragment>
         )
     }
