@@ -50,6 +50,9 @@ import   adminUser from './components/admin/Users/User';
 import adminbookinglist from './components/admin/booking/booking'
 import coupon from './components/admin/coupan/coupan'
 import AdminLogin from "./components/auth/Adminlogin";
+import EmailVerify from './components/vendor/Emailverify.js/Emailverfiy'
+
+import VednorRoute from "./components/private-route/VednorRoute";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -87,7 +90,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact  path="/vednor-login"  component={VednorLogin} /> 
+            <Route exact  path="/vendor-login"  component={VednorLogin} /> 
             <Route exact  path="/vendor-register"  component={VednorRegister} /> 
             <Route exact path="/Wedding_Modzz-admin" component={AdminLogin} />
            
@@ -112,6 +115,7 @@ class App extends Component {
             <Route exact path="/admin/coupon" component={coupon} /> 
 
             <VendorRoute exact path="/vendor/dashboard" component={vendorDashboard} /> 
+            <VednorRoute exact path="/verify-account" component={EmailVerify} /> 
             <Route exact path="/vendor/information" component={vedndoInformation} /> 
             <Route exact path="/vendor/packages" component={packages} /> 
 

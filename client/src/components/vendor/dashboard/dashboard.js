@@ -3,9 +3,29 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import  { Section  } from './Style';
 import Sidebar  from '../sidebar/Sidebar';
+import   { connect} from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { getVerfication }  from '../../../actions/VednorAction';
 
-export default class dashboard extends Component {
+
+ class dashboard extends Component {
+
+    componentDidMount() {
+        this.props.getVerfication();
+    }
+
+
+
     render() {
+
+    const { user } = this.props.auth;
+               const { otp } = this.props.vendors;
+    if( otp === "none"){
+        return (
+        <Redirect to='/verify-account' ></Redirect>
+        )
+    }
+      
         return (
             <React.Fragment>
                 <Navbar/>
@@ -28,3 +48,16 @@ export default class dashboard extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+    admin: state.admin,
+    vendors: state.vendors
+  });
+  
+  export default connect(
+    mapStateToProps,
+    {  getVerfication  }
+  )(dashboard);
+  

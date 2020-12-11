@@ -21,7 +21,7 @@ export const registerUser = (userData, history) => dispatch => {
 export const registervednor = (userData, history) => dispatch => {
   axios
     .post("/api/users/vednorregister", userData)
-    .then(res => history.push("/vednorlogin"))
+    .then(res => history.push("/vendor-login"))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,

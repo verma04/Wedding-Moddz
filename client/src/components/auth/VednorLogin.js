@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginvendor } from "../../actions/authActions";
 import classnames from "classnames";
-import  { LoginBox } from './Style';
+import  { RegisterBox } from './Style/Regsiter';
 import Navbar from '../../components/layout/Navbar/Navbar';
 import Topvar from '../../components/layout/Topbar/topbar'
 
@@ -22,7 +22,7 @@ class Login extends Component {
   async componentDidMount() {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
+      this.props.history.push("/admin/dashboard");
 
     }
     await this.props.getCatgory();
@@ -32,7 +32,7 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/");
+      this.props.history.push("/admin/dashboard");
     }
 
     if (nextProps.errors) {
@@ -64,16 +64,17 @@ class Login extends Component {
       <React.Fragment>
         <Topvar/>
         <Navbar/>
-           <LoginBox>
-
+           <RegisterBox>
+  
+           <div className='flex-1' >
         <div  className="row">
          
-             <div className="login-btn" >
-              <button> <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607063197/wedding%20Moodz/icons8-google-50_lsm4za.png'} ></img> <h2> Sign in with google  </h2></button>
-              <button><img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607063197/wedding%20Moodz/icons8-facebook-48_tqt1ll.png'} ></img> <h2> Sign in with facebook </h2> </button>
-             </div>
+        <div className="head" >
+     <h2>"Grow your Business with WeddingMoodz"</h2>
+     <h3>Sign Up to access your Dashboard</h3>
 
-             <div class="or-separator">OR</div>
+          </div>
+     
            
             <form noValidate onSubmit={this.onSubmit}>
 
@@ -125,15 +126,20 @@ class Login extends Component {
          
             </form>
          
-        </div>
+     
          
-         <div className="bottom" >
-          
-          <h4> Forgot Password? </h4>
- 
-   <h3>Don't have an account? Create one  <a href='/register' >here</a> </h3>
+        <div className="footer" >
+
+   
+<h3>Are you a customer?</h3>
+
+<button onClick={() => this.props.history.push('/vendor-register') } > Business Sign Up </button>
+            
+
+
          </div>
-      
+    
+         </div>
 
 
 
@@ -145,14 +151,14 @@ class Login extends Component {
                    </div>
    
          
+  </div>
 
 
 
 
 
 
-
-        </LoginBox>
+        </RegisterBox>
         </React.Fragment>
      
     );

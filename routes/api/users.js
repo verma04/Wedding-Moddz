@@ -8,6 +8,7 @@ const passport = require("passport");
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
+const nodemailer = require("nodemailer");
 
 // Load User model
 const User = require("../../models/User");
@@ -69,25 +70,45 @@ router.post("/vednorregister", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  Vendor.findOne({ email: req.body.email }).then(vendor => {
-    if (vendor) {
-      return res.status(400).json({ email: "Email already exists" });
-           
-    }
-    
+   console.log(req.body.category)
+
+     
 
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
-    } else {
+    if (user.role === 'Vendor') {
+        return res.status(400).json({ email: "Email already exists as vendor try another" });
+      }
+      else  if (user.role === 'admin') {
+        return res.status(400).json({ email: "Envalid email" });
+      }
+      else {
+        return res.status(400).json({ email: "Email already exists" });
+      }
+    }
+  
+    
+    else {
+      
+            
+      User.findOne({ phone: req.body.phone }).then(user => {
+        if (user) {
+          return res.status(400).json({ phone: "phone already exists" });
+        }
+        var val = Math.floor(1000 + Math.random() * 9000);
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        role: "Vendor"
+        role: "Vendor",
+        phone:req.body.phone,
+        city:req.body.city,
+        VendorCategory:req.body.category,
+        otp:val
+      
       });
 
-      // Hash password before saving in database
+     // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
@@ -98,9 +119,37 @@ router.post("/vednorregister", (req, res) => {
             .catch(err => console.log(err));
         });
       });
+     
+
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'vermapankaj619@gmail.com', // here use your real email
+          pass: 'Garbh@619' // put your password correctly (not in this question please)
+        }
+      })
+      
+      var mailOptions = {
+        from: 'WedddingMoodz',
+        to:  'pankaj.k@amakein.com',
+        subject: 'EatWell security alert: Sign-in from new device detected',
+        html: "  <style>div { background-color: coral; }</style><div class='dd' >  <h1>Welcome to WeddingMoodz </h1><h2>Your one times Email Verfictaion OTP</h2> <p>43221</p> </div>"  + val,
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
+
+     
+     
+    });
     }
   });
-});
+
 });
 // @route POST api/users/login
 // @desc Login user and return JWT token
@@ -169,9 +218,10 @@ router.post("/login", (req, res) => {
 
 router.post("/VednorLogin", (req, res) => {
   // Form validation
+  console.log(req.body)
 
   const { errors, isValid } = validateLoginInput(req.body);
-
+  
   // Check validation
   if (!isValid) {
     return res.status(400).json(errors);
@@ -186,6 +236,17 @@ router.post("/VednorLogin", (req, res) => {
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
+  
+   else {
+    
+    if( user.role === 'user'){
+      return res.status(404).json({ emailnotfound: "Email Regsiter as User" });
+    }
+
+    else if (user.role === 'admin' ) {
+      return res.status(404).json({ emailnotfound: "Invalid  Email" });
+    }
+
 
     // Check password
     bcrypt.compare(password, user.password).then(isMatch => {
@@ -195,7 +256,9 @@ router.post("/VednorLogin", (req, res) => {
         const payload = {
           id: user.id,
           name: user.name,
-          role: user.role
+          email:user.email,
+          role: user.role,
+          Verfictaion:user.Emaillverified
         };
 
         // Sign token
@@ -218,6 +281,8 @@ router.post("/VednorLogin", (req, res) => {
           .json({ passwordincorrect: "Password incorrect" });
       }
     });
+  }
+  
   });
 });
 

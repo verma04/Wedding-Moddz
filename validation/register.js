@@ -9,10 +9,22 @@ module.exports = function validateRegisterInput(data) {
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
-
+  data.phone = !isEmpty(data.phone) ? data.phone : "";
+  data.city = !isEmpty(data.city) ? data.city : "";
+  data.category = !isEmpty(data.category) ? data.category : "";
   // Name checks
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
+  }
+  if (Validator.isEmpty( data.phone )) {
+    errors.phone = "Phone field is required";
+  }
+  if (Validator.isEmpty( data.city )) {
+    errors.city = "City field is required";
+  }
+
+  if (Validator.isEmpty( data.category )) {
+    errors.category = "Category field is required";
   }
 
   // Email checks
@@ -26,6 +38,12 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
+  if (Validator.isEmpty(data.password)) {
+    errors.password = "Password field is required";
+  }
+  if (Validator.isEmpty(data.password)) {
+    errors.password = "Password field is required";
+  }
 
   if (Validator.isEmpty(data.password2)) {
     errors.password2 = "Confirm password field is required";
@@ -34,6 +52,11 @@ module.exports = function validateRegisterInput(data) {
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be at least 6 characters";
   }
+
+  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+    errors.phone = "Phone is Envalid";
+  }
+
 
   if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = "Passwords must match";

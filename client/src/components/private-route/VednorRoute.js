@@ -7,7 +7,7 @@ const VednorRoute = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      auth.isAuthenticated === true && auth.user.role === "vendor" ? (
+      auth.isAuthenticated === true && auth.user.role === "Vendor" ? (
         <Component {...props} />
       ) : (
         <Redirect to="/" />

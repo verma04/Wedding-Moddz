@@ -3,10 +3,12 @@ import authReducer from "./authReducer";
 import errorReducer from "./errorReducer";
 import AdminReducer from './AdminReducer'
 import UserReducer from './UserReducer'
+import vendorReducer from './vendorReducer'
 
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
   admin: AdminReducer,
-  user:UserReducer
+  user:UserReducer,
+  vendors:vendorReducer
 });

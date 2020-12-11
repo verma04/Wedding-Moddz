@@ -12,6 +12,13 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  Emaillverified : {
+    type: String,
+    default:"none"
+  },
+  otp: {
+    type:Number
+  },
   password: {
     type: String,
     required: true
@@ -23,6 +30,28 @@ const UserSchema = new Schema({
    role: {
     type: String,
   },
+  phone: {
+    type: Number,
+    required: true
+  },
+
+    VendorCategory: {
+      type: String,
+     
+    } ,
+
+    verified : {
+      type: String,
+      default:"none"
+    }
+  
+   ,
+  city: {
+    type: String,
+   
+  }
+,
+
   cities: [
     {
       city :{

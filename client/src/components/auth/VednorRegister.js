@@ -8,8 +8,12 @@ import Topbar from '../layout/Topbar/topbar';
 import NavbAr from '../layout/Navbar/Navbar';
 import Footer from '../layout/footer/Footer';
 import {  getCatgory, getCity} from '../../actions/UserActions'
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
 
 import { RegisterBox} from './Style/Regsiter'
+import { faBuromobelexperte } from "@fortawesome/free-brands-svg-icons";
 
 class Register extends Component {
   constructor() {
@@ -19,17 +23,27 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      phone:'',
+      city:'',
+      category:'',
       errors: {}
     };
   }
 
- async componentDidMount() {
+ async componentWillMount() {
     // If logged in and user navigates to Register page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
+      this.props.history.push("/vendor-login");
     }
     await this.props.getCatgory();
     await this.props.getCity();
+    
+
+  }
+
+  async componentDidMount() {
+   
+  
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,7 +65,10 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      phone:this.state.phone,
+      city:this.state.city,
+      category: this.state.category
     };
 
     this.props.registervednor(newUser, this.props.history);
@@ -123,46 +140,46 @@ class Register extends Component {
               <label htmlFor="email">Phone</label>
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
+                  value={this.state.phone}
+                  error={errors.phone}
+                  id="phone"
                   type="number"
                   className={classnames("", {
-                    invalid: errors.email
+                    invalid: errors.phone
                   })}
                 />
                
-                <span className="red-text">{errors.email}</span>
+                <span className="red-text">{errors.phone}</span>
               </div>
               <div className="input-field">
               <label htmlFor="email">City</label>
-              <select>
+              <select  id="city" value={this.state.city}    onChange={this.onChange} >
                 <option>  City ( Choose your base city here  ) </option>
               {city.map((number) =>
               
               
-              <option value="A">{number.city}</option>
+              <option  id="city" value={number.city}>{number.city}</option>
             
          
                      
               )}
             </select>
-                <span className="red-text">{errors.email}</span>
+                <span className="red-text">{errors.city}</span>
               </div>
               <div className="input-field">
               <label htmlFor="email">Category</label>
-              <select>
-              <option>Select Vendor Type  </option>
+              <select  id="category" value={this.state.category}    onChange={this.onChange}>
+              <option value='' >Select Vendor Type  </option>
               {category.map((number) =>
               
            
-              <option value="A">{number.category}</option>
+              <option   value={number.category}>{number.category}</option>
              
                      
               )}
             </select>
                
-                <span className="red-text">{errors.email}</span>
+                <span className="red-text">{errors.category}</span>
               </div>
               <div className="input-field">
               <label htmlFor="password">Password</label>
@@ -211,7 +228,7 @@ class Register extends Component {
    
    <h3>Are you a customer?</h3>
 
-   <button>Business Sign In</button>
+   <button  onClick={() => this.props.history.push('/vendor-login') } >Business Sign In </button>
                
 
 

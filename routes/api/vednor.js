@@ -118,4 +118,59 @@ router.post("/login", (req, res) => {
   });
 });
 
+
+router.post("/verifyOtp" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+  
+  const { value1, value2, value3, value4} = req.body;
+
+  const otp =  parseInt(value1 + value2+ value3+ value4)
+  console.log( typeof otp)
+
+  User.findOne({ _id: req.user.id }).then(vendor => {
+
+    if (vendor.Emaillverified ==="verfied") {
+      return res.status(400).json({ email: "Account is alredy verfied" });
+    } else {
+         if( vendor.otp === otp ){
+          User.findOneAndUpdate({ _id: req.user.id } , { $set: { "Emaillverified":"verfied" , "otp": ""}}).then(vendor => {
+
+              res.json(vendor.Emaillverified)
+
+          });
+        
+
+         }
+         else {
+          return res.status(400).json({ phone: "otp is Invalid" });
+         }
+    }
+  });
+  
+ 
+
+});
+
+
+router.get("/getVerfication" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+  
+
+  User.findOne({ _id: req.user.id }).then(vendor => {
+
+     res.json(vendor.Emaillverified)
+  
+  });
+  
+ 
+
+});
+
+
+
+
+
+
+
+
+
+
 module.exports = router;
