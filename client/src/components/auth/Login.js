@@ -7,6 +7,7 @@ import classnames from "classnames";
 import  { LoginBox } from './Style';
 import Navbar from '../../components/layout/Navbar/Navbar';
 import Topvar from '../../components/layout/Topbar/topbar'
+import Footer from '../layout/footer/Footer'
 class Login extends Component {
   constructor() {
     super();
@@ -123,12 +124,19 @@ class Login extends Component {
          
          <div className="bottom" >
           
-          <h4> Forgot Password? </h4>
+       
  
-   <h3>Don't have an account? Create one  <a href='/register' >here</a> </h3>
+    <button onClick={() => this.props.history.push("/vendor-login") } >  Business Login</button>
          </div>
       
+         <div className="send" >
+          
+           
 
+
+
+         </div>
+      
 
 
          <div  className="bg" >
@@ -147,6 +155,7 @@ class Login extends Component {
 
 
         </LoginBox>
+        <Footer/>
         </React.Fragment>
      
     );

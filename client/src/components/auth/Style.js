@@ -32,10 +32,10 @@ export const LoginBox = styled.section`
    
   
    @media (min-width: 1281px) {
-     margin-top:10rem;
+    
        
        .row {
-           margin-top:5rem;
+           margin-top:5%;
         width:30rem;
      
         height:30rem;
@@ -161,20 +161,21 @@ export const LoginBox = styled.section`
           height:5rem;
         text-align:center;
         display:flex;
-  justify-content:space-between;
+  justify-content:flex-start;
   align-items:center;
+  width:30rem;
   flex-direction:column;
-  h3 {
-      a {
-          color:${colors.primary.pink1};
-          cursor: pointer;
-      }
-    
-  }
-  h4 {
-        color:${colors.primary.pink1};
-        cursor: pointer;
-      }
+button {
+
+    width: 100%;
+    height: 52%;
+    border: none;
+    border: 2px solid ${colors.primary.pink2};
+    background: white;
+    font-size: 1.2rem;
+    font-weight:900;
+    color:${colors.primary.pink2};
+}
 
        }
 
