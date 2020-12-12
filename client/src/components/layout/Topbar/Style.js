@@ -166,6 +166,8 @@ background-color:${colors.primary.pink1};
   justify-content:center;
   flex-direction:column;
   align-items:center;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 3px 3px 0 rgba(0,0,0,0.19);
+border-radius:10px;
   .pop-1 {
     width:100%;
     height:20%;
