@@ -8,7 +8,7 @@ import Navbar from '../Navbar/Navbar';
 import TopBar from '../Topbar/topbar'
 import Footer from '../footer/Footer';
 import VednorSlider from './vednorSlider/Slider';
-import { connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Top from '../Backtoptop/Top'
 
 
@@ -20,7 +20,7 @@ import { withRouter } from "react-router";
 import Bottom from '../bottomNavigation/Bottom'
 
 import Category from './Category/Category'
-import { getCity , getCatgory , city } from "../../../actions/UserActions";
+import { getCity , getCatgory , city , topsearch  } from "../../../actions/UserActions";
 import Img from 'react-cool-img';
  class DemoCarousel extends Component {
 
@@ -32,12 +32,13 @@ import Img from 'react-cool-img';
              city: this.props.match.params.id
          }
          this.props.city(city);
+         this.props.topsearch(city)
     }
     
     render() {
-        const { current} = this.props.user;
+        const { current , venue} = this.props.user;
 
-        if ( current === null){
+        if ( current === null || venue === null){
             return (
                 null
             )
@@ -106,5 +107,5 @@ const mapStateToProps = state => ({
 
 export default connect (
     mapStateToProps,
-    { getCatgory , getCity , city }
+    { getCatgory , getCity , city , topsearch }
 ) (withRouter(DemoCarousel));

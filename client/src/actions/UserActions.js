@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-import {  CATEGORY  , CITY , GET_ERRORS, CURRENT_CITY } from "./types";
+import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY } from "./types";
 
 // Register User
 
@@ -48,6 +48,22 @@ import {  CATEGORY  , CITY , GET_ERRORS, CURRENT_CITY } from "./types";
       .then(res => 
         dispatch({
             type: CURRENT_CITY,
+            payload: res.data
+          })
+        )
+      .catch(err =>
+       console.log(err)
+      );
+    
+  };
+
+
+  export const  topsearch = (data) => dispatch => {
+    axios
+      .post("/api/users/topsearch" , data)
+      .then(res => 
+        dispatch({
+            type: VENUE,
             payload: res.data
           })
         )

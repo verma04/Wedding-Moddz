@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 import{ Item  }from './Style';
 import Img from 'react-cool-img';
-
+import { connect } from 'react-redux'
 import { withRouter } from 'react-router';
  
 
@@ -18,6 +18,8 @@ navigate  = ( id) => {
 
  
   render() {
+
+    const {  venue} = this.props.user;
    
     const responsive = {
       superLargeDesktop: {
@@ -58,15 +60,15 @@ navigate  = ( id) => {
          <div className="center" >
   
          <Carousel responsive={responsive}>
-        
+         {venue.map((number) => 
   <div >
   <div className='img-wrapper'   >
             <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
             <div className="fade" >
-            <h3>Lawn /farmHosue</h3>
+         <h3>{number.VendorCategory}</h3>
           <ul>
               <li></li>
-              <li>dfdfdf</li>
+         <li>{number.name}</li>
                 <li>sdsdds</li>
               </ul>
          </div>
@@ -74,67 +76,8 @@ navigate  = ( id) => {
 
             
   </div>
-  <div >
-  <div className='img-wrapper'   >
-            <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
-            <div className="fade" >
-            <h3>Lawn /farmHosue</h3>
-          <ul>
-              <li></li>
-              <li>dfdfdf</li>
-                <li>sdsdds</li>
-              </ul>
-         </div>
-            </div>
-
-            
-  </div>
-  <div >
-  <div className='img-wrapper'   >
-            <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
-            <div className="fade" >
-         <h3>Lawn /farmHosue</h3>
-          <ul>
-              <li></li>
-              <li>dfdfdf</li>
-                <li>sdsdds</li>
-              </ul>
-         </div>
-            </div>
-
-            
-  </div>
-  <div >
-  <div className='img-wrapper'   >
-            <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
-            <div className="fade" >
-         <h3>Lawn /farmHosue</h3>
-          <ul>
-              <li></li>
-              <li>dfdfdf</li>
-                <li>sdsdds</li>
-              </ul>
-         </div>
-            </div>
-
-            
-  </div>
-  <div >
-  <div className='img-wrapper'   >
-            <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
-            <div className="fade" >
-         <h3>Lawn /farmHosue</h3>
-          <ul>
-              <li></li>
-              <li>dfdfdf</li>
-                <li>sdsdds</li>
-              </ul>
-         </div>
-            </div>
-
-            
-  </div> 
-
+         )}
+  
   
 </Carousel>
 
@@ -154,5 +97,13 @@ navigate  = ( id) => {
   }
 }
 
+const mapStateToProps = state => ({
 
-export default ( withRouter(Responsive) );
+  user:state.user
+});
+
+
+export default connect (
+  mapStateToProps,
+  {  }
+) (withRouter(Responsive));

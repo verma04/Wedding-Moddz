@@ -14,6 +14,7 @@ const nodemailer = require("nodemailer");
 const User = require("../../models/User");
 const Vendor = require("../../models/Vednor");
 
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -298,6 +299,8 @@ router.get("/getCity",
     res.json(user.cities)
       
 
+    
+
   });
   
  
@@ -342,6 +345,47 @@ router.post("/currentCity",(req, res) => {
   } else{
       res.json("Not found.");
   }
+      
+
+  });
+  
+ 
+  
+  
+  
+
+
+});
+
+
+router.post("/topsearch",(req, res) => {
+  
+  console.log(req.body)
+
+
+  User.find({ city:req.body.city }).then(user => {
+
+      
+    const arr = []
+
+      user.forEach(element => {
+         
+         
+
+        const data = {
+        id:element.id,
+        name:element.name,
+        VendorCategory:element.VendorCategory
+        }
+        arr.push(data)
+
+       
+       
+
+     });
+
+ 
+     res.json(arr)
       
 
   });
