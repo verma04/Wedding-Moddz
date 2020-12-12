@@ -9,7 +9,7 @@ import store from "./store";
 import stories from './components/layout/stories/stories'
 import VednorLogin from './components/auth/VednorLogin';
 import VednorRegister from './components/auth/VednorRegister';
-
+import CityLanding from './components/layout/City/Landing'
 
 
 import Landing from "./components/layout/Landing/Landing";
@@ -88,6 +88,7 @@ class App extends Component {
           <div className="App">
             
             <Route exact path="/" component={Landing} />
+            <Route exact path="/:id" component={CityLanding} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact  path="/vendor-login"  component={VednorLogin} /> 

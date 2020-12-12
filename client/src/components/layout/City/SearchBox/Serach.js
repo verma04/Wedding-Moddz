@@ -5,13 +5,48 @@ import   { connect} from 'react-redux';
 import { withRouter } from "react-router";
 class Serach extends Component {
     render() {
+
+        const { current} = this.props.user;
+ 
+        if ( current === "found"){
+            return (
+                <Section>
+                <div className="flex" >
+           <div className="head" >
+            <h2>Plan a {this.props.match.params.id} Wedding  </h2>
+
+
+           </div>
+
+
+                <div className='flex2' >
+
+                    <div className='flex-4' >
+                    <i class="fas fa-home"></i>
+                    </div>
+
+                    <div className='flex-5' >
+                           
+                    <h2>Find Vendors in {this.props.match.params.id}</h2>
+
+                        <div class="data" >
+                        <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+          
+                </div>
+                </div>
+            </Section>
+            )
+        }
+
         return (
             <Section>
                 <div className="flex" >
            <div className="head" >
-<h2>Your Wedding, Your Way</h2>
-<h3>Find the best wedding vendors with thousands of trusted reviews
-</h3>
+<h2>Oopss!! Wedding_Moodz is not Avilabe in your City</h2>
+
+
            </div>
 
 

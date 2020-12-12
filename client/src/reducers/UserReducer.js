@@ -1,11 +1,12 @@
-import { CATEGORY, CITY} from "../actions/types";
+import { CATEGORY, CITY , CURRENT_CITY} from "../actions/types";
 
 
 
 const initialState = {
 
     category:null,
-    city: null
+    city: null,
+    current:null,
 };
 
 export default function(state = initialState, action) {
@@ -23,6 +24,13 @@ export default function(state = initialState, action) {
           city:  action.payload,
            
             };
+            case CURRENT_CITY:
+              return {
+                ...state,
+            current:  action.payload,
+             
+              };
+            
           
       
    

@@ -328,4 +328,30 @@ router.get("/getCategoryHome",(req, res) => {
 
 });
 
+router.post("/currentCity",(req, res) => {
+  
+  console.log(req.body)
+
+
+  User.findOne({ _id:'5fd0cf7953415b2214b359af' }).then(user => {
+
+       const city =user.cities
+
+    if(city.some(person => person.city === req.body.city)){
+      res.json("found");
+  } else{
+      res.json("Not found.");
+  }
+      
+
+  });
+  
+ 
+  
+  
+  
+
+
+});
+
 module.exports = router;

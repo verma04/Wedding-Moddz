@@ -17,7 +17,7 @@ margin-top:10rem;
 @media (min-width: 1281px) {
 
     background-image: url("https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972542/wedding%20Moodz/Asset_23_4x_znpq7g.png") , url('https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972539/wedding%20Moodz/Asset_23_i1yxo5.svg'); /* The image used */
-  height:100vh;
+
  /* You must set a specified height */
   background-position: left , right; /* Center the image */
   background-repeat: no-repeat , no-repeat; /* Do not repeat the image */

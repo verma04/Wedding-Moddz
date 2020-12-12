@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-import {  CATEGORY  , CITY , GET_ERRORS} from "./types";
+import {  CATEGORY  , CITY , GET_ERRORS, CURRENT_CITY } from "./types";
 
 // Register User
 
@@ -41,4 +41,21 @@ import {  CATEGORY  , CITY , GET_ERRORS} from "./types";
       );
     
   };
+  
+  export const  city = (data) => dispatch => {
+    axios
+      .post("/api/users/currentCity" , data)
+      .then(res => 
+        dispatch({
+            type: CURRENT_CITY,
+            payload: res.data
+          })
+        )
+      .catch(err =>
+       console.log(err)
+      );
+    
+  };
 
+
+   

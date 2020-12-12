@@ -14,6 +14,13 @@ import   { connect} from 'react-redux';
         this.props.getCatgory();
     }
     render() {
+        const { category }  = this.props.user
+
+        if( category === null) {
+            return (
+              null
+            )
+          }
         return (
             <React.Fragment>
                 <TopBar/>
@@ -34,38 +41,15 @@ import   { connect} from 'react-redux';
 
           <div className="category" >
 
-       <div className="img" >
-
- <img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
-<h2>ddsds</h2>
-       </div>
-       <div className="img" >
-
-<img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
-<h2>ddsds</h2>
-      </div>
-      <div className="img" >
-
-<img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
-<h2>ddsds</h2>
-      </div>
-      <div className="img" >
-
-<img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
-<h2>ddsds</h2>
-      </div>
-               
-       <div className="img" >
-       <img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
-       <h2>ddsds</h2>   
-</div>
+       
+          {category.map((number) => 
  <div className="img" >
  <img src='https://res.cloudinary.com/dzcmadjl1/image/upload/v1606975569/wedding%20Moodz/image-1_nqd0ju.jpg' ></img>
- <h2>ddsds</h2>  
+          <h2>{number.category}</h2>  
 </div>
-          </div>
-
-
+        
+          )}
+  </div>
 
 
 
@@ -89,7 +73,8 @@ import   { connect} from 'react-redux';
 const mapStateToProps = state => ({
     auth: state.auth,
     errors: state.errors,
-    admin: state.admin
+ 
+     user:state.user
   });
   
   export default connect(

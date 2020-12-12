@@ -3,15 +3,15 @@ import React, { Component } from 'react'
 import { Slider } from './style'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Search from '../SearchBox/Serach';
+import Search from './SearchBox/Serach';
 import Navbar from '../Navbar/Navbar';
 import TopBar from '../Topbar/topbar'
 import Footer from '../footer/Footer';
 import VednorSlider from './vednorSlider/Slider';
-
+import { connect} from 'react-redux'
 import Top from '../Backtoptop/Top'
-import   { connect} from 'react-redux';
-import { getCity , getCatgory  } from "../../../actions/UserActions";
+
+
 import Banner from './Banner/Banner'
 import PopularSearches from './Popular Searches/Popular';
 
@@ -20,24 +20,34 @@ import { withRouter } from "react-router";
 import Bottom from '../bottomNavigation/Bottom'
 
 import Category from './Category/Category'
-
+import { getCity , getCatgory , city } from "../../../actions/UserActions";
 import Img from 'react-cool-img';
  class DemoCarousel extends Component {
- 
+
     componentDidMount() {
         this.props.getCatgory();
-         this.props.getCity()
+         this.props.getCity();
+
+         const city ={
+             city: this.props.match.params.id
+         }
+         this.props.city(city);
     }
     
-
- 
-
     render() {
+        const { current} = this.props.user;
+
+        if ( current === null){
+            return (
+                null
+            )
+        }
+
         return (
             <React.Fragment>
                 <TopBar/>
         <Navbar/>
-        <Slider>
+            <Slider>
                 <div    className="center" >
               <Carousel   showThumbs={false} showStatus={false} useKeyboardArrows  autoPlay interval="2000">
                   <div className="img-1">
@@ -75,9 +85,7 @@ import Img from 'react-cool-img';
             </div>
              
             </Slider>
-        
-        
-           <Banner/>
+            <Banner/>
             <PopularSearches/>
             <VednorSlider/>
             <Category/>
@@ -89,7 +97,6 @@ import Img from 'react-cool-img';
     }
 }
 
-
 const mapStateToProps = state => ({
     auth: state.auth,
     errors: state.errors,
@@ -99,5 +106,5 @@ const mapStateToProps = state => ({
 
 export default connect (
     mapStateToProps,
-    { getCatgory , getCity }
+    { getCatgory , getCity , city }
 ) (withRouter(DemoCarousel));

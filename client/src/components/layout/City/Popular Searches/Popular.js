@@ -6,14 +6,16 @@ import 'react-multi-carousel/lib/styles.css';
 import{ Item  }from './Style';
 import Img from 'react-cool-img';
 import { withRouter } from 'react-router';
-import { getCity , getCatgory  } from "../../../../actions/UserActions";
+import { getCatgory } from "../../../../actions/UserActions";
 import   { connect} from 'react-redux';
 
 
 
  class Responsive extends Component {
 
-  
+  componentDidMount() {
+    this.props.getCatgory();
+}
 
  
   render() {

@@ -7,9 +7,6 @@ import { logoutUser , getCity } from "../../../actions/authActions";
 
 
 class Topbar extends Component {
-  componentDidMount() {
-    this.props.getCity()
-  }
  
 
   render() {
@@ -43,10 +40,10 @@ class Topbar extends Component {
           return (
          
             <select name="cars" id="cars">
-               <option value="volvo">All city</option>
+               <option onClick={() => this.props.history.push(`/dkdkdssd`) } value="volvo">All city</option>
             {city.map((number) =>
            
-            <option value="saab"> {number.city}</option>
+            <option  onClick={() => this.props.history.push(`/dkdkdssd`) }  value="saab"> {number.city}</option>
             
           
             )}
