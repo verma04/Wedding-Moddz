@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Search from './SearchBox/Serach';
 import Navbar from '../Navbar/Navbar';
-import TopBar from '../Topbar/topbar'
+import TopBar from './Topbar/topbar'
 import Footer from '../footer/Footer';
 import VednorSlider from './vednorSlider/Slider';
 import { connect } from 'react-redux'

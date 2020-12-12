@@ -3,13 +3,13 @@ import { NavLink , Link } from "react-router-dom";
 
 import { Nav }  from './Style';
 import { connect } from "react-redux";
-import { logoutUser , getCity } from "../../../actions/authActions";
+import { logoutUser , getCity } from "../../../../actions/authActions";
 
 import { withRouter } from "react-router";
 class Topbar extends Component {
 
   state = {
-   city: "All Cities",
+   city:  this.props.match.params.id,
     popup:false,
     
   }
@@ -21,8 +21,9 @@ class Topbar extends Component {
 
   send = (city) => {
 
-    if( city === "All Cities "){
-
+    if( city === "All Cities"){
+      this.props.history.push(`/`)
+      window.location.reload();
       this.setState({popup: !this.state.popup })
     }
     else {
