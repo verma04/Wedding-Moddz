@@ -101,7 +101,7 @@ class App extends Component {
            
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
-            <Route exact path="/vendors/:id" component={List} /> 
+            <Route exact path="/vendor/:id/:vendor" component={List} /> 
             <Route exact path="/profile" component={profile} /> 
             <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 
            

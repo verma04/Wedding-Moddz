@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY } from "./types";
+import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from "./types";
 
 // Register User
 
@@ -66,6 +66,20 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY } from "./types";
             type: VENUE,
             payload: res.data
           })
+        )
+      .catch(err =>
+       console.log(err)
+      );
+    
+  };
+  export const  vendorList = (data) => dispatch => {
+    axios
+      .post("/api/users/vendorList" , data)
+      .then(res => 
+        dispatch({
+          type: VENDOR_LIST,
+          payload: res.data
+        })
         )
       .catch(err =>
        console.log(err)

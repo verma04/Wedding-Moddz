@@ -4,8 +4,29 @@ import React, { Component } from 'react';
 import { Section } from './Style'
 import TopBar  from '../../layout/Topbar/topbar';
 import Navbar from '../../layout/Navbar/Navbar'
-export default class List extends Component {
+import { connect } from 'react-redux';
+import { withRouter } from "react-router";
+import Footer from '../footer/Footer'
+
+import {vendorList} from '../../../actions/UserActions'
+class List extends Component {
+
+   
+    componentDidMount( ){
+
+
+        const data = {
+        city: this.props.match.params.id,
+        category: this.props.match.params.vendor
+        }
+        
+       this.props.vendorList(data)
+    }
+ 
     render() {
+
+
+
         return (
             <React.Fragment>
                 <TopBar/>
@@ -382,7 +403,20 @@ export default class List extends Component {
 
                 </div>
             </Section>
+            <Footer/>
             </React.Fragment>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+    admin: state.admin,
+    user:state.user
+  });
+
+export default connect (
+    mapStateToProps,
+    { vendorList }
+) (withRouter( List));

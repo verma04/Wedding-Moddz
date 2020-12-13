@@ -15,6 +15,7 @@ const User = require("../../models/User");
 const Vendor = require("../../models/Vednor");
 
 
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -397,5 +398,62 @@ router.post("/topsearch",(req, res) => {
 
 
 });
+
+
+router.post("/vendorList",(req, res) => {
+  
+  
+  const { category} = req.body;
+
+  console.log(category)
+
+
+  User.find({ city:req.body.city }).then(user => {
+
+      
+     
+    let  filter  = user
+    const filtered = filter.filter(element => element.VendorCategory ===   category);
+       
+    const arr = []
+
+    filtered.forEach(element => {
+       
+       
+
+      const data = {
+      id:element.id,
+      name:element.name,
+      VendorCategory:element.VendorCategory
+      }
+      arr.push(data)
+
+     
+     
+
+   });
+
+
+   res.json(arr)
+    
+
+       
+       
+
+     });
+
+ 
+   
+      
+
+  });
+  
+ 
+  
+  
+  
+
+
+
 
 module.exports = router;

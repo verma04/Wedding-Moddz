@@ -7,6 +7,7 @@ import{ Item  }from './Style';
 import Img from 'react-cool-img';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router';
+import vendor from "../../vendor/vendor";
  
 
 
@@ -61,8 +62,8 @@ navigate  = ( id) => {
   
          <Carousel responsive={responsive}>
          {venue.map((number) => 
-  <div >
-  <div className='img-wrapper'   >
+  <div key={number.id}>
+  <div  className='img-wrapper'   >
             <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607319271/wedding%20Moodz/banquet-halls_ct7dlq.png"}  cache  alt="sdd"  ></Img>
             <div className="fade" >
          <h3>{number.VendorCategory}</h3>

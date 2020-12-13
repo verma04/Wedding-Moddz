@@ -91,8 +91,8 @@ import   { connect} from 'react-redux';
          <Carousel responsive={responsive}>
         {category.map((number) => 
   <div>
-  <div className='img-wrapper'    >
-            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
+  <div onClick={() => this.props.history.push(`/vendor/${this.props.match.params.id}/${number.category}`)}   className='img-wrapper'    >
+            <Img   src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
             <div className="fade" >
         <h2>{number.category}</h2>
          </div>
