@@ -22,6 +22,7 @@ import Bottom from '../bottomNavigation/Bottom'
 import Category from './Category/Category'
 import { getCity , getCatgory , city , topsearch  } from "../../../actions/UserActions";
 import Img from 'react-cool-img';
+import Loading from '../Loading/Loading'
  class DemoCarousel extends Component {
 
     componentDidMount() {
@@ -40,7 +41,7 @@ import Img from 'react-cool-img';
 
         if ( current === null || venue === null){
             return (
-                null
+                <Loading/>
             )
         }
 
