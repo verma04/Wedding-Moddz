@@ -34,6 +34,8 @@ import Loading from '../Loading/Loading'
          }
          this.props.city(city);
          this.props.topsearch(city)
+
+         document.title = this.props.match.params.id
     }
     
     render() {

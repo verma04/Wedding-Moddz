@@ -27,6 +27,7 @@ import Img from 'react-cool-img';
     componentDidMount() {
         this.props.getCatgory();
          this.props.getCity()
+         document.title = "Home"
     }
     
 
