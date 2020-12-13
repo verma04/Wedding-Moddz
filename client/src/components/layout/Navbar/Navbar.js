@@ -90,8 +90,16 @@ class Navbar extends Component {
    {(() => {
    if (isAuthenticated === true) {
           return (
-            <button  onClick={() => this.props.logoutUser()}  class="button button1" >    Logout</button>
-          )
+            // <button    class="button button1" >    Logout</button>
+            <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+          <a href="/vendor/dashboard">  <i className='fas fa-angle-right' > </i> {user.name}</a>
+            <a href="#"><i className='fas fa-angle-right' ></i> Setting</a>
+            <a onClick={() => this.props.logoutUser()}>  <i className='fas fa-angle-right' ></i>  Logout</a>
+            </div>
+          </div>
+           )
            } else {
           return (
             <Link to="/Login" >  <button  class="button button1"  >  SignUp </button></Link> 
