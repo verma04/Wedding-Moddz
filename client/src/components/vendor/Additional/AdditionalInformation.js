@@ -69,7 +69,7 @@ export default class AdditionalInformation extends Component {
         },
         Q12: {
             category:'WEDDING PLANNER',
-            Q1:  "Who will bear the cost of travel and stay outside the home town             ?",
+            Q1:  "Who will bear the cost of travel and stay outside the home town  ?",
             ans: "none",
         },
         //  BRIDAL MAKE-UP
