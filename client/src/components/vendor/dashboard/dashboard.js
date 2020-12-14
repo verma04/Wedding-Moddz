@@ -12,6 +12,7 @@ import { getVerfication }  from '../../../actions/VednorAction';
 
     componentDidMount() {
         this.props.getVerfication();
+        document.title = "Vendor Dashboard"
     }
 
 

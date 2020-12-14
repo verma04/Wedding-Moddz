@@ -7,8 +7,9 @@ import classnames from "classnames";
 import  { RegisterBox } from './Style/Regsiter';
 import Navbar from '../../components/layout/Navbar/Navbar';
 import Topvar from '../../components/layout/Topbar/topbar'
-
+import Footer from '../layout/footer/Footer'
 import {  getCatgory, getCity} from '../../actions/UserActions'
+
 class Login extends Component {
   constructor() {
     super();
@@ -159,6 +160,7 @@ class Login extends Component {
 
 
         </RegisterBox>
+        <Footer/>
         </React.Fragment>
      
     );

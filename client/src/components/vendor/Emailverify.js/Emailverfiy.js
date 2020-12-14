@@ -18,6 +18,7 @@ import { Redirect} from 'react-router-dom'
     }
     componentDidMount() {
         this.props.getVerfication();
+        document.title = "Verify Account"
     }
 
     onChange = e => {

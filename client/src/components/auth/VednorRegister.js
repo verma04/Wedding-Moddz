@@ -11,7 +11,6 @@ import {  getCatgory, getCity} from '../../actions/UserActions'
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-
 import { RegisterBox} from './Style/Regsiter'
 import { faBuromobelexperte } from "@fortawesome/free-brands-svg-icons";
 

@@ -51,6 +51,7 @@ import adminbookinglist from './components/admin/booking/booking'
 import coupon from './components/admin/coupan/coupan'
 import AdminLogin from "./components/auth/Adminlogin";
 import EmailVerify from './components/vendor/Emailverify.js/Emailverfiy'
+import additional from './components/vendor/Additional/AdditionalInformation'
 
 import VednorRoute from "./components/private-route/VednorRoute";
 
@@ -117,6 +118,7 @@ class App extends Component {
 
             <VendorRoute exact path="/vendor/dashboard" component={vendorDashboard} /> 
             <VednorRoute exact path="/verify-account" component={EmailVerify} /> 
+            <VednorRoute exact path="/additional-information" component={additional} /> 
             <Route exact path="/vendor/information" component={vedndoInformation} /> 
             <Route exact path="/vendor/packages" component={packages} /> 
 
