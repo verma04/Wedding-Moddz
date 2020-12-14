@@ -18,7 +18,7 @@ export default class AdditionalInformation extends Component {
         },
         Q2: {
             category:'PHOTOGRAPHER',
-            Q1:  "Which services do you offer  ?",
+            Q1:  "Which services do you offer ?",
             ans: "none"
         },
         Q3: {
@@ -28,7 +28,7 @@ export default class AdditionalInformation extends Component {
         },
         Q4: {
             category:'PHOTOGRAPHER',
-            Q1:  "What is the duration of your work experience  ?",
+            Q1:  "What is the duration of your work experience ?",
             ans: "none"
         },
         Q5: {
