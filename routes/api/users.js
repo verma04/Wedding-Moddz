@@ -260,7 +260,8 @@ router.post("/VednorLogin", (req, res) => {
           name: user.name,
           email:user.email,
           role: user.role,
-          Verfictaion:user.Emaillverified
+          Verfictaion:user.Emaillverified,
+          VendorCategory:user.VendorCategory
         };
 
         // Sign token
