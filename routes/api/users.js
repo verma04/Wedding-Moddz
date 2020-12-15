@@ -296,7 +296,7 @@ router.get("/getCity",
 
 
 
-  User.findOne({ _id:'5fd0cf7953415b2214b359af' }).then(user => {
+  User.findOne({ _id:'5fd44d49f5533d00176af805' }).then(user => {
 
     res.json(user.cities)
       
@@ -318,7 +318,7 @@ router.get("/getCategoryHome",(req, res) => {
 
 
 
-  User.findOne({ _id:'5fd0cf7953415b2214b359af' }).then(user => {
+  User.findOne({ _id:'5fd44d49f5533d00176af805' }).then(user => {
 
     res.json(user.category)
       
@@ -338,7 +338,7 @@ router.post("/currentCity",(req, res) => {
   console.log(req.body)
 
 
-  User.findOne({ _id:'5fd0cf7953415b2214b359af' }).then(user => {
+  User.findOne({ _id:'5fd44d49f5533d00176af805' }).then(user => {
 
        const city =user.cities
 

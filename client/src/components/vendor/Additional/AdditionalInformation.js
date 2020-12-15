@@ -9,383 +9,400 @@ import Footer from '../../layout/footer/Footer'
 import   { connect} from 'react-redux';
  class AdditionalInformation extends Component {
 
+    onChange = async (event) => {
+     await this.setState(prevState => ({ Q56: {   ...prevState.Q56, ans: event.target.value }  })) 
+   
+     
+      };
+      onChange1 = async (event) => {
+        await this.setState(prevState => ({ Q57: {   ...prevState.Q57, ans: event.target.value }  })) 
+      
+        
+         };
+
+    onSubmit = e => {
+        e.preventDefault();
+    
+      
+      };
+
       state = {
 
         Q1: {
             category:'PHOTOGRAPHER',
             Q1:  "How much time do you take to deliver the photos ?",
-            ans: "none"
+            ans: ""
         },
         Q2: {
             category:'PHOTOGRAPHER',
             Q1:  "Which services do you offer ?",
-            ans: "none"
+            ans: ""
         },
         Q3: {
             category:'PHOTOGRAPHER',
             Q1:  "What is your speciality?",
-            ans: "none"
+            ans: ""
         },
         Q4: {
             category:'PHOTOGRAPHER',
             Q1:  "What is the duration of your work experience ?",
-            ans: "none"
+            ans: ""
         },
         Q5: {
             category:'PHOTOGRAPHER',
             Q1:  "Your payment terms and conditions?",
-            ans: "none"
+            ans: ""
         },
         Q6: {
             category:'PHOTOGRAPHER',
             Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-            ans: "none"
+            ans: ""
         },
            // WEDDING PLANNER
         Q7: {
             category:'WEDDING PLANNER',
             Q1:  "What kind of commercials do you work on ?",
-            ans: "none"
+            ans: ""
         },
         Q8: {
             category:'WEDDING PLANNER',
             Q1:  "What is your style USP?",
-            ans: "none"
+            ans: ""
         },
         Q9: {
             category:'WEDDING PLANNER',
             Q1:  " What is your policy on decor??",
-            ans: "none"
+            ans: ""
         },
         Q10: {
             category:'WEDDING PLANNER',
             Q1:  " How many hours/days do you need to plan a wedding?",
-            ans: "none"
+            ans: ""
         },
         Q11: {
             category:'WEDDING PLANNER',
             Q1:  "How many weddings have you planned before? ?",
-            ans: "none"
+            ans: ""
         },
         Q12: {
             category:'WEDDING PLANNER',
             Q1:  "Who will bear the cost of travel and stay outside the home town  ?",
-            ans: "none",
+            ans: "",
         },
         //  BRIDAL MAKE-UP
         Q13: {
             category:'WEDDING PLANNER',
             Q1:  "Which of the following do you offer?",
-            ans: "none"
+            ans: ""
         },
         Q14: {
             category:'WEDDING PLANNER',
             Q1:  "Do you travel to the venue ?",
-            ans: "none"
+            ans: ""
         },
         Q15: {
             category:'WEDDING PLANNER',
             Q1:  "What does the bridal makeup price include?",
-            ans: "none"
+            ans: ""
         },
         Q16: {
             category:'WEDDING PLANNER',
             Q1:  " Do you offer Airbrush/ HD Makeup ?",
-            ans: "none"
+            ans: ""
         },
         Q17: {
             category:'WEDDING PLANNER',
             Q1:  "What is your policy on trials?",
-            ans: "none"
+            ans: ""
         },
         Q18: {
             category:'WEDDING PLANNER',
             Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-            ans: "none",
+            ans: "",
         },
 
           //  WEDDING DECORATOR 
           Q19: {
             category:'WEDDING DECORATOR ',
             Q1:  "What types of venues do you work with?",
-            ans: "none"
+            ans: ""
         },
         Q20: {
             category:'WEDDING DECORATOR ',
             Q1:  "Can you decorate traditional marquees and solid buildings with your       linings?",
-            ans: "none"
+            ans: ""
         },
         Q21: {
             category:'WEDDING DECORATOR ',
             Q1:  "Are you enlisted on the Panel of some banquets/ hotels? Please mention a few.",
-            ans: "none"
+            ans: ""
         },
         Q22: {
             category:'WEDDING DECORATOR ',
             Q1:  " For an indoor banquet function, of approx 250 pax what is the price range that you would be comfortable doing",
-            ans: "none"
+            ans: ""
         },
         Q23: {
             category:'WEDDING DECORATOR ',
             Q1:  "For an outdoor function, what would the price range be?",
-            ans: "none"
+            ans: ""
         },
         Q24: {
             category:'WEDDING DECORATOR ',
             Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-            ans: "none",
+            ans: "",
         },
 
             //  WEDDING PANDIT
             Q25: {
                 category:'WEDDING PANDIT',
                 Q1:  "What type of WEDDING PANDIT is your specialty?",
-                ans: "none"
+                ans: ""
             },
             Q26: {
                 category:'WEDDING PANDIT',
                 Q1:  "Do you do engravings on rings ?",
-                ans: "none"
+                ans: ""
             },
             Q27: {
                 category:'WEDDING PANDIT',
                 Q1:  "Do you make customized WEDDING PANDIT  ",
-                ans: "none"
+                ans: ""
             },
             Q28: {
                 category:'WEDDING PANDIT',
                 Q1:  " What if I don’t like the WEDDING PANDIT I ordered?",
-                ans: "none"
+                ans: ""
             },
             Q29: {
                 category:'WEDDING PANDIT',
                 Q1:  "Your payment terms and conditions for rental WEDDING PANDIT",
-                ans: "none"
+                ans: ""
             },
             Q30: {
                 category:'WEDDING PANDIT',
                 Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-                ans: "none",
+                ans: "",
             },
             //WEDDING CATERERS
             Q31: {
                 category:'WEDDING CATERERS',
                 Q1:  "Do you fall into any of these categories",
-                ans: "none"
+                ans: ""
             },
             Q32: {
                 category:'WEDDING CATERERS',
                 Q1:  "What Type Of Caterer Are You ?",
-                ans: "none"
+                ans: ""
             },
             Q33: {
                 category:'WEDDING CATERERS',
                 Q1:  "What is the starting per plate price for a Vegetarian menu (Assume 250 pax)?",
-                ans: "none"
+                ans: ""
             },
             Q34: {
                 category:'WEDDING CATERERS',
                 Q1:  " What is the starting per plate price for a Non- Vegetarian menu (Assume 250 pax) ? ",
-                ans: "none"
+                ans: ""
             },
             Q35: {
                 category:'WEDDING CATERERS',
                 Q1:  "Which of the following cuisines do you offer",
-                ans: "none"
+                ans: ""
             },
             Q36: {
                 category:'WEDDING CATERERS',
                 Q1:  " Who will bear the cost of travel and stay outside the home town ?",
-                ans: "none",
+                ans: "",
             },
            
                   //DJ AND SOUND
                   Q37: {
                     category:'DJ AND SOUND ',
                     Q1:  "What is your basic starting package?",
-                    ans: "none"
+                    ans: ""
                 },
                 Q38: {
                     category:' DJ AND SOUND',
                     Q1:  " What does the above price include? (E.g Includes equipment, Lighting)",
-                    ans: "none"
+                    ans: ""
                 },
                 Q39: {
                     category:'DJ AND SOUND',
                     Q1:  "Select Category Type",
-                    ans: "none"
+                    ans: ""
                 },
                 Q40: {
                     category:'DJ AND SOUND',
                     Q1:  "How Many years have you been DJing for?",
-                    ans: "none"
+                    ans: ""
                 },
                 Q41: {
                     category:'DJ AND SOUND',
                     Q1:  "How many members does your team consist of?",
-                    ans: "none"
+                    ans: ""
                 },
                 Q42: {
                     category:'DJ AND SOUND',
                     Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-                    ans: "none",
+                    ans: "",
                 },
                       //MEHNDI ARTISTS
                       Q43: {
                         category:'MEHNDI ARTISTS ',
                         Q1:  "What are the starting prices for bridal mehndi?",
-                        ans: "none"
+                        ans: ""
                     },
                     Q44: {
                         category:'MEHNDI ARTISTS',
                         Q1:  " What is your speciality in ?",
-                        ans: "none"
+                        ans: ""
                     },
                     Q45: {
                         category:'MEHNDI ARTISTS',
                         Q1:  "How many artists are in total ?",
-                        ans: "none"
+                        ans: ""
                     },
                     Q46: {
                         category:'MEHNDI ARTISTS',
                         Q1:  "Do you provide after care solutions ?",
-                        ans: "none"
+                        ans: ""
                     },
                     Q47: {
                         category:'MEHNDI ARTISTS',
                         Q1:  "For mehendi of family and friends what is your package?",
-                        ans: "none"
+                        ans: ""
                     },
                     Q48: {
                         category:'MEHNDI ARTISTS',
                         Q1:  " Who will bear the cost of travel and stay outside the home town ?",
-                        ans: "none",
+                        ans: "",
                     },
 
                           //WEDDING CAKES
                           Q55: {
                             category:'WEDDING CAKES',
                             Q1:  " What are your most popular flavors? (Enter flavors with comma to separate them)",
-                            ans: "none"
+                            ans: ""
                         },
                         Q56: {
                             category:'WEDDING CAKES',
                             Q1:  " Do you make eggless cake",
-                            ans: "none"
+                            ans: ""
                         },
                         Q57: {
                             category:'WEDDING CAKES',
                             Q1:  "What do you specialise in??",
-                            ans: "none"
+                            ans: ""
                         },
                         Q58: {
                             category:'WEDDING CAKES',
                             Q1:  "For a wedding cake (fondant cake), what is the starting price per kg? (Assume the most commonly requested for flavour)                            ",
-                            ans: "none"
+                            ans: ""
                         },
                         Q59: {
                             category:'WEDDING CAKES',
                             Q1:  "Do you arrange for delivery and transport of the cake to the venue?",
-                            ans: "none"
+                            ans: ""
                         },
                         Q60: {
                             category:'WEDDING CAKES',
                             Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-                            ans: "none",
+                            ans: "",
                         },
                             //BRIDAL WEAR
                             Q49: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "How would you describe your establishment?",
-                                ans: "none"
+                                ans: ""
                             },
                             Q50: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "What type of outfits do you offer?",
-                                ans: "none"
+                                ans: ""
                             },
                             Q51: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "Most of your outfits are:",
-                                ans: "none"
+                                ans: ""
                             },
                             Q52: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "What is your price range?",
-                                ans: "none"
+                                ans: ""
                             },
                             Q53: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "What size do you stock?",
-                                ans: "none"
+                                ans: ""
                             },
                             Q54: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "Who will bear the cost of travel and stay outside the home town ?",
-                                ans: "none",
+                                ans: "",
                             },
               //VENUES
                             Q55: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "What kind of venue do you offer? ",
-                                ans: "none"
+                                ans: ""
                             },
                             Q56: {
                                 category:'BRIDAL WEAR',
-                                Q1:  "Are there adequate restroom facilities?",
-                                ans: "none"
+                                Q1:  "How many guests can the venue accommodate??",
+                                ans: ""
                             },
                             Q57: {
                                 category:'BRIDAL WEAR',
-                                Q1:  " How many guests can the venue accommodate?",
-                                ans: "none"
+                                Q1:  " What is space Prefenence?",
+                                ans: ""
                             },
                             Q58: {
                                 category:'BRIDAL WEAR',
-                                Q1:  " How many guests can the venue accommodate?Is there a secure area to store the wedding gifts?",
-                                ans: "none"
+                                Q1:  " What is charge price per plate",
+                                ans: ""
                             },
                             Q59: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "Are there adequate restroom facilities?",
-                                ans: "none"
+                                ans: ""
                             },
                             Q60: {
                                 category:'BRIDAL WEAR',
                                 Q1:  "What is your payment and cancellation policy?",
-                                ans: "none",
+                                ans: "",
                             },
     
      //BRIDAL WEAR
      Q61: {
         category:'BRIDAL WEAR',
         Q1:  "How would you describe your establishment? ",
-        ans: "none"
+        ans: ""
     },
     Q62: {
         category:'BRIDAL WEAR',
         Q1:  "What type of outfits do you offer?",
-        ans: "none"
+        ans: ""
     },
     Q63: {
         category:'BRIDAL WEAR',
         Q1:  "Most of your outfits are:",
-        ans: "none"
+        ans: ""
     },
     Q64: {
         category:'BRIDAL WEAR',
         Q1:  "What is your price range?",
-        ans: "none"
+        ans: ""
     },
     Q65: {
         category:'BRIDAL WEAR',
         Q1:  "What size do you stock?",
-        ans: "none"
+        ans: ""
     },
     Q66: {
         category:'BRIDAL WEAR',
         Q1:  "Do you have a certain style that you tend to lean towards in formal  wear?",
-        ans: "none",
+        ans: "",
     },
 
 
@@ -393,32 +410,32 @@ import   { connect} from 'react-redux';
       Q67: {
         category:'Are you able to ship cards domestic / internationally? ',
         Q1:  "Do you fall into any of these categories",
-        ans: "none"
+        ans: ""
     },
     Q68: {
         category:' What is the starting range for a wedding card (without box)?',
         Q1:  "What Type Of Caterer Are You ?",
-        ans: "none"
+        ans: ""
     },
     Q69: {
         category:'What are you most known for?',
         Q1:  "What is the starting per plate price for a Vegetarian menu (Assume 250 pax)?",
-        ans: "none"
+        ans: ""
     },
     Q70: {
         category:'WEDDING CATERERS',
         Q1:  "Which of the following do you offer?",
-        ans: "none"
+        ans: ""
     },
     Q71: {
         category:'WEDDING CATERERS',
         Q1:  "What is the minimum number of pieces you take an order for?",
-        ans: "none"
+        ans: ""
     },
     Q72: {
         category:'WEDDING CATERERS',
         Q1:  "Do you also offer services for favors?",
-        ans: "none",
+        ans: "",
     },
 
       }
@@ -1073,7 +1090,7 @@ import   { connect} from 'react-redux';
 
           else  if  ((user.VendorCategory === 'Venues') ) {
             return (
-              <form  noValidate onSubmit={this.onSubmit} >
+              <form  onSubmit={this.onSubmit}  noValidate     >
   
               <div className="input" >
   
@@ -1082,16 +1099,16 @@ import   { connect} from 'react-redux';
                       <div className="data" >     {this.state.Q55.Q1}  </div>
                       <div className="check" >
                   <ul>
-                        <li><input value={this.state.Q13.ans}   onChange={() => this.setState(prevState => ({ Q6: {   ...prevState.Q13, ans: 'Hotel' }  })) }  type="checkbox"></input>Hotel</li>
-                        <li> <input  value={this.state.Q13.ans}   onChange={() => this.setState(prevState => ({ Q13: {   ...prevState.Q13, ans: ' Marriage Garden' }  })) }  type="checkbox"></input> Marriage Garden</li>
-                        <li><input value={this.state.Q13.ans}   onChange={() => this.setState(prevState => ({ Q6: {   ...prevState.Q13, ans: 'Lawns and Farmhouse' }  })) }  type="checkbox"></input>Lawns and Farmhouse</li>
-                        <li> <input  value={this.state.Q13.ans}   onChange={() => this.setState(prevState => ({ Q13: {   ...prevState.Q13, ans: 'Banquet Hall' }  })) }  type="checkbox"></input>Banquet Hall </li>
+                        <li><input value={this.state.Q55.ans}   onChange={() => this.setState(prevState => ({ Q55: {   ...prevState.Q55, ans: 'Hotel' }  })) }  type="checkbox"></input>Hotel</li>
+                        <li> <input  value={this.state.Q55.ans}   onChange={() => this.setState(prevState => ({ Q55: {   ...prevState.Q55, ans: ' Marriage Garden' }  })) }  type="checkbox"></input> Marriage Garden</li>
+                        <li><input value={this.state.Q55.ans}   onChange={() => this.setState(prevState => ({ Q55: {   ...prevState.Q55, ans: 'Lawns and Farmhouse' }  })) }  type="checkbox"></input>Lawns and Farmhouse</li>
+                        <li> <input  value={this.state.Q55.ans}   onChange={() => this.setState(prevState => ({ Q55: {   ...prevState.Q55, ans: 'Banquet Hall' }  })) }  type="checkbox"></input>Banquet Hall </li>
 
                   
                         
                     </ul>
                     <ul>
-                        <li><input value={this.state.Q13.ans}   onChange={() => this.setState(prevState => ({ Q6: {   ...prevState.Q13, ans: 'Palace' }  })) }  type="checkbox"></input>Palace</li>
+                        <li><input value={this.state.Q13.ans}    onChange={() => this.setState(prevState => ({ Q6: {   ...prevState.Q13, ans: 'Palace' }  })) }  type="checkbox"></input>Palace</li>
                        
                   
                         
@@ -1102,13 +1119,24 @@ import   { connect} from 'react-redux';
   
                   </div>
                   <div className="box" >
+  
+     
+  <div className="data" >  {this.state.Q56.Q1}  </div>
+
+  <div className="type" >
+  
+  <input   value={ this.state.Q56.ans }    onChange={this.onChange}   placeholder="Enter data here"   required></input>
+   </div>
+
+  </div>
+                  <div className="box" >
                       
-                  <div className="data" >{this.state.Q56.Q1}  </div>
+                  <div className="data" >{this.state.Q57.Q1}  </div>
                
                  
                     <div className="type" >
                   
-                  <input placeholder="Enter data here" ></input>
+                  <input value={ this.state.Q57.ans }    onChange={this.onChange1}   placeholder="Enter data here"  required ></input>
                    </div>
   
   
@@ -1116,39 +1144,34 @@ import   { connect} from 'react-redux';
                   <div className="box" >
   
      
-                  <div className="data" >{this.state.Q57.Q1}  </div>
+                  <div className="data" >{this.state.Q58.Q1}  </div>
                 
                   <div className="type" >
                   
-                  <input placeholder="Enter data here" ></input>
+                  <input value={ this.state.Q58.ans }    onChange={this.onChange} placeholder="Enter data here"   required></input>
                    </div>
   
-                  </div>
-                  <div className="box" >
-                  <div className="data" >{this.state.Q58.Q1}  </div>
-                  <div className="type" >
-                  
-                  <input placeholder="Enter data here" ></input>
-                   </div>
                   </div>
                   <div className="box" >
                   <div className="data" >{this.state.Q59.Q1}  </div>
                   <div className="type" >
                   
-                  <input placeholder="Enter data here" ></input>
+                  <input value={ this.state.Q59.ans }    onChange={this.onChange} placeholder="Enter data here"   required></input>
+                   </div>
+                  </div>
+                  <div className="box" >
+                  <div className="data" >{this.state.Q60.Q1}  </div>
+                  <div className="type" >
+                  
+                  <input value={ this.state.Q60.ans }    onChange={this.onChange} placeholder="Enter data here"  required ></input>
                    </div>
                   </div>
               
                   
                   
 
-                  <div className="box" >
-                  <div className="data" >{this.state.Q60.Q1}  </div>
-                  <div className="type" >
-                  
-                  <input placeholder="Enter data here" ></input>
-                   </div>
-                  </div>
+               
+               
                 
                   </div>       
                        
