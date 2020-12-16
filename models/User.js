@@ -85,6 +85,33 @@ const UserSchema = new Schema({
 
 ]
 ,
+img: {
+  type: String,
+ 
+},
+venueType:{
+  type: String,
+},
+spacePrefenence:{
+  type: String,
+},
+totalguests:{
+  type: Number,
+},
+pricePerPlate:{
+  type: Number,
+},
+restroom:{
+  type: Number,
+},
+policy:{
+  type: String,
+}
+
+
+
+
+
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

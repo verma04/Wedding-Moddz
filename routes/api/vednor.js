@@ -12,6 +12,7 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const Vendor = require("../../models/Vednor");
 const User = require("../../models/User");
+const { findOne } = require("../../models/Vednor");
 
 
 
@@ -159,6 +160,39 @@ router.get("/getVerfication" ,  passport.authenticate('jwt', { session: false })
      res.json(vendor.Emaillverified)
   
   });
+  
+ 
+
+});
+
+
+router.get("/getVenueVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  User.findOne({ _id: req.user.id }).then(vendor => {
+
+    res.json(vendor.venueType)
+ 
+ });
+ 
+
+});
+
+
+
+router.post("/VenueVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+
+
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans  } ,  }  ).then(vendor => {
+
+  
+ 
+ 
+
+ });
+
+res.json(req.user.venueType)
+ 
   
  
 

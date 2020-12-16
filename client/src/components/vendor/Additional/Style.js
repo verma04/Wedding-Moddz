@@ -55,13 +55,16 @@ justify-content:center;
           height:80%;
           display:flex;
   justify-content:center;
+  position:relative;
           img {
             
               height:90%;
-              opacity: 0.1;
+              
           }
+         
    
       }
+      
       label {
    cursor: pointer;
 background-color:${colors.primary.pink1};

@@ -5,13 +5,15 @@ import  { Section  } from './Style';
 import Sidebar  from '../sidebar/Sidebar';
 import   { connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { getVerfication }  from '../../../actions/VednorAction';
+import { getVenueVendor , getVerfication }  from '../../../actions/VednorAction';
 
 
  class dashboard extends Component {
 
     componentDidMount() {
+        this.props.getVenueVendor();
         this.props.getVerfication();
+        
         document.title = "Vendor Dashboard"
     }
 
@@ -20,10 +22,10 @@ import { getVerfication }  from '../../../actions/VednorAction';
     render() {
 
     const { user } = this.props.auth;
-               const { otp } = this.props.vendors;
-    if( otp === "none"){
+               const { type } = this.props.vendors;
+    if( type === ""){
         return (
-        <Redirect to='/verify-account' ></Redirect>
+        <Redirect to='/additional-information' ></Redirect>
         )
     }
       
@@ -59,6 +61,6 @@ const mapStateToProps = state => ({
   
   export default connect(
     mapStateToProps,
-    {  getVerfication  }
+    {  getVenueVendor ,  getVerfication }
   )(dashboard);
   

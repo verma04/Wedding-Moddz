@@ -425,7 +425,11 @@ router.post("/vendorList",(req, res) => {
       const data = {
       id:element.id,
       name:element.name,
-      VendorCategory:element.VendorCategory
+      VendorCategory:element.VendorCategory,
+      img:element.img,
+      pricePerPlate:element.pricePerPlate
+
+
       }
       arr.push(data)
 

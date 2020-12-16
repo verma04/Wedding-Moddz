@@ -8,7 +8,7 @@ const initialState = {
     city: null,
     current:null,
     venue:null,
-    vendor:null
+    vendorlist:null
 };
 
 export default function(state = initialState, action) {

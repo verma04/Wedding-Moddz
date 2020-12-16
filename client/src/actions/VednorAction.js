@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_ERRORS , OTP} from "./types";
+import { GET_ERRORS , OTP , TYPE} from "./types";
 export const verifyOtp = (userData , history) => dispatch => {
     axios
       .post("/api/vendor/verifyOtp", userData)
@@ -9,10 +9,7 @@ export const verifyOtp = (userData , history) => dispatch => {
            history.push('/vendor/dashboard')
         )
       .catch(err =>
-        dispatch({
-          type: GET_ERRORS,
-          payload: err.response.data
-        })
+        console.log(err)
       );
   };
 
@@ -31,5 +28,36 @@ export const verifyOtp = (userData , history) => dispatch => {
           type: GET_ERRORS,
           payload: err.response.data
         })
+      );
+  };
+
+
+  export const getVenueVendor = () => dispatch => {
+    axios
+      .get("/api/vendor/getVenueVendor" )
+      .then(res => 
+         
+        dispatch({
+            type: TYPE,
+            payload:  res.data
+          })
+        )
+      .catch(err =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+      );
+  };
+ 
+
+  export const VenueVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/VenueVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
       );
   };

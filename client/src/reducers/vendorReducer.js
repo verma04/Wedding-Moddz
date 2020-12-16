@@ -1,9 +1,11 @@
-import {OTP} from "../actions/types";
+import {OTP, TYPE} from "../actions/types";
+
 
 
 
 const initialState = {
- otp:null
+ otp:null,
+ type:null
 };
 
 export default function(state = initialState, action) {
@@ -16,6 +18,12 @@ export default function(state = initialState, action) {
         loading: true,
         otp:action.payload
       };
+      case TYPE:
+        return {
+          ...state,
+          loading: true,
+          type:action.payload
+        };
     default:
       return state;
   }
