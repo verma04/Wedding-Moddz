@@ -41,6 +41,7 @@ import { Redirect } from 'react-router-dom';
         onSubmit=(e) => {
             e.preventDefault();
                 const userData = {
+                    img:this.state.img1,
                     categoryCaterers:this.state.Q31,
                     typeCaterers: this.state.Q32,
                     priceCaterers:this.state.Q33,

@@ -7,21 +7,32 @@ import Navbar from '../../layout/Navbar/Navbar'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import Footer from '../footer/Footer'
-
+import qs from 'query-string';
 import {vendorList} from '../../../actions/UserActions'
 import vendor from '../vendor/vendor';
 class List extends Component {
 
    
-    componentDidMount( ){
+    componentWillMount( ){
 
-
+        const values = qs.parse(this.props.location.search)
         const data = {
         city: this.props.match.params.id,
         category: this.props.match.params.vendor
         }
         
-       this.props.vendorList(data)
+       this.props.vendorList(data, values.search , values.search1)
+       console.log('dssd')
+
+    }
+
+   
+
+       componentDidMount() {
+        
+
+       console.log( this.props.user.vendorlist )
+     
     }
  
     render() {

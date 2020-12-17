@@ -144,7 +144,7 @@ router.post("/postCity",   passport.authenticate('jwt', { session: false }),
         .status(400)
         .json({ city: "City exsit" });
     } else{
-        console.log("Object not found.");
+      
     
   User.findOneAndUpdate({_id: req.user.id}, {$push: { "cities": data  }},function(err, doc){
     if(err){

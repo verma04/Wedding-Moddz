@@ -9,6 +9,8 @@ import Footer from '../../layout/footer/Footer'
 import   { connect} from 'react-redux';
 import Venues from './Venues';
 import  WeddingCaterers  from './Wedding-Caterers'
+
+import Pandits from './Pandits'
   class AdditionalInformation extends Component {
 
   
@@ -447,6 +449,11 @@ import  WeddingCaterers  from './Wedding-Caterers'
         }  else  if ((user.VendorCategory === 'Wedding-Caterers') ){ 
           return (
          <WeddingCaterers/>
+          )
+        }
+        else  if ((user.VendorCategory === "Pandits") ){ 
+          return (
+         <Pandits/>
           )
         }
       })()}

@@ -6,8 +6,14 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: {
     type: String,
-    required: true
+  
   },
+  vendorName: {
+    type: String,
+  
+  },
+
+
   email: {
     type: String,
     required: true
@@ -124,10 +130,10 @@ categoryCaterers:{
   type: String,
 },
 priceCaterers:{
-  type: Number,
+  type: String,
 },
 capacityCaterers:{
-  type: Number,
+  type:String,
 },
 
 costCaterers:{

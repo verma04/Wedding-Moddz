@@ -39,7 +39,7 @@ router.post("/register", (req, res) => {
       return res.status(400).json({ email: "Email already exists" });
     } else {
       const newVendor = new Vendor({
-        name: req.body.name,
+        vendorName: req.body.name,
         email: req.body.email,
         password: req.body.password,
         role: "vendor"
@@ -191,7 +191,7 @@ router.post("/VenueVendor" ,  passport.authenticate('jwt', { session: false }), 
 
  });
 
-res.json(req.user.venueType)
+res.json(req.user.value)
  
   
  
@@ -202,15 +202,15 @@ router.post("/caterersVendor" ,  passport.authenticate('jwt', { session: false }
 
  console.log(req.body)
 
-//   User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans , value:'done'  } ,  }  ).then(vendor => {
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: { "categoryCaterers": req.body.categoryCaterers.ans  , "typeCaterers":req.body.typeCaterers.ans , "img":req.body.img ,  "priceCaterers":req.body.priceCaterers.ans,   "capacityCaterers":req.body.capacityCaterers.ans, "costCaterers":req.body.costCaterers.ans , value:'done'  } ,  }  ).then(vendor => {
 
   
  
  
 
-//  });
+ });
 
-// res.json(req.user.venueType)
+res.json(req.user.value)
  
   
  

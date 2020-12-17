@@ -101,7 +101,7 @@ router.post("/vednorregister", (req, res) => {
         }
         var val = Math.floor(1000 + Math.random() * 9000);
       const newUser = new User({
-        name: req.body.name,
+        vendorName: req.body.name,
         email: req.body.email,
         password: req.body.password,
         role: "Vendor",
@@ -391,7 +391,7 @@ router.post("/topsearch",(req, res) => {
 
         const data = {
         id:element.id,
-        name:element.name,
+        name:element.vendorName,
         VendorCategory:element.VendorCategory
         }
         arr.push(data)
@@ -451,7 +451,7 @@ router.post("/vendorList",(req, res) => {
 
     const data = {
     id:element.id,
-    name:element.name,
+    name:element.vendorName,
     VendorCategory:element.VendorCategory,
     img:element.img,
     pricePerPlate:element.pricePerPlate
@@ -466,6 +466,12 @@ router.post("/vendorList",(req, res) => {
 
  });
  res.json(arr)
+
+
+
+
+
+
  })
 
 

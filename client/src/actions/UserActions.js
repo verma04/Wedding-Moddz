@@ -9,7 +9,7 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from
   export const getCatgory = () => dispatch => {
     axios
       .get("/api/users/getCategoryHome")
-      .then(res => 
+      .then(res =>
         dispatch({
             type: CATEGORY,
             payload: res.data
@@ -27,7 +27,7 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from
   export const  getCity = () => dispatch => {
     axios
       .get("/api/users/getCity")
-      .then(res => 
+      .then(res =>
         dispatch({
             type: CITY,
             payload: res.data
@@ -39,13 +39,13 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from
           payload: err.response.data
         })
       );
-    
+
   };
-  
+
   export const  city = (data) => dispatch => {
     axios
       .post("/api/users/currentCity" , data)
-      .then(res => 
+      .then(res =>
         dispatch({
             type: CURRENT_CITY,
             payload: res.data
@@ -54,14 +54,14 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from
       .catch(err =>
        console.log(err)
       );
-    
+
   };
 
 
   export const  topsearch = (data) => dispatch => {
     axios
       .post("/api/users/topsearch" , data)
-      .then(res => 
+      .then(res =>
         dispatch({
             type: VENUE,
             payload: res.data
@@ -70,12 +70,18 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from
       .catch(err =>
        console.log(err)
       );
-    
+
   };
-  export const  vendorList = (data) => dispatch => {
+  export const  vendorList = (data , se, se2) => dispatch => {
+
+    console.log(se , se2)
     axios
       .post("/api/users/vendorList" , data)
-      .then(res => 
+      .then(res =>
+
+      
+
+
         dispatch({
           type: VENDOR_LIST,
           payload: res.data
@@ -84,8 +90,7 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY  , VENDOR_LIST} from
       .catch(err =>
        console.log(err)
       );
-    
+
   };
 
 
-   
