@@ -170,7 +170,7 @@ router.get("/getVenueVendor" ,  passport.authenticate('jwt', { session: false })
 
   User.findOne({ _id: req.user.id }).then(vendor => {
 
-    res.json(vendor.venueType)
+    res.json(vendor.value)
  
  });
  
@@ -183,7 +183,7 @@ router.post("/VenueVendor" ,  passport.authenticate('jwt', { session: false }), 
 
 
 
-  User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans  } ,  }  ).then(vendor => {
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans , value:'done'  } ,  }  ).then(vendor => {
 
   
  
@@ -198,6 +198,24 @@ res.json(req.user.venueType)
 
 });
 
+router.post("/caterersVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+ console.log(req.body)
+
+//   User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans , value:'done'  } ,  }  ).then(vendor => {
+
+  
+ 
+ 
+
+//  });
+
+// res.json(req.user.venueType)
+ 
+  
+ 
+
+});
 
 
 

@@ -85,10 +85,17 @@ const UserSchema = new Schema({
 
 ]
 ,
+  value:{
+    type: String,
+  }
+  ,
+
 img: {
   type: String,
  
 },
+//Veneue
+
 venueType:{
   type: String,
 },
@@ -107,6 +114,26 @@ restroom:{
 policy:{
   type: String,
 }
+,
+//Wedding-Caterers
+
+categoryCaterers:{
+  type: String,
+},
+ typeCaterers:{
+  type: String,
+},
+priceCaterers:{
+  type: Number,
+},
+capacityCaterers:{
+  type: Number,
+},
+
+costCaterers:{
+  type: String,
+}
+
 
 
 

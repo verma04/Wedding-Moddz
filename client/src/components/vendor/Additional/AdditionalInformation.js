@@ -7,7 +7,8 @@ import Navbar from '../../layout/Navbar/Navbar';
 
 import Footer from '../../layout/footer/Footer'
 import   { connect} from 'react-redux';
-import Venues from './Venues'
+import Venues from './Venues';
+import  WeddingCaterers  from './Wedding-Caterers'
   class AdditionalInformation extends Component {
 
   
@@ -443,9 +444,9 @@ import Venues from './Venues'
           return (
             <Venues/>
           )
-        }  else {
+        }  else  if ((user.VendorCategory === 'Wedding-Caterers') ){ 
           return (
-            <div>catch all</div>
+         <WeddingCaterers/>
           )
         }
       })()}

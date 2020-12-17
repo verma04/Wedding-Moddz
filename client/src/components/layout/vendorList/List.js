@@ -91,7 +91,7 @@ class List extends Component {
                         </div>   
                          <div className="down" >
                
-                         ₹{number.pricePerPlate}
+                         ₹3{number.pricePerPlate}
 
     
     </div>            

@@ -172,7 +172,7 @@ class Register extends Component {
               {category.map((number) =>
               
            
-              <option   value={number.category}>{number.category}</option>
+              <option   value={number._id}>{number.category}</option>
              
                      
               )}

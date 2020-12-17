@@ -13,6 +13,7 @@ const nodemailer = require("nodemailer");
 // Load User model
 const User = require("../../models/User");
 const Vendor = require("../../models/Vednor");
+const { findOne } = require("../../models/User");
 
 
 
@@ -63,6 +64,7 @@ router.post("/register", (req, res) => {
 
 
 router.post("/vednorregister", (req, res) => {
+
   // Form validation
 
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -249,9 +251,16 @@ router.post("/VednorLogin", (req, res) => {
       return res.status(404).json({ emailnotfound: "Invalid  Email" });
     }
 
+    
+    User.findOne({ _id: "5fd44d49f5533d00176af805" }).then(data => {
 
-    // Check password
-    bcrypt.compare(password, user.password).then(isMatch => {
+ 
+       const  category = data.category;
+
+       const filtered = category.filter(element => element.id ===  user.VendorCategory  );
+    
+     console.log(filtered[0].category)
+     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         // User matched
         // Create JWT Payload
@@ -261,7 +270,7 @@ router.post("/VednorLogin", (req, res) => {
           email:user.email,
           role: user.role,
           Verfictaion:user.Emaillverified,
-          VendorCategory:user.VendorCategory
+          VendorCategory:filtered[0].category
         };
 
         // Sign token
@@ -284,9 +293,15 @@ router.post("/VednorLogin", (req, res) => {
           .json({ passwordincorrect: "Password incorrect" });
       }
     });
+    });
+
+
+    // Check password
+  
   }
   
   });
+  
 });
 
 router.get("/getCity",  
@@ -404,54 +419,82 @@ router.post("/topsearch",(req, res) => {
 router.post("/vendorList",(req, res) => {
   
   
-  const { category} = req.body;
+ 
 
-  console.log(category)
+ console.log(req.body)
+
+  User.findOne({ _id: "5fd44d49f5533d00176af805" }).then(data => {
+
+ 
+   
+//  console.log()
 
 
-  User.find({ city:req.body.city }).then(user => {
+
+ User.find({ city:req.body.city }).then(user => {
+  
 
       
+  const  category = data.category;
+
+  const filterr= category.filter(element => element.category ===  req.body.category  );
+  let  filter  = user
+  const filtered = filter.filter(element => element.VendorCategory ===   filterr[0].id);
+
+ 
      
-    let  filter  = user
-    const filtered = filter.filter(element => element.VendorCategory ===   category);
-       
-    const arr = []
+  const arr = []
 
-    filtered.forEach(element => {
-       
-       
+  filtered.forEach(element => {
+     
+     
 
-      const data = {
-      id:element.id,
-      name:element.name,
-      VendorCategory:element.VendorCategory,
-      img:element.img,
-      pricePerPlate:element.pricePerPlate
+    const data = {
+    id:element.id,
+    name:element.name,
+    VendorCategory:element.VendorCategory,
+    img:element.img,
+    pricePerPlate:element.pricePerPlate
 
 
-      }
-      arr.push(data)
+    }
+    arr.push(data)
+  
+  
+   
+   
+
+ });
+ res.json(arr)
+ })
+
+
+  
 
      
      
 
    });
 
+           
 
-   res.json(arr)
-    
 
-       
-       
 
-     });
+
+
+
+
+
+  });
+
+
+
 
  
    
       
 
-  });
+
   
  
   

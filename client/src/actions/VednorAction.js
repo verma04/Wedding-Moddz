@@ -43,10 +43,7 @@ export const verifyOtp = (userData , history) => dispatch => {
           })
         )
       .catch(err =>
-        dispatch({
-          type: GET_ERRORS,
-          payload: err.response.data
-        })
+        console.log(err)
       );
   };
  
@@ -54,6 +51,17 @@ export const verifyOtp = (userData , history) => dispatch => {
   export const VenueVendor = (data , history) => dispatch => {
     axios
       .post("/api/vendor/VenueVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
+
+  export const caterersVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/caterersVendor" , data)
       .then(res => 
            history.push('/vendor/dashboard')
         )
