@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Section} from './Style';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
-import {  mehendiVendor , getVenueVendor , getVerfication } from '../../../actions/VednorAction'
+import {  musicVendor , getVenueVendor , getVerfication } from '../../../actions/VednorAction'
 import { Redirect } from 'react-router-dom';
  class  Music extends Component {
   
@@ -17,30 +17,26 @@ import { Redirect } from 'react-router-dom';
             img1:"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607942224/wedding%20Moodz/wedding_moodz_lazy_loading_gqclva.png",
                     //MEHNDI ARTISTS
                       Q1: {
-                        category:'MEHNDI ARTISTS ',
+                        
                         Q1:  "What is your speciality in ?",
                         ans: ""
                     },
                     Q2: {
-                        category:'MEHNDI ARTISTS',
+                        
                         Q1:  "How Many years have experience ? ",
                         ans: ""
                     },
                     Q3: {
-                        category:'MEHNDI ARTISTS',
+                        
                         Q1:  "What is your price range?",
                         ans: ""
                     },
                     Q4: {
-                        category:'MEHNDI ARTISTS',
+                        
                         Q1:  "How many members does your team consist of?",
                         ans: ""
                     },
-                    Q5: {
-                        category:'MEHNDI ARTISTS',
-                        Q1:  "For mehendi of family and friends what is your package?",
-                        ans: ""
-                    },
+                   
                     Q6: {
                         category:'MEHNDI ARTISTS',
                         Q1:  "Who will bear the cost of travel and stay outside the home town ?",
@@ -52,7 +48,7 @@ import { Redirect } from 'react-router-dom';
     onChange = async (event) => {
         await this.setState(prevState => ({ Q1: {   ...prevState.Q1, ans: event.target.value }  })) 
                         };
-                        onChange1 = async (event) => {
+                        onChange = async (event) => {
                             await this.setState(prevState => ({ Q3: {   ...prevState.Q3, ans: event.target.value }  })) 
                         };
 
@@ -79,11 +75,12 @@ import { Redirect } from 'react-router-dom';
             e.preventDefault();
                 const userData = {
                     img:this.state.img1,
-                    mehndiCharge:this.state.Q1,
-                   
-                   
+                    musicCategory:this.state.Q1,
+                    musicExperince:this.state.Q2,
+                    musicPrice:this.state.Q3,
+                    musicMember:this.state.Q4,
                 }
-               this.props.mehendiVendor(userData , this.props.history)
+               this.props.musicVendor(userData , this.props.history)
 
         }
 
@@ -193,9 +190,9 @@ import { Redirect } from 'react-router-dom';
             
               <div className="check" >
               <ul>
-                    <li><input value={this.state.Q4.ans} checked={this.state.op1} onChange={() => this.setState(prevState => ({ Q4: {   ...prevState.Q4, ans: ' Included' }  })) }  type="checkbox"></input>  Single</li>
+                    <li><input value={this.state.Q4.ans} checked={this.state.op1} onChange={() => this.setState(prevState => ({ Q4: {   ...prevState.Q4, ans: 'Single' }  })) }  type="checkbox"></input>  Single</li>
 
-                    <li><input value={this.state.Q4.ans} checked={this.state.op1} onChange={() => this.setState(prevState => ({ Q4: {   ...prevState.Q4, ans: 'Not Included' }  })) }  type="checkbox"></input> Team</li>
+                    <li><input value={this.state.Q4.ans} checked={this.state.op1} onChange={() => this.setState(prevState => ({ Q4: {   ...prevState.Q4, ans: 'Team' }  })) }  type="checkbox"></input> Team</li>
                  
 
 
@@ -211,7 +208,7 @@ import { Redirect } from 'react-router-dom';
              
               <div className="type" >
               
-              <input value={ this.state.Q3.ans }    onChange={this.onChange1} placeholder="Enter data here"  checked={false}  required ></input>
+              <input value={ this.state.Q3.ans }    onChange={this.onChange} placeholder="Enter data here"  checked={false}  required ></input>
                </div>
 
  
@@ -273,6 +270,6 @@ const mapStateToProps = state => ({
   
   export default connect(
     mapStateToProps,
-    { mehendiVendor , getVenueVendor  , getVerfication}
+    { musicVendor , getVenueVendor  , getVerfication}
   )(withRouter(Music));
   

@@ -179,6 +179,21 @@ jewellerySpecialty: {
   type: String,
 }
 
+,
+
+//DJ&Sound
+musicCategory: {
+  type: String,
+},
+musicExperince: {
+  type: String,
+},
+musicPrice: {
+  type: String,
+},
+musicMember: {
+  type: String,
+}
 
 
 

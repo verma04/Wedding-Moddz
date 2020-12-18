@@ -308,6 +308,29 @@ res.json(req.user.value)
 
 });
 
+router.post("/musicVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  
+  console.log(req.body)
+
+ User.findOneAndUpdate({ _id: req.user.id } , { $set: {  "musicCategory": req.body.musicCategory.ans  , " musicExperince": req.body. musicExperince.ans  , "musicPrice": req.body.musicPrice.ans  ,  "musicMember": req.body.musicMember.ans  , "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+});
+
+
+
+res.json(req.user.value)
+
+ 
+
+
+});
+
+
 
 
 

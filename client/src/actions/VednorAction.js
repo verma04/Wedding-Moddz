@@ -113,3 +113,15 @@ export const verifyOtp = (userData , history) => dispatch => {
        console.log(err)
       );
   };
+
+
+  export const musicVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/musicVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
