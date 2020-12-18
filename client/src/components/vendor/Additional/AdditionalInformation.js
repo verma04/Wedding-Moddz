@@ -12,7 +12,8 @@ import  WeddingCaterers  from './Wedding-Caterers'
 import WeddingDecorators from './WeddingDecorators'
 import Mehendi from './Mehendi'
 import Jewellery from './Jewellery'
-import Pandits from './Pandits'
+import Pandits from './Pandits';
+import Music from './Music'
   class AdditionalInformation extends Component {
 
   
@@ -471,6 +472,11 @@ import Pandits from './Pandits'
         else  if ((user.VendorCategory === "Jewellery & Accessories ") ){ 
           return (
          <Jewellery/>
+          )
+        }
+        else  if ((user.VendorCategory === "Music & Dance") ){ 
+          return (
+         <Music/>
           )
         }
       })()}
