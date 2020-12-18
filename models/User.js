@@ -169,6 +169,11 @@ decoratorsChargers:{
   type: String,
 },
 
+//mehndi
+mehndiCharge: {
+  type: Number,
+}
+
 
 
 

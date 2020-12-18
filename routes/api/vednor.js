@@ -264,6 +264,28 @@ res.json(req.user.value)
 
 });
 
+router.post("/mehendiVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  
+  console.log(req.body)
+
+ User.findOneAndUpdate({ _id: req.user.id } , { $set: { "mehndiCharge": req.body. mehndiCharge.ans  ,  "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+});
+
+
+
+res.json(req.user.value)
+
+ 
+
+
+});
+
 
 
 

@@ -91,3 +91,14 @@ export const verifyOtp = (userData , history) => dispatch => {
        console.log(err)
       );
   };
+
+  export const mehendiVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/mehendiVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
