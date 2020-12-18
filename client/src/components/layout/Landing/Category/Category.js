@@ -48,7 +48,7 @@ import   { connect} from 'react-redux';
            <h3>Banquet Halls, Lawns / Farmhouses, Reso..... </h3>
        </div>
        <div className='wrapper' >
-           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607262167/image-2_ffmrkd.jpg'} ></img>
+           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608287532/wedding%20Moodz/hvvqoyugfgm3aiduiq0s.jpg'} ></img>
        </div>
      
        </div>
@@ -80,7 +80,7 @@ import   { connect} from 'react-redux';
            <h3>Banquet Halls, Lawns / Farmhouses, Reso..... </h3>
        </div>
        <div className='wrapper' >
-           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607262167/image-2_ffmrkd.jpg'} ></img>
+           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286662/wedding%20Moodz/juntzcbr5f3pjmyvnhdj.jpg'} ></img>
        </div>
      
        </div>
@@ -114,7 +114,7 @@ import   { connect} from 'react-redux';
            <h3>Banquet Halls, Lawns / Farmhouses, Reso..... </h3>
        </div>
        <div className='wrapper' >
-           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607262167/image-2_ffmrkd.jpg'} ></img>
+           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286661/wedding%20Moodz/jsr17kef8uhpzfwjdk8y.jpg'} ></img>
        </div>
      
        </div>
@@ -146,7 +146,7 @@ import   { connect} from 'react-redux';
            <h3>Banquet Halls, Lawns / Farmhouses, Reso..... </h3>
        </div>
        <div className='wrapper' >
-           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607262167/image-2_ffmrkd.jpg'} ></img>
+           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286659/wedding%20Moodz/curpw9lnr6pz5cbvepql.jpg'} ></img>
        </div>
      
        </div>
@@ -183,7 +183,7 @@ import   { connect} from 'react-redux';
            <h3>Banquet Halls, Lawns / Farmhouses, Reso..... </h3>
        </div>
        <div className='wrapper' >
-           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607262167/image-2_ffmrkd.jpg'} ></img>
+           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286843/wedding%20Moodz/xyrtikvgncsqdrqqjq2t.jpg'} ></img>
        </div>
      
        </div>
@@ -215,7 +215,7 @@ import   { connect} from 'react-redux';
            <h3>Banquet Halls, Lawns / Farmhouses, Reso..... </h3>
        </div>
        <div className='wrapper' >
-           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607262167/image-2_ffmrkd.jpg'} ></img>
+           <img  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286663/wedding%20Moodz/wtaa2vqlrn7sxzuxexee.jpg'} ></img>
        </div>
      
        </div>
