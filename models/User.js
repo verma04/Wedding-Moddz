@@ -172,9 +172,12 @@ decoratorsChargers:{
 //mehndi
 mehndiCharge: {
   type: Number,
+},
+
+//jewellery
+jewellerySpecialty: {
+  type: String,
 }
-
-
 
 
 

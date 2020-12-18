@@ -11,7 +11,7 @@ import Venues from './Venues';
 import  WeddingCaterers  from './Wedding-Caterers'
 import WeddingDecorators from './WeddingDecorators'
 import Mehendi from './Mehendi'
-
+import Jewellery from './Jewellery'
 import Pandits from './Pandits'
   class AdditionalInformation extends Component {
 
@@ -466,6 +466,11 @@ import Pandits from './Pandits'
         else  if ((user.VendorCategory === "Mehndi") ){ 
           return (
          <Mehendi/>
+          )
+        }
+        else  if ((user.VendorCategory === "Jewellery & Accessories ") ){ 
+          return (
+         <Jewellery/>
           )
         }
       })()}

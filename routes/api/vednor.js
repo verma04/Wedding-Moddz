@@ -286,6 +286,29 @@ res.json(req.user.value)
 
 });
 
+router.post("/jewelleryVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  
+  console.log(req.body)
+
+ User.findOneAndUpdate({ _id: req.user.id } , { $set: { "jewellerySpecialty": req.body.jewellerySpecialty.ans  ,  "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+});
+
+
+
+res.json(req.user.value)
+
+ 
+
+
+});
+
+
 
 
 

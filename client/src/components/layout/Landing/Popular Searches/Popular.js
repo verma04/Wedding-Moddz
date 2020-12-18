@@ -90,7 +90,69 @@ import   { connect} from 'react-redux';
         {category.map((number) => 
   <div>
   <div className='img-wrapper'    >
-            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607321545/wedding%20Moodz/groom-wear_hnt9s7.jpg'}  cache  alt="sdd" ></Img>
+
+  {(() => {
+        if (number.category === "Photographers " ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286843/wedding%20Moodz/xyrtikvgncsqdrqqjq2t.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }  if (number.category === "Wedding-Planner" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608287624/wedding%20Moodz/p7bfnkr3xssmztthvopk.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Bridal Wear" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286662/wedding%20Moodz/juntzcbr5f3pjmyvnhdj.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Wedding-decorators" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286843/wedding%20Moodz/xyrtikvgncsqdrqqjq2t.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Jewellery & Accessories " ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286661/wedding%20Moodz/op3ncqdkpvsooa8dslda.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Music & Dance" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286655/wedding%20Moodz/dxyv8wsbyqefafsftu0y.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Mehndi" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286663/wedding%20Moodz/tfbgnh3l6ybqwfflxfnv.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Venues" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286669/wedding%20Moodz/gs4gkin5ckcbjetoimiy.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Groom Wear" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286659/wedding%20Moodz/ptx6rushtn04rpy3wk2g.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Wedding-Caterers" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286661/wedding%20Moodz/jsr17kef8uhpzfwjdk8y.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Wedding-invitations" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286663/wedding%20Moodz/wtaa2vqlrn7sxzuxexee.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+        if (number.category === "Pandits" ) {
+          return (
+            <Img   src="" src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608286659/wedding%20Moodz/curpw9lnr6pz5cbvepql.jpg'}  cache  alt="sdd" ></Img>
+          )
+        }
+      })()}
+           
             <div className="fade" >
         <h2>{number.category}</h2>
          </div>
