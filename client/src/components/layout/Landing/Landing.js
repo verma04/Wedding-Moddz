@@ -43,7 +43,7 @@ import Img from 'react-cool-img';
               <Carousel   showThumbs={false} showStatus={false} useKeyboardArrows  autoPlay interval="2000">
                   <div className="img-1">
               <div className="img-wrapper" >
-                    <Img alt="sdd"  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606313440/image-3_dqjq19.jpg"}  cache    src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758229/wedding%20Moodz/Image3_p8wirh.jpg'}/>
+                    <Img alt="sdd"   cache    src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758229/wedding%20Moodz/Image3_p8wirh.jpg'}/>
                    
 
                 </div>
@@ -51,7 +51,7 @@ import Img from 'react-cool-img';
                 </div>
                 <div className="img-1">
                 <div className="img-wrapper" >
-                    <Img alt="sdd"   placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606313525/photo-1587271407850-8d438ca9fdf2_t25ztg.jpg"}  cache  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758229/wedding%20Moodz/Image2_lobp0z.jpg'}/>
+                    <Img alt="sdd"     cache  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758229/wedding%20Moodz/Image2_lobp0z.jpg'}/>
                    
 
                 </div>
@@ -60,7 +60,7 @@ import Img from 'react-cool-img';
               
                 <div className="img-1">
               <div className="img-wrapper" >
-              <Img  alt="sdd"  placeholder={"https://res.cloudinary.com/pankaj-k-amakein-com/image/upload/v1606294996/LAZY_LOADING_NIR_LOGO1_n8hcwm.png"}  cache   src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758222/wedding%20Moodz/Image1_ayre8n.jpg'} />
+              <Img  alt="sdd"    cache   src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758222/wedding%20Moodz/Image1_ayre8n.jpg'} />
                   
                    
 
