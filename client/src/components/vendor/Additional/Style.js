@@ -147,6 +147,15 @@ border-radius:10px;
          padding-left:2rem;
          
       } 
+      select {
+        width:50%;
+        height:2rem;
+        font-size:1.2rem;
+        line-height: 1.6;
+      }
+      option {
+        line-height: 1.6;
+      }
     }
 
 

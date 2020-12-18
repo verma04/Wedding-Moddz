@@ -191,6 +191,8 @@ router.post("/VenueVendor" ,  passport.authenticate('jwt', { session: false }), 
 
  });
 
+ 
+
 res.json(req.user.value)
  
   
@@ -217,6 +219,50 @@ res.json(req.user.value)
 
 });
 
+router.post("/panditsVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  
+   console.log(req.body)
+
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: { "panditCharge": req.body.panditCharge.ans  , "panditLanguage":req.body.panditLanguage.ans , "img":req.body.img ,  "panditkundlis":req.body.panditkundlis.ans,   "panditSamagri":req.body.panditSamagri.ans, "panditExperince":req.body.panditExperince.ans, "panditcostTravel":req.body.panditcostTravel.ans , value:'done'  } ,  }  ).then(vendor => {
+
+  
+ 
+ 
+
+ });
+
+ 
+
+res.json(req.user.value)
+ 
+  
+ 
+
+});
+
+
+router.post("/decoratorsVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  
+  console.log(req.body)
+
+ User.findOneAndUpdate({ _id: req.user.id } , { $set: { "decoratorsChargers": req.body.decoratorsChargers.ans  ,  "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+});
+
+
+
+res.json(req.user.value)
+
+ 
+
+
+});
 
 
 

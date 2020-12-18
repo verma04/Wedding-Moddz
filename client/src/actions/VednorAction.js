@@ -69,3 +69,25 @@ export const verifyOtp = (userData , history) => dispatch => {
        console.log(err)
       );
   };
+
+  export const panditsVendor  = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/panditsVendor " , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
+
+  export const decoratorsVendor  = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/decoratorsVendor " , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };

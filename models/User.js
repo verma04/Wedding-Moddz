@@ -138,7 +138,36 @@ capacityCaterers:{
 
 costCaterers:{
   type: String,
-}
+},
+
+//Wedding-Pandits
+
+panditCharge:{
+  type: String,
+},
+ panditLanguage:{
+  type: String,
+},
+panditkundlis:{
+  type: String,
+},
+panditSamagri:{
+  type:String,
+},
+
+panditExperince:{
+  type: String,
+},
+panditcostTravel: {
+  type: String,
+},
+
+
+//WeddingDecorators
+
+decoratorsChargers:{
+  type: String,
+},
 
 
 
