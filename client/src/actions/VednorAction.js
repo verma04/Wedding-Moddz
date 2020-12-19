@@ -125,3 +125,25 @@ export const verifyOtp = (userData , history) => dispatch => {
        console.log(err)
       );
   };
+
+  export const photographersVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/photographersVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
+
+  export const wediingInvVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/wediingInvVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };

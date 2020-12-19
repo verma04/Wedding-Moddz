@@ -14,6 +14,8 @@ import Mehendi from './Mehendi'
 import Jewellery from './Jewellery'
 import Pandits from './Pandits';
 import Music from './Music'
+import Photographers from './Photographers';
+import WeddingInv from './WeddingInvitation'
   class AdditionalInformation extends Component {
 
   
@@ -477,6 +479,16 @@ import Music from './Music'
         else  if ((user.VendorCategory === "Music & Dance") ){ 
           return (
          <Music/>
+          )
+        }
+        else  if ((user.VendorCategory === "Photographers") ){ 
+          return (
+         <Photographers/>
+          )
+        }
+        else  if ((user.VendorCategory === "Wedding-invitations") ){ 
+          return (
+         <WeddingInv/>
           )
         }
       })()}

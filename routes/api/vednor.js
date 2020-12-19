@@ -331,7 +331,45 @@ res.json(req.user.value)
 });
 
 
+router.post("/photographersVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
 
+  console.log(req.body)
+ 
+ User.findOneAndUpdate({ _id: req.user.id } , { $set: {  "photographersCategory": req.body.photographersCategory.ans  , "photographersExperince": req.body.photographersExperince.ans  , "photographersPrice": req.body.photographersPrice.ans  ,  "photographersPackage": req.body.photographersPackage.ans  , "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+});
+
+
+
+res.json(req.user.value)
+
+});
+
+
+
+
+
+router.post("/wediingInvVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  console.log(req.body)
+ 
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: {  "WeddingInvitaionsShipping": req.body.WeddingInvitaionsShipping.ans  , "WeddingInvitaionsRange": req.body.WeddingInvitaionsRange.ans  , "WeddingInvitaionsBox": req.body.WeddingInvitaionsBox.ans  ,  "WeddingInvitaionsPicies": req.body.WeddingInvitaionsPicies.ans  , "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+  });
+
+
+
+res.json(req.user.value)
+
+});
 
 
 

@@ -193,6 +193,35 @@ musicPrice: {
 },
 musicMember: {
   type: String,
+},
+
+//PhotoGrapher
+photographersCategory: {
+  type: String,
+},
+photographersExperince: {
+  type: String,
+},
+photographersPrice: {
+  type: String,
+},
+photographersPackage: {
+  type: String,
+},
+
+
+//WeddingInvitaions
+WeddingInvitaionsShipping: {
+  type: String,
+},
+WeddingInvitaionsRange: {
+  type: String,
+},
+WeddingInvitaionsBox: {
+  type: String,
+},
+WeddingInvitaionsPicies: {
+  type: String,
 }
 
 
