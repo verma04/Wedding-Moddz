@@ -236,6 +236,17 @@ bridalPriceRange: {
   type: String,
 },
 
+
+//GROOM
+groomestablishment: {
+  type: String,
+},
+groomwearoutfits : {
+  type: String,
+},
+groomPriceRange: {
+  type: String,
+},
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

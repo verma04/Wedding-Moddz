@@ -158,3 +158,14 @@ export const verifyOtp = (userData , history) => dispatch => {
        console.log(err)
       );
   };
+
+  export const groomVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/groomVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };

@@ -391,6 +391,24 @@ res.json(req.user.value)
 });
 
 
+router.post("/groomVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+  console.log(req.body)
+ 
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: {  "groomestablishment": req.body.groomestablishment.ans  ,  "groomwearoutfits": req.body.groomwearoutfits.ans  ,  "groomPriceRange": req.body.groomPriceRange.ans  , "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+  });
+
+
+
+res.json(req.user.value)
+
+});
+
 
 
 module.exports = router;
