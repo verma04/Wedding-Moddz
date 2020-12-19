@@ -372,7 +372,23 @@ res.json(req.user.value)
 });
 
 
+router.post("/bridalVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
 
+  console.log(req.body)
+ 
+  User.findOneAndUpdate({ _id: req.user.id } , { $set: {  "bridalestablishment": req.body.bridalestablishment.ans  ,  "bridalwearoutfits": req.body.bridalwearoutfits.ans  ,  "bridalPriceRange": req.body.bridalPriceRange.ans  , "img":req.body.img ,  value:'done'  } ,  }  ).then(vendor => {
+
+ 
+
+
+
+  });
+
+
+
+res.json(req.user.value)
+
+});
 
 
 

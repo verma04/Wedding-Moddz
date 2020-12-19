@@ -16,6 +16,7 @@ import Pandits from './Pandits';
 import Music from './Music'
 import Photographers from './Photographers';
 import WeddingInv from './WeddingInvitation'
+import BridalWear from './BridalWear'
   class AdditionalInformation extends Component {
 
   
@@ -489,6 +490,11 @@ import WeddingInv from './WeddingInvitation'
         else  if ((user.VendorCategory === "Wedding-invitations") ){ 
           return (
          <WeddingInv/>
+          )
+        }
+        else  if ((user.VendorCategory === "Bridal Wear") ){ 
+          return (
+         <BridalWear/>
           )
         }
       })()}

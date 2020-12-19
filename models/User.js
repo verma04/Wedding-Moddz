@@ -223,8 +223,18 @@ WeddingInvitaionsBox: {
 WeddingInvitaionsPicies: {
   type: String,
 }
+,
 
-
+//BRIDALYEAR
+ bridalestablishment: {
+  type: String,
+},
+bridalwearoutfits : {
+  type: String,
+},
+bridalPriceRange: {
+  type: String,
+},
 
 });
 

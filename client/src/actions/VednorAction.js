@@ -147,3 +147,14 @@ export const verifyOtp = (userData , history) => dispatch => {
        console.log(err)
       );
   };
+
+  export const bridalVendor = (data , history) => dispatch => {
+    axios
+      .post("/api/vendor/bridalVendor" , data)
+      .then(res => 
+           history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
