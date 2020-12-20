@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import {  VenueVendor , getVenueVendor , getVerfication } from '../../../actions/VednorAction'
 import { Redirect } from 'react-router-dom';
+import { setAlert} from '../../../actions/alertAction';
+
  class Venues extends Component {
   
    async componentDidMount() {
@@ -58,6 +60,13 @@ import { Redirect } from 'react-router-dom';
         }
 
         onSubmit=(e) => {
+   
+              if ( this.state.Q56.ans === null ){
+             this.props.setAlert("Added To cart" , "Added")
+
+
+              }
+
             e.preventDefault();
                 const userData = {
                     venueType:this.state.Q55,
@@ -296,6 +305,6 @@ const mapStateToProps = state => ({
   
   export default connect(
     mapStateToProps,
-    { VenueVendor , getVenueVendor  , getVerfication}
+    { VenueVendor , getVenueVendor,setAlert  , getVerfication}
   )(withRouter(Venues));
   

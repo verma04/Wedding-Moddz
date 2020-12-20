@@ -52,7 +52,7 @@ import coupon from './components/admin/coupan/coupan'
 import AdminLogin from "./components/auth/Adminlogin";
 import EmailVerify from './components/vendor/Emailverify.js/Emailverfiy'
 import additional from './components/vendor/Additional/AdditionalInformation'
-
+import Alert from './components/vendor/Additional/alert/alert'
 import VednorRoute from "./components/private-route/VednorRoute";
 
 // Check for token to keep user logged in
@@ -84,7 +84,7 @@ class App extends Component {
        <GlobalFonts />
      
           <Reset/>
-         
+         <Alert/>
         <Router>
           <div className="App">
             
