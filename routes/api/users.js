@@ -441,9 +441,10 @@ router.post("/vendorList",(req, res) => {
   let  filter  = user
   const filtered = filter.filter(element => element.VendorCategory ===   filterr[0].id);
 
-  
+   console.log(filtered)
+
   const arr = []
-  const arr1=[]
+ 
 
   filtered.forEach(element => {
      
@@ -457,13 +458,15 @@ router.post("/vendorList",(req, res) => {
     pricePerPlate:element.pricePerPlate,
     about:element.aboutus,
     pricePerPlate:element.pricePerPlate,
-    totalguests:element.totalguests
+    totalguests:element.totalguests,
+    priceCaterers:element.priceCaterers,
+    typeCaterers:element.typeCaterers
 
     }
     arr.push(data)
   
   
-   
+
    
 
  });
@@ -471,28 +474,7 @@ router.post("/vendorList",(req, res) => {
  res.json(arr)
 
 
-   
-//  if (  req.body.capacity === undefined   )
-//  {
-//      console.log('ss')
-//  }
-//  else {
-//    console.log(req.body.capacity)
-   
 
-
-//    const data = filter.filter(element => element.totalguests > req.body.capacity  );
-//   let data1 = data
-
-//   if (  req.body.price_per_plate == undefined ){
-
-//   }
-//   else {
-//    const data2 = data1.filter(element => element.pricePerPlate > req.body.price_per_plate );
-//    console.log(data2)
-//   }
-//  }
- 
 
 
 
