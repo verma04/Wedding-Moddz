@@ -18,7 +18,7 @@ import Photographers from './Photographers';
 import WeddingInv from './WeddingInvitation'
 import BridalWear from './BridalWear'
 import GroomWear from './GroomWear';
-import Alert from './alert/alert'
+
 
   class AdditionalInformation extends Component {
 
@@ -35,6 +35,7 @@ import Alert from './alert/alert'
         return (
             <React.Fragment>
                 <TopBar/>
+                
                 <Navbar/>
             
                 {(() => {

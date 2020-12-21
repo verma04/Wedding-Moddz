@@ -28,7 +28,8 @@ import vendor from "./components/layout/vendor/vendor";
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
 
-import List from './components/layout/vendorList/List';
+import List from './components/layout/vendorList/Venue/List';
+import Food from './components/layout/vendorList/Food/List';
 import profile from './components/layout/profile/profile'
 
 //vendor 
@@ -102,7 +103,8 @@ class App extends Component {
            
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
-            <Route exact path="/vendor/:id/:vendor" component={List} /> 
+            <Route exact path="/wedding-venues/:id/:vendor" component={List} /> 
+            <Route exact path="/food/:id/:vendor" component={Food} /> 
             <Route exact path="/profile" component={profile} /> 
             <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 
            

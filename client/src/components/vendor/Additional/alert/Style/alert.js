@@ -8,9 +8,9 @@ export   const Alertt = styled.div`
     width:100%;
     display:flex;
   justify-content:space-between;
-  position:relative;
-  .Added {
-    position: absolute;
+  position:fixed;
+  .error {
+ 
     right: 5rem;
     top: -3rem;
     background-color: #4E372A;
@@ -40,16 +40,20 @@ export   const Alertt = styled.div`
   }
   @media (min-width: 1281px) {
   .center {
-    width:80rem;
+   
     display:flex;
-  justify-content:space-between;
-  position:relative;
-  .Added {
+  justify-content:flex-end;
+  position:fixed;
+  right:2rem;
+  top:1rem;
+  .error {
+    background-color:#FF0000;
+    z-index:1;
      position:absolute;
      right:0;
     background-color:${colors.button.darkBrown};
   border-radius: 10px;
-  width:20rem;
+  width:24rem;
  
   display:flex;
   justify-content:space-around;

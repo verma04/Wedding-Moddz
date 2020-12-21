@@ -17,7 +17,7 @@ justify-content:center;
 
     .flex {
         width:60%;
-        height:90rem;
+        height:120rem;
         box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.19);
         background-color:white;
   display:flex;
@@ -28,7 +28,7 @@ justify-content:center;
   .head {
       width:100%;
       height:10%;
-      border:1px solid red;
+    
       display:flex;
   justify-content:center;
   align-items:center;
@@ -44,7 +44,7 @@ justify-content:center;
   .cover {
       width:100%;
       height:15%;
-      border:1px solid red;
+    
       display:flex;
   justify-content:center;
   align-items:center;
@@ -85,7 +85,7 @@ border-radius:10px;
  
       width:100%;
       height:75%;
-      border:1px solid red;
+    
       display:flex;
       justify-content:center;
     align-items:center;
@@ -94,7 +94,7 @@ border-radius:10px;
         
         width:100%;
       height:90%;
-      border:1px solid red;
+    
       display:flex;
       justify-content:space-between;
     align-items:center;
@@ -109,17 +109,19 @@ border-radius:10px;
     
     .data {
         padding-left:2rem;
-        height:30%;
-        
+        height:40%;
+     padding-top:1rem;
         display:flex;
-      justify-content:center;
+      justify-content:flex-end;
     flex-direction:column;
     font-weight:900;
+    display:flex;
+    justify-content:center;
     
     }
     .check {
         
-        height:70%;
+        height:60%;
         padding-left:2rem;
         display:flex;
       justify-content:flex-start;
@@ -142,9 +144,10 @@ border-radius:10px;
       align-items:center;
      
       input {
-         width:80%;
-         height:80%;
+         width:90%;
+         height:60%;
          padding-left:2rem;
+         padding-bottom:1rem;
          
       } 
       select {
@@ -163,7 +166,7 @@ border-radius:10px;
     }
     .btn {
         
-        border:1px solid red;
+      
         height:10%;
         width:100%;
         display:flex;

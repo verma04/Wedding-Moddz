@@ -11,7 +11,7 @@ const Alert = ({ alerts }) =>
       <div   className="center">
         <div></div>
     <div key={alert.id} className={`${alert.alertType}`}>
-    <i class="far fa-check-circle"></i>
+    <i className="fas fa-exclamation-triangle"></i>
     
     <h3> {alert.msg}</h3>
   

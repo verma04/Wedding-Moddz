@@ -1,15 +1,18 @@
 import { faRoad } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
 
-import { Section } from './Style'
-import TopBar  from '../../layout/Topbar/topbar';
-import Navbar from '../../layout/Navbar/Navbar'
+import Loading from '../../Loading/Loading'
+
+import { Section } from '../Style'
+import TopBar  from '../../Topbar/topbar';
+import Navbar from '../../Navbar/Navbar'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-import Footer from '../footer/Footer'
+import Footer from '../../footer/Footer'
 import qs from 'query-string';
-import {vendorList} from '../../../actions/UserActions'
-import vendor from '../vendor/vendor';
+import {vendorList} from '../../../../actions/UserActions'
+import vendor from '../../vendor/vendor';
+import Filter from './Filter'
 class List extends Component {
 
    
@@ -18,11 +21,14 @@ class List extends Component {
         const values = qs.parse(this.props.location.search)
         const data = {
         city: this.props.match.params.id,
-        category: this.props.match.params.vendor
+        category: this.props.match.params.vendor,
+        capacity:values.capacity,
+        price_per_plate:values.price_per_plate_or_rental,
+        spacePrefenence:values.spacePrefenence
         }
         
-       this.props.vendorList(data, values.search , values.search1)
-       console.log('dssd')
+       this.props.vendorList(data)
+       console.log(data)
 
     }
 
@@ -41,7 +47,7 @@ class List extends Component {
        
         if( vendorlist === null ){
             return (
-                 null
+                <Loading/>
             )
         }
 
@@ -52,6 +58,7 @@ class List extends Component {
             <React.Fragment>
                 <TopBar/>
                 <Navbar/>
+                <Filter/>
             <Section>
                 <div className="flex" >
 
@@ -74,8 +81,7 @@ class List extends Component {
                      <h4>About Vednor</h4>
                     <p>
 
-                    Line 252:25:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
-[1]  
+                    {number.about} 
                     </p>
                     </div>
                      
@@ -94,7 +100,7 @@ class List extends Component {
 </div>
 <div className="data-1" >
 <li>dsds</li>
-<li>sdd</li>
+<li>2 reviews</li>
 </div>
 
                         </div>
@@ -102,7 +108,7 @@ class List extends Component {
                         </div>   
                          <div className="down" >
                
-                         ₹3{number.pricePerPlate}
+                        <div className="price" >  ₹{number.pricePerPlate}</div> <div className="plate" >per plate</div>
 
     
     </div>            

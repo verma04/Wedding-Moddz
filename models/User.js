@@ -100,6 +100,9 @@ img: {
   type: String,
  
 },
+aboutus:{
+  type: String,
+},
 //Veneue
 
 venueType:{
