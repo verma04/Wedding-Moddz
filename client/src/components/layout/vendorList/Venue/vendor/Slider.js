@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { colors} from '../../../../../theme/color';
+import  { colors } from '../../../../../theme/color';
 
 
 

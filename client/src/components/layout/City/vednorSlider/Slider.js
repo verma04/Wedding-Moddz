@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+
 
 import{ Item  }from './Style';
 import Img from 'react-cool-img';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router';
-import vendor from "../../vendor/vendor";
+import vendor from "../../vendorList/Venue/vendor/vendor";
  
 
 

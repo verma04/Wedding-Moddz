@@ -8,7 +8,9 @@ export const  Slider = styled.div`
 position:relative;
 
   
- 
+@media (max-width: 767px) {
+     display:none;
+   }
     
   
   @media (min-width: 1281px) {

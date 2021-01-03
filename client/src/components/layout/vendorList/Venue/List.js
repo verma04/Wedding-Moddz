@@ -11,7 +11,7 @@ import { withRouter } from "react-router";
 import Footer from '../../footer/Footer'
 import qs from 'query-string';
 import {vendorList} from '../../../../actions/UserActions'
-import vendor from '../../vendor/vendor';
+import vendor from './vendor/vendor';
 import Filter from './Filter'
 class List extends Component {
 
@@ -66,7 +66,7 @@ class List extends Component {
 
                <div className="flex-1" >
          {vendorlist.map((number) =>
-               <div className="list" >  
+               <div onClick={() => this.props.history.push(`/wedding-venues/${number.id}`)}  className="list" >  
                     <div className="up" >
 
                     <div className="wrapper" >

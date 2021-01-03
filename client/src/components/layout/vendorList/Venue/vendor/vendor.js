@@ -8,14 +8,31 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Img from 'react-cool-img';
 import Navbar from '../../../Navbar/Navbar';
-import TopBar from '../../../City/Topbar/topbar'
+import TopBar from '../../../Topbar/topbar'
+import { connect } from 'react-redux';
+import {vendorDetials} from '../../../../../actions/UserActions'
+import Loading from '../../../Loading/Loading';
 
-export default class vendor extends Component {
 
+
+
+ class vendor extends Component {
+   
+
+   componentDidMount() {
+   
+      let data = {
+         id: this.props.match.params.id
+      }
+   this.props.vendorDetials(data)
+
+   }
 
     
     render() {
-
+  
+       
+      const { vendordet} = this.props.user;
         const responsive = {
             superLargeDesktop: {
               // the naming can be any, depends on you.
@@ -35,6 +52,13 @@ export default class vendor extends Component {
               items: 1
             }
           };
+   
+          if ( vendordet === null ){
+             return (
+                <Loading/>
+             )
+          }
+
         return (
             <React.Fragment>
                   <TopBar/>
@@ -43,18 +67,19 @@ export default class vendor extends Component {
                 
   <div className="flex" >
 
-      <div  className="wrapper" >
-          <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606989478/wedding%20Moodz/fb30641121ad8a7b17bd8489baa55053_1_mnnksf.jpg'} ></img>
-      </div>
-  
+      
+  <div className="flex-1" >
   <div className='data' >
-
+  <div  className="wrapper" >
+          <img src={vendordet.img} ></img>
+      </div>
   <div className='data-1' >
   
   <ul>
-      <li><img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972542/wedding%20Moodz/verified_ahru4t.svg'} ></img>  <h2>Sharma Studio Dharmshala</h2></li>
-      <li>Wedding Photographer</li>
+      <li><img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972542/wedding%20Moodz/verified_ahru4t.svg'} ></img>  <h2>{vendordet.vendorName}</h2></li>
+      <li>Wedding Venue</li>
       <li><h2> ₹50000</h2></li>
+      
       <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
       <li><h5>Since member 2007</h5></li>
   </ul>
@@ -62,25 +87,71 @@ export default class vendor extends Component {
       
       </div>
 
-      <div className='data-2' >
-        
-        <ul>
-
-            <li><img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/loaction_4x_wgn1ec.png'} ></img> <h3>dssssssss   s</h3> </li>
-            <li> <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/mail_4x_ipsoeo.png'} ></img>  <h3>dssssssss   s</h3>  </li>
-            <li> <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/phone_4x_eo8it4.png'} ></img>    <h3>dssssssss   s</h3>  </li>
-            <li>  <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/facebook_4x_bphbzh.png'} ></img>   <h3>dssssssss   s</h3>  </li>
-            <li>  <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/whats_app_4x_faiis5.png'} ></img>   <h3>dssssssss   s</h3>  </li>
-            <li>  <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/instagram_4x_un5cbx.png'} ></img> <h3>dssssssss   s</h3>   </li>
-        </ul>
-
-
-      </div>
+     
       
   </div>
+    
+    <div className="data2" >
 
+    <div className='banner' >
+    <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1608803109/wedding%20Moodz/nv2bymdjd1zxccokgx7l.svg'} ></img>
+  
+  <p><span>WeddingMoodz</span>  has a best price guarantee at this venue  Call +918010858858 </p>
 
+  <h6 >View our venue booking service</h6>
+</div>
+       
+
+<div className='price' >
+
+</div>
+       
+       <div className='contact' >
+  
+   <div class="btn" ><i class="fas fa-envelope"></i> </div>
+   <div class="btn" ><i class="fas fa-id-card"></i> </div>
+       </div>
+
+       <div className='wishlist' >
+  
+  <div className='one' >
+
+  <i class="fas fa-photo-video"></i>
+    
+  <h3>Photos</h3>
   </div>
+  <div className='two' >
+  <i class="fas fa-heart"></i>
+
+<h3>ShortList</h3>
+  
+  </div>  
+  <div className='three' >
+  <i class="fas fa-pen-nib">
+   
+  </i>
+  <h3> Review</h3></div>  
+  <div className='four' >
+  <i class="fas fa-share">
+     
+  </i>
+  <h3>Share</h3>
+  </div> 
+</div>
+    </div>
+  </div>
+  </div>
+
+
+
+ <div className='reala' >
+    <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972540/wedding%20Moodz/Asset_21_xpk7g5.svg'}  ></img>
+ </div>
+
+ <div className='reala1' >
+    <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606972539/wedding%20Moodz/Asset_22_xvpdjl.svg'}  ></img>
+ </div>
+
 
             </Section>
    
@@ -168,3 +239,16 @@ export default class vendor extends Component {
         )
     }
 }
+
+
+const mapStateToProps = state => ({
+   auth: state.auth,
+   errors: state.errors,
+   admin: state.admin,
+   user:state.user
+ });
+
+export default connect (
+   mapStateToProps,
+   { vendorDetials }
+) ( vendor);

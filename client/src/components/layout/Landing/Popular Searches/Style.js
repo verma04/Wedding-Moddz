@@ -10,45 +10,7 @@ export const  Item = styled.div`
      width:100%;
    }
    @media (max-width: 767px) {
-     margin-top:5rem;
-    .centerr{
-     width:100%;
-     .img-wrapper {
-       display:flex;
-        justify-content:center;
-        border-radius:10px;
-        margin-bottom:1rem;
-       img {
-         position:relative;
-       
-  width:50%;
-  height:50%;
-  border-radius:10px;
-  background-color: rgba(0,0,0,0.5);
-  -webkit-box-shadow: 0 1rem 6px -6px grey;
-	   -moz-box-shadow: 0 1rem 6px -6px grey;
-	        box-shadow: 0 1rem 6px -6px grey;
-          transition: 1s all ease-in-out; 
-       }
-   
-       .fade {
-        top: 13rem;
-    position: absolute;
-        
-       h2 {
-        
-       
-        left: 6rem;
-    color: white;
-    font-weight: 1000;
-    font-size: 1.3rem;
-       }
-     }
-     }
-     .img-wrapper:hover img { 
-            transform: scale(1.1); 
-        } 
-   }
+     display:none;
    }
  @media (min-width: 1281px) {
    display:flex;

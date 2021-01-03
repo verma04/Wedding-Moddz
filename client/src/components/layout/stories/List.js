@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+
 
 import{ Item  }from './Slider';
 import Img from 'react-cool-img';

@@ -1,4 +1,4 @@
-import { CATEGORY, CITY , CURRENT_CITY , VENUE , VENDOR_LIST} from "../actions/types";
+import { CATEGORY, CITY , CURRENT_CITY , VENUE ,  VENDOR_DET , VENDOR_LIST} from "../actions/types";
 
 
 
@@ -8,7 +8,8 @@ const initialState = {
     city: null,
     current:null,
     venue:null,
-    vendorlist:null
+    vendorlist:null,
+    vendordet:null
 };
 
 export default function(state = initialState, action) {
@@ -45,7 +46,12 @@ export default function(state = initialState, action) {
                 vendorlist:  action.payload,
                  
                   };
-            
+                  case VENDOR_DET:
+                    return {
+                      ...state,
+                  vendordet:  action.payload,
+                   
+                    };
           
       
    

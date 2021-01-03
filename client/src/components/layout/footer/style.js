@@ -6,7 +6,7 @@ export const Footerr = styled.div`
 background-color:white;
 
 @media  (max-width: 767px) {
-
+display:none;
 }
 @media (min-width: 768px) and (max-width: 1280px) {
 

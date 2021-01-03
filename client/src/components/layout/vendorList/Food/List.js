@@ -11,7 +11,7 @@ import { withRouter } from "react-router";
 import Footer from '../../footer/Footer'
 import qs from 'query-string';
 import {vendorList} from '../../../../actions/UserActions'
-import vendor from '../../vendor/vendor';
+import vendor from '../Venue/vendor/vendor';
 import Filter from './Filter'
 class List extends Component {
 

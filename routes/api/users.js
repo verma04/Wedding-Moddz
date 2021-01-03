@@ -415,6 +415,15 @@ router.post("/topsearch",(req, res) => {
 
 });
 
+router.get("/list",(req, res) => {
+  User.find({ role:"Vendor" }).then(data => {
+
+   res.json(data)
+
+  })
+
+});
+
 
 router.post("/vendorList",(req, res) => {
   
@@ -502,6 +511,33 @@ router.post("/vendorList",(req, res) => {
 
 
 
+
+
+router.post("/vendorDetials",(req, res) => {
+  
+ 
+  User.findOne({ _id: req.body.id }).then(vendor => {
+  
+
+
+    delete vendor.password  
+    delete vendor.email
+    delete vendor.phone
+    delete otp  
+ 
+  
+
+    res.json(vendor)
+  });
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   });
+ 
 
  
    

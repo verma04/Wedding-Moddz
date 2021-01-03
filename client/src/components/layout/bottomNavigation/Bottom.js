@@ -52,6 +52,7 @@ class Bottom extends Component {
       className="navbar__link"
       to="/stories"
     >
+      <i class="fas fa-photo-video"></i>
      <h4>Photos</h4> 
     </NavLink>
     <NavLink
@@ -59,6 +60,7 @@ class Bottom extends Component {
       className="navbar__link"
       to="/contactus"
     >
+      <i class="fas fa-blog"></i>
       <h4>Blogs</h4>
       
     </NavLink>

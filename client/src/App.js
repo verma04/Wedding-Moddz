@@ -24,13 +24,13 @@ import "./App.css";
 import{ Reset } from './theme/reset'
 import GlobalFonts from './theme/theme';
 
-import vendor from "./components/layout/vendor/vendor";
+import vendor from "./components/layout/vendorList/Venue/vendor/vendor";
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
 
 import List from './components/layout/vendorList/Venue/List';
 import Food from './components/layout/vendorList/Food/List';
-import profile from './components/layout/profile/profile'
+
 
 //vendor 
 import vendorDashboard from './components/vendor/dashboard/dashboard';
@@ -99,13 +99,14 @@ class App extends Component {
            
             <Route exact path="/stories" component={stories} />
             <Route exact path="/categories" component={categories} />
-            <Route exact path="/vendor" component={vendor} />
+          
            
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
             <Route exact path="/wedding-venues/:id/:vendor" component={List} /> 
+            <Route exact path="/wedding-venues/:id" component={vendor} />
             <Route exact path="/food/:id/:vendor" component={Food} /> 
-            <Route exact path="/profile" component={profile} /> 
+           
             <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 
            
             <AdminRoute exact path="/admin/categories" component={adminCategory} /> 
