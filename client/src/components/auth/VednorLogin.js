@@ -28,10 +28,11 @@ class Login extends Component {
     }
     await this.props.getCatgory();
     await this.props.getCity();
+   await window.scrollTo(0, 0);
 
   }
 
-  componentWillReceiveProps(nextProps) {
+ async componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/admin/dashboard");
     }
@@ -41,6 +42,7 @@ class Login extends Component {
         errors: nextProps.errors
       });
     }
+    await window.scrollTo(0, 0);
   }
 
   onChange = e => {

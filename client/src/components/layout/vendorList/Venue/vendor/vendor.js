@@ -27,6 +27,9 @@ import Loading from '../../../Loading/Loading';
    this.props.vendorDetials(data)
 
    }
+   push = (id) => {
+      this.props.history.push(`/photos/${id}`)
+   }
 
     
     render() {
@@ -41,11 +44,11 @@ import Loading from '../../../Loading/Loading';
             },
             desktop: {
               breakpoint: { max: 3000, min: 1024 },
-              items: 3
+              items: 5
             },
             tablet: {
               breakpoint: { max: 1024, min: 464 },
-              items: 2
+              items: 3
             },
             mobile: {
               breakpoint: { max: 464, min: 0 },
@@ -80,12 +83,69 @@ import Loading from '../../../Loading/Loading';
       <li>Wedding Venue</li>
       <li><h2> ₹50000</h2></li>
       
-      <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+     
       <li><h5>Since member 2007</h5></li>
   </ul>
       
+  <div className="rating" >
+     
+  <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></li>
+
+     </div>
+
+     <div className="social" >
+
+        <div className="top" >
+           
+           <div className="wrapper" >
+            <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1609652980/wedding%20Moodz/qis54kbz8lf1r0lobiqr.svg'} ></img>
+          <span >Write a Review</span>
+           </div>
+           <div className="wrapper" >
+           <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1609652980/wedding%20Moodz/hs1gqqq2lu53chzixqxm.svg'} ></img>
+           <span >Images</span>
+           </div>
+           <div className="wrapper" >
+           <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1609652980/wedding%20Moodz/mlvormcpl5w1hpxqn197.svg'} ></img>
+           <span >Videos</span>
+           </div>
+
+        </div>
+        <div className="bottom" >
+   
+             <div className='link' >
+            <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/loaction_4x_wgn1ec.png'} ></img>
+           <span>sdkjd sdksdj sdkjdd</span>
+            </div>
+             <div className='link' >
+             <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/facebook_4x_bphbzh.png'} ></img>
+             <span>sdkjd sdksdj sdkjdd</span>
+             </div>
+             <div className='link' >
+             <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/instagram_4x_un5cbx.png'} ></img>
+             <span>sdkjd sdksdj sdkjdd</span>
+             </div>
+             <div className='link' >
+             <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/mail_4x_ipsoeo.png'} ></img>
+             <span>sdkjd sdksdj sdkjdd</span>
+             </div>
+             <div className='link' >
+             <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/whats_app_4x_faiis5.png'} ></img>
+             <span>sdkjd sdksdj sdkjdd</span>
+             </div>
+             <div className='link' >
+             <img src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1606992755/wedding%20Moodz/phone_4x_eo8it4.png'} ></img>
+             <span>sdkjd sdksdj sdkjdd</span>
+             </div>
+    
+
+
+
+        </div>
+     </div>
       
       </div>
+
 
      
       
@@ -229,6 +289,12 @@ import Loading from '../../../Loading/Loading';
 
 
 </div>
+
+
+  <div className='btn' >
+  <button onClick={() => this.push(this.props.match.params.id)}  >View All</button>
+  </div>
+  
 
 </Item>
  

@@ -21,7 +21,7 @@ export const Section = styled.section`
     width:100%;
        height:3rem;
        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
-       background-color:	#F0F0F0;
+       background-color: ${colors.primary.pink2};
        display:flex;
 justify-content:center;
        .data {
@@ -38,10 +38,10 @@ justify-content:center;
             i{
                 font-size:1.4rem;
              padding-left:0.2rem;
-             color:#585858;
+             color:white;
             }
             h3 {
-                color:#585858;
+               color:white;
             }
         }
        }
@@ -53,7 +53,7 @@ justify-content:center;
         width:100%;
        height:15rem;
        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 5px 0px;
-       background-color:	#F0F0F0;
+       background-color: ${colors.primary.pink2};
        display:flex;
 justify-content:center;
   .flex0 {
@@ -76,6 +76,7 @@ justify-content:center;
                 justify-content:center;
                 span {
                     padding: 0.2rem;
+                    color:white;
                 }
             }
           

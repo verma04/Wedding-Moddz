@@ -25,6 +25,7 @@ import{ Reset } from './theme/reset'
 import GlobalFonts from './theme/theme';
 
 import vendor from "./components/layout/vendorList/Venue/vendor/vendor";
+import vednorPhotos from './components/layout/vendorList/Venue/vendor/photos'
 import Contact2 from './components/layout/Contactus/Contact2';
 import ContactUS from './components/layout/Contactus/Contact';
 
@@ -55,6 +56,7 @@ import EmailVerify from './components/vendor/Emailverify.js/Emailverfiy'
 import additional from './components/vendor/Additional/AdditionalInformation'
 import Alert from './components/vendor/Additional/alert/alert'
 import VednorRoute from "./components/private-route/VednorRoute";
+import photos from "./components/layout/vendorList/Venue/vendor/photos";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -105,6 +107,7 @@ class App extends Component {
             <Route exact path="/Contactus/new" component={Contact2} /> 
             <Route exact path="/wedding-venues/:id/:vendor" component={List} /> 
             <Route exact path="/wedding-venues/:id" component={vendor} />
+            <Route exact path="/photos/:id" component={vednorPhotos} />
             <Route exact path="/food/:id/:vendor" component={Food} /> 
            
             <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 

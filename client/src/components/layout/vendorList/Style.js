@@ -29,7 +29,7 @@ justify-content:center;
     grid-gap:2rem;
     .list {
         width:18rem;
-        height: 20rem;
+        height: 22rem;
        border-radius: 10px;
       
         display:flex;
@@ -46,7 +46,7 @@ justify-content:center;
 flex-direction:column;
 .wrapper {
     width:100%;
-    height: 80%;
+    height: 70%;
     position: relative;
    
     img {
@@ -118,7 +118,7 @@ flex-direction:column;
 }
 .data {
     width:100%;
-    height: 20%;
+    height: 30%;
     border-bottom: 1px dotted #707070;
     display:flex;
 justify-content:center;
@@ -143,6 +143,7 @@ li {
 }
 h4 {
     margin-left:0.5rem;
+    width:70%;
 }
 i {
     font-size: 0.8rem;
