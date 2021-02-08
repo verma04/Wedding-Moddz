@@ -38,7 +38,7 @@ const UserSchema = new Schema({
   },
   phone: {
     type: Number,
-    required: true
+  
   },
 
     VendorCategory: {
@@ -60,10 +60,26 @@ const UserSchema = new Schema({
 
   cities: [
     {
-      city :{
+      cityName :{
         type: String,
         required: true
       },
+      cityslug: {
+        type: String,
+        required: true
+      },
+      cityimg: {
+        type: String,
+        required: true
+      },
+
+      cityDescription: {
+        type: String,
+        required: true
+      },
+      
+
+    
     
   },
   ],
@@ -72,17 +88,10 @@ const UserSchema = new Schema({
       category :{
         type: String,
         required: true,
-          
-          subcategory: [
-            {
-              subcategory :{
-                type: String,
-                required: true,
-                  
-              },
-            
-          },
-        ]
+      },
+      categoryCity :{
+        type: String,
+        required: true,
       },
     
   },

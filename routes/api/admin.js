@@ -11,8 +11,8 @@ const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const Admin = require("../../models/Admin");
-
-
+const City  = require('../../models/City')
+const Category = require('../../models/Category')
 
 
 
@@ -120,40 +120,101 @@ router.get("/getCity",   passport.authenticate('jwt', { session: false }),
 (req, res) => {
   
 
-  console.log(req.user.cities)
+res.json(req.user.cities)
 
 
 });
 
-router.post("/postCity",   passport.authenticate('jwt', { session: false }),
+router.get("/getCityProfile/:id",   passport.authenticate('jwt', { session: false }),
 
 (req, res) => {
   
-  const data = {
-   city:req.body.city
+  User.findOne({role: "admin"},function(err, doc){
+    // console.log(doc.cities)
+
+    const arr = doc.cities.filter(item => item.cityslug === req.params.id  );
+    console.log(arr)
+
+    res.json(arr[0])
+
+  })
+
+
+});
+
+router.get("/deleteCity/:id",   passport.authenticate('jwt', { session: false }),
+
+(req, res) => {
+  console.log(req.params.id)
+  
+  // User.findOne({role: "admin"},function(err, doc){
+  //   // console.log(doc.cities)
+
+  //   const arr = doc.cities.filter(item => item.cityslug === req.params.id  );
+  //   console.log(arr)
+
+  //   res.json(arr[0])
+
+  // })
+  User.findOneAndUpdate({  role:"admin"  }, {  $pull:  {"cities": {_id:req.params.id}}  },{ new: true, upsert: true },function(err, result) {
+    
+    if(err) {
+      console.log(err);
   }
-  User.findOne({_id: req.user.id},function(err, doc){
+    
+    
+  User.findOne({role: "admin"},function(err, doc){
+    // console.log(doc.cities)
+       res.json(doc.cities)
+
+  })
+
+
+  
+  })
+
+
+});
+
+router.post("/addCity",   passport.authenticate('jwt', { session: false }),
+
+(req, res) => {
+  console.log(req.body)
+
+
+    
+  User.findOne({role: "admin"},function(err, doc){
     if (err) {
       console.log(err)
     }
     else {
+   
+    
      const persons =  doc.cities;
 
-      if(persons.some(person => person.city ===  req.body.city)){
+      if(persons.some(person => person.cityName ===  req.body.cityName)){
         return res
         .status(400)
         .json({ city: "City exsit" });
     } else{
       
     
-  User.findOneAndUpdate({_id: req.user.id}, {$push: { "cities": data  }},function(err, doc){
+  User.findOneAndUpdate({_id: req.user.id}, {$push: { "cities": req.body  }},function(err, doc){
     if(err){
         console.log("Something wrong when updating data!");
     }
 
-   res.json(doc.cities);
+  
     
 });
+
+User.findOne({role: "admin"},function(err, doc){
+  // console.log(doc.cities)
+     res.json(doc.cities)
+
+})
+
+
     }
     }
 });
@@ -167,48 +228,39 @@ router.get("/getCatgory",   passport.authenticate('jwt', { session: false }),
 (req, res) => {
   
 
-  res.json(req.user.category)
+  Category.find({},function(err, doc){
+    // console.log(doc.cities)
+
+  res.json(doc)
+
+  })
+
+
 
 
 });
 
-router.post("/postCategory",   passport.authenticate('jwt', { session: false }),
+router.post("/addCategory",   passport.authenticate('jwt', { session: false }),
 
 (req, res) => {
   console.log(req.body)
-  
-  const data = {
-    category:req.body.category
-  }
- User.findOne({_id: req.user.id},function(err, doc){
-    if (err) {
-      console.log(err)
+  Category.findOne({ category: req.body.category }).then( async category => {
+    if (category) {
+      return res.status(400).json({ categoryError: "Category already exists" });
     }
     else {
-     const persons =  doc.category;
+      const created = await Category.create(req.body);
+      res.json(created)
 
-      if(persons.some(person => person.category ===  req.body.category)){
-        return res
-        .status(400)
-        .json({ city: "Category exsit" });
-    } else{
-        console.log("Object not found.");
-    
-  User.findOneAndUpdate({_id: req.user.id}, {$push: { "category": data  }},function(err, doc){
-    if(err){
-        console.log("Something wrong when updating data!");
+      
     }
+  });
 
-   
-    
-});
-    }
-    }
-    res.json(doc.category);
+
 });
 
 
-});
+
 
 
 

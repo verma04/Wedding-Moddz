@@ -8,6 +8,9 @@ export const VENDOR_LIST = "VENDOR_LIST";
 export const TYPE = "TYPE";
 //Admin
 
+export const CITYPROFILE = "CITYPROFILE"
+
+
 export const SET_ALERT = "SET_ALERT"
 
 export const REMOVE_ALERT  = "REMOVE_ALERT "

@@ -12,8 +12,8 @@ const nodemailer = require("nodemailer");
 
 // Load User model
 const User = require("../../models/User");
-const Vendor = require("../../models/Vednor");
-const { findOne } = require("../../models/User");
+const List = require("../../models/List");
+
 
 
 
@@ -252,7 +252,7 @@ router.post("/VednorLogin", (req, res) => {
     }
 
     
-    User.findOne({ _id: "5fd44d49f5533d00176af805" }).then(data => {
+    User.findOne({ role: "admin" }).then(data => {
 
  
        const  category = data.category;
@@ -311,7 +311,7 @@ router.get("/getCity",
 
 
 
-  User.findOne({ _id:'5fd44d49f5533d00176af805' }).then(user => {
+  User.findOne({ role:'admin' }).then(user => {
 
     res.json(user.cities)
       
@@ -333,7 +333,7 @@ router.get("/getCategoryHome",(req, res) => {
 
 
 
-  User.findOne({ _id:'5fd44d49f5533d00176af805' }).then(user => {
+  User.findOne({role: "admin" }).then(user => {
 
     res.json(user.category)
       

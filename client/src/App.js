@@ -38,7 +38,7 @@ import vendorDashboard from './components/vendor/dashboard/dashboard';
 import vedndoInformation from './components/vendor/Information/information';
 import packages from './components/vendor/packages/packages';
 
-
+import { ToastContainer, toast } from 'react-toastify';
 
 //admin
 import adminDashboard from './components/admin/dashboard/dashboard';
@@ -57,6 +57,7 @@ import additional from './components/vendor/Additional/AdditionalInformation'
 import Alert from './components/vendor/Additional/alert/alert'
 import VednorRoute from "./components/private-route/VednorRoute";
 import photos from "./components/layout/vendorList/Venue/vendor/photos";
+import cityprofile from './components/admin/Cities/CityProfile/cityProfile'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -89,6 +90,7 @@ class App extends Component {
           <Reset/>
          <Alert/>
         <Router>
+          <ToastContainer/>
           <div className="App">
             
             <Route exact path="/" component={Landing} />
@@ -115,6 +117,7 @@ class App extends Component {
             <AdminRoute exact path="/admin/categories" component={adminCategory} /> 
            
             <AdminRoute exact path="/admin/cities" component={adminCities} /> 
+            <AdminRoute exact path="/admin/cities/:city" component={cityprofile} />
             <Route exact path="/admin/vendor" component={adminVendor} /> 
             <Route exact path="/admin/setting" component={adminSetting} /> 
             <Route exact path="/admin/subcription-list" component={AdminSubcriptions} /> 

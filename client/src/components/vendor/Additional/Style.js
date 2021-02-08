@@ -109,7 +109,7 @@ border-radius:10px;
     
     .data {
         padding-left:2rem;
-        height:40%;
+        height: 25%;
      padding-top:1rem;
         display:flex;
       justify-content:flex-end;

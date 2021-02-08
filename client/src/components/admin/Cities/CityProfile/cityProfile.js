@@ -1,31 +1,34 @@
 
 
 import React, {  useEffect , useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../Navbar/Navbar';
 import  { Section  } from './Style';
-import Sidebar  from '../sidebar/Sidebar';
+import Sidebar  from '../../sidebar/Sidebar';
 import   { connect} from 'react-redux';
-import { getCity } from "../../../actions/adminActions";
+import { getCityProfile } from "../../../../actions/adminActions";
 
-import Form from '../form/addcity/Form'
-import Edit from '../form/editform/edit'
+import Delete from '../../form/deleteuser/delete'
+import Edit from '../../form/editform/edit'
 
-const  City = ({getCity , history, user: {city}}) => {
+const  City = ({ match , getCityProfile , admin: {cityProfie}}) => {
+  
+    let params = match.params;
 
-
-    const [pop, setPop] = useState(true);
-    const [edit, deluser] = useState(true);
-    const toggle = () => {
-        setPop(!pop)
-    }
+    const [edit, edituser] = useState(true);
+    const [del, deluser] = useState(true);
+  
     const settoggle = () => {
-        deluser(!edit)
+        edituser(!edit)
+    }
+    const toggle = () => {
+        deluser(!del)
     }
 
-useEffect(() => {
-    getCity()
-  },[getCity]);
-if(city === null){
+useEffect( async (  ) =>   {
+
+    getCityProfile(params.city)
+  }, [getCityProfile]);
+if(cityProfie === null){
     return null
 }
 
@@ -47,42 +50,51 @@ if(city === null){
                                  <h3>Home</h3>
 
                                  <h3>CITIES</h3>
+                                 <h3> {params.city} </h3>
                                  
-                                 <i onClick={toggle}  class="fas fa-plus-circle"></i>
+                               
                                  </div>
                              
                              <div className="mid" >
-                                 {city.map((city) =>
-                                <div onClick={() =>  history.push(`/admin/cities/${city.cityslug}`) } className="city" >
+                           
+                                <div className="city" >
                                  <div className='img' >
-                           <img src={city.cityimg} ></img>
+                           <img src={cityProfie.cityimg} ></img>
 
                                  </div>
                                  <div className="des" >
                                    <div className="cityName" >
                                        <h3> City </h3>
 
-                                       <p> {city.cityName} </p>
+                                       <p> {cityProfie.cityName} </p>
                                         </div>
 
                                         <div className="cityName" >
                                        <h3> City-Description </h3>
 
-                                       <p> {city.cityDescription} </p>
+                                       <p> {cityProfie.cityDescription} </p>
                                         </div>
 
                                  </div>
 
-                              
+                                 <div className="edit" >
+                                     <button onClick={settoggle} > Edit </button>
+                                     <button  onClick={toggle} > Delete </button>
+                                 </div>
                                  {edit === false &&
 <>
-<Edit toggle={settoggle._id}  data={city}  />
+<Edit toggle={settoggle}  data={cityProfie}  />
+</>
+
+} 
+{del === false &&
+<>
+<Delete toggle={toggle}  data={cityProfie}  />
 </>
 
 } 
                                 </div>
-                                 )
-                                 }
+                               
                              
                              </div>
 
@@ -90,12 +102,7 @@ if(city === null){
                                   
                                
                              </div>
-                             {pop === false &&
-<>
-<Form  toggle={toggle} />
-</>
-
-} 
+  
 
 
                              </div> 
@@ -108,11 +115,11 @@ if(city === null){
 
 const mapStateToProps = state => ({
     auth: state.auth,
-    user: state.user
+    admin: state.admin
     
   });
   
   export default connect(
     mapStateToProps,
-    { getCity  }
+    { getCityProfile  }
   )(City);

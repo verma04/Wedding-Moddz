@@ -5,6 +5,8 @@ import { withRouter } from 'react-router';
 import {  VenueVendor , getVenueVendor , getVerfication } from '../../../actions/VednorAction'
 import { Redirect } from 'react-router-dom';
 import { setAlert} from '../../../actions/alertAction';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
  class Venues extends Component {
 
@@ -44,6 +46,16 @@ import { setAlert} from '../../../actions/alertAction';
      
      
                              };
+                             onChange6 = async (event) => {
+                                await this.setState({  address: event.target.value})
+         
+         
+                                 };
+                                 onChange7 = async (event) => {
+                                    await this.setState({  pincode: event.target.value})
+             
+             
+                                     };
 
 
       onUpload1 = async (e) => {
@@ -66,13 +78,13 @@ import { setAlert} from '../../../actions/alertAction';
 
         onSubmit=(e) => {
             e.preventDefault();
-              if (  this.state.Q1.ans === '' || this.state.Q2.ans === '' ||  this.state.Q3.ans === ''  || this.state.Q4.ans === '' || this.state.Q5.ans ===  '' || this.state.Q6.ans ===  '' || this.state.about === ''){
-             this.props.setAlert("Enter Required Value" , "error")
+              if (  this.state.Q1.ans === '' || this.state.Q2.ans === '' ||  this.state.Q3.ans === ''  || this.state.address ===  '' || this.state.pincode ===  '' || this.state.about === ''){
+                toast.error("Enter Required Value" , 2000)
               }
 
               else if ( this.state.img1 ==="https://res.cloudinary.com/dzcmadjl1/image/upload/v1607942224/wedding%20Moodz/wedding_moodz_lazy_loading_gqclva.png"  ) {
                 
-                this.props.setAlert("Upload Cover Image" , "error")
+                toast.error("Upload Cover Image" , 2000 )
 
               }
 
@@ -81,15 +93,18 @@ import { setAlert} from '../../../actions/alertAction';
              else {
 
                 const userData = {
-                    venueType:this.state.Q1,
-                    totalguests: this.state.Q2,
-                    spacePrefenence:this.state.Q3,
-                    pricePerPlate:this.state.Q4,
-                    restroom:this.state.Q5,
-                    policy:this.state.Q6,
+                    venueType:this.state.Q1.ans,
+                    totalguests: this.state.Q2.ans,
+                    spacePrefenence:this.state.Q3.ans,
+                    PriceStartingFrom:this.state.Q4.ans,
+                    address:this.state.address,
                     img:this.state.img1,
-                    about:this.state.about
+                    about:this.state.about,
+                    pincode:this.state.pincode,
+                    user:this.props.auth.user.id
                 }
+
+                console.log(userData)
                 this.props.VenueVendor(userData , this.props.history)
 
            
@@ -104,7 +119,7 @@ import { setAlert} from '../../../actions/alertAction';
 
               //VENUES
                             Q1: {
-                                category:'BRIDAL WEAR',
+                            
                                 Q1:  "What kind of venue do you offer? ",
                                 ans: "",
                                 checked: 'checked',
@@ -115,31 +130,29 @@ import { setAlert} from '../../../actions/alertAction';
                                 op5:false,
                             },
                             Q2: {
-                                category:'BRIDAL WEAR',
+                               
                                 Q1:  "How many guests can the venue accommodate??",
                                 ans: ""
                             },
                             Q3: {
-                                category:'BRIDAL WEAR',
-                                Q1:  " What is space Prefenence?",
+                               
+                                Q1:  " What is space preference?",
                                 ans: ""
                             },
                             Q4: {
-                                category:'BRIDAL WEAR',
-                                Q1:  " What is charge price per plate",
+                               
+                                Q1:  " What is  price for the Wedding Venue",
                                 ans: ""
                             },
-                            Q5: {
-                                category:'BRIDAL WEAR',
-                                Q1:  "Are there adequate restroom facilities?",
-                                ans: ""
-                            },
+                        
                             Q6: {
-                                category:'BRIDAL WEAR',
-                                Q1:  "What is your payment and cancellation policy?",
+                               
+                                Q1:  "Address",
                                 ans: "",
                             }, 
-                            about: ''
+                            about: '',
+                            address: "",
+                            pincode: ""
 
 
 
@@ -151,30 +164,11 @@ import { setAlert} from '../../../actions/alertAction';
 
     render() {
 
-        const { type , otp} = this.props.vendors;
-        if( otp === "none"){
-            return (
-            <Redirect to='/verify-account' ></Redirect>
-            )
-        }
-
-        if ( type === null) {
-            return (
-                null
-            )
-
-        }
-        if ( type !== "") {
-            return (
-                <Redirect to="/vendor/dashboard" ></Redirect>
-            )
-
-        }
 
 
         return (
             <Section>
-
+<ToastContainer/>
             <div className="flex" >
 
      <div className="head" >
@@ -268,22 +262,6 @@ import { setAlert} from '../../../actions/alertAction';
                </div>
 
               </div>
-              <div className="box" >
-              <div className="data" >{this.state.Q5.Q1}  </div>
-              <div className="type" >
-
-              <input value={ this.state.Q5.ans }    onChange={this.onChange3} placeholder="Enter data here"   required></input>
-               </div>
-              </div>
-              <div className="box" >
-              <div className="data" >{this.state.Q6.Q1}  </div>
-              <div className="type" >
-
-              <input value={ this.state.Q6.ans }    onChange={this.onChange4} placeholder="Enter data here"  checked={false}  required ></input>
-               </div>
-              </div>
-
-
 
               <div className="box" >
               <div className="data" >About * </div>
@@ -293,8 +271,26 @@ import { setAlert} from '../../../actions/alertAction';
                </div>
               </div>
 
+           
+              <div className="box" >
+              <div className="data" >{this.state.Q6.Q1}  </div>
+              <div className="type" >
+
+              <input value={ this.state.address }    onChange={this.onChange6} placeholder="Enter Address"  checked={false}  required ></input>
+               </div>
+              </div>
 
 
+
+             
+
+              <div className="box" >
+              <div className="data" >Enter Pin code</div>
+              <div className="type" >
+
+              <input value={ this.state.pincode }  type="number"  onChange={this.onChange7} placeholder="Enter Pin Code*"  checked={false}  required ></input>
+               </div>
+              </div>
 
               </div>
 

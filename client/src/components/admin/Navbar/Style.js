@@ -13,7 +13,7 @@ justify-content:center;
  
 }
 @media (min-width: 1281px) {
-
+  z-index:1;
    display:flex;
    justify-content:center;
    position:fixed;

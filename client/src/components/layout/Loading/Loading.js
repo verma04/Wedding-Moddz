@@ -19,7 +19,7 @@ export default class Loading extends Component {
 
 <div className="wrapper" > 
 
-<img src="https://res.cloudinary.com/dzcmadjl1/image/upload/v1606971736/wedding%20Moodz/Weddingmoodz-giff_xsnjbu.gif" ></img>
+<img src="https://res.cloudinary.com/dzcmadjl1/image/upload/v1612763546/wedding%20Moodz/tuipv95dzpcux2dmz7tm.gif" ></img>
 
 </div>
 

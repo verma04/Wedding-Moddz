@@ -9,23 +9,12 @@ module.exports = function validateRegisterInput(data) {
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
-  data.phone = !isEmpty(data.phone) ? data.phone : "";
-  data.city = !isEmpty(data.city) ? data.city : "";
-  data.category = !isEmpty(data.category) ? data.category : "";
+  
   // Name checks
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
   }
-  if (Validator.isEmpty( data.phone )) {
-    errors.phone = "Phone field is required";
-  }
-  if (Validator.isEmpty( data.city )) {
-    errors.city = "City field is required";
-  }
-
-  if (Validator.isEmpty( data.category )) {
-    errors.category = "Category field is required";
-  }
+  
 
   // Email checks
   if (Validator.isEmpty(data.email)) {

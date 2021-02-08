@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import  { colors } from '../../../theme/color'
+import  { colors } from '../../../../theme/color'
 
 export const Section = styled.section`
 display:flex;
@@ -86,8 +86,8 @@ justify-content:center;
      
 
     display:flex;
-    justify-content:space-evenly;
-    flex-flow: wrap;
+    justify-content:center;
+    flex-direction:column;
     align-items:center;
 
 
@@ -96,7 +96,7 @@ justify-content:center;
       background: #F5F5F5;
       padding:1rem;
       border-radius: 10px;
-      width:25%;
+      width:100%;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -128,23 +128,18 @@ justify-content:center;
       .cityName {
        
         width:50%;
-      
+        min-height:4rem;
         display:flex;
         justify-content:flex-start;
         flex-direction:column;
-        align-items:center;
-        
 
         h3 {
-          text-align:center;
           margin:1rem;
-          font-weight:1000;
+       font-weight:900;
         }
         p {
-          text-align:center;
+          text-align:left;
           margin:1rem;
-          font-weight:1000;
-          
         }
       }
       

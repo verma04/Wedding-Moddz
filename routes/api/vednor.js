@@ -10,11 +10,11 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const Vendor = require("../../models/Vednor");
+
 const User = require("../../models/User");
-const { findOne } = require("../../models/Vednor");
 
 
+const List = require('../../models/List')
 
 
 // @route POST api/users/register
@@ -180,20 +180,26 @@ router.get("/getVenueVendor" ,  passport.authenticate('jwt', { session: false })
 
 
 router.post("/VenueVendor" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
-
-
-
-  User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans , value:'done' , "aboutus":req.body.about } ,  }  ).then(vendor => {
-
-  
- 
  
 
+  console.log(req.body)
+
+
+//   User.findOneAndUpdate({ _id: req.user.id } , { $set: { "venueType": req.body.venueType.ans  , "spacePrefenence":req.body.spacePrefenence.ans , "img":req.body.img ,  "totalguests":req.body.totalguests.ans,   "pricePerPlate":req.body.pricePerPlate.ans, "restroom":req.body.restroom.ans, "policy":req.body.policy.ans , value:'done' , "aboutus":req.body.about } ,  }  ).then(vendor => {
+
+  List.create(req.body ).then(vendor => {
+
+    console.log(vendor.value)
+ 
  });
+ 
+ 
+
+//  });
 
  
 
-res.json(req.user.value)
+// res.json(req.user.value)
  
   
  

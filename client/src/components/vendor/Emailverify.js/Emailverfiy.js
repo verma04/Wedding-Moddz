@@ -51,12 +51,7 @@ import { Redirect} from 'react-router-dom'
         //     null
         //     )
         // }
-        if( otp === "verfied"){
-            return (
-            <Redirect to='/vendor/dashboard' ></Redirect>
-            )
-        }
-       
+      
           
         return (
             <React.Fragment>

@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const VendorSchema = new Schema({
-  name: {
+const CitySchema = new Schema({
+    cityDescription: {
     type: String,
     required: true
   },
-  email: {
+  cityName: {
     type: String,
     required: true
   },
-  password: {
+  cityimg: {
     type: String,
     required: true
   },
@@ -19,9 +19,13 @@ const VendorSchema = new Schema({
     type: Date,
     default: Date.now
   },
-   role: {
+  cityslug: {
     type: String,
-  }
+  },
+
+
+
+
 });
 
-module.exports = Vendor = mongoose.model("vendors", VendorSchema);
+module.exports = Admin = mongoose.model("cities", CitySchema);

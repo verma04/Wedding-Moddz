@@ -1,23 +1,30 @@
 import axios from "axios";
 
-
-import { GET_ERRORS, CITY , CATEGORY } from "./types";
+import { ToastContainer, toast } from 'react-toastify';
+import { GET_ERRORS, CITY ,CITYPROFILE, CATEGORY } from "./types";
 
 // Register User
-export const registerCity = (userData) => dispatch => {
-  axios
-    .post("/api/admin/postCity", userData)
-    .then(res => 
+export const addCity = (userData , toggle) => async  dispatch => {
+
+try {
+  const res = await  axios.post("/api/admin/addCity", userData);
+    
+   await toggle()
+   await  toast.success("City Added");
+
+  
+   
         dispatch({
             type: CITY,
             payload: res.data
-          }))
-    .catch(err =>
+          })
+}
+    catch(err) {
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
       })
-    );
+    }
 };
 
 export const  getCity = () => dispatch => {
@@ -26,6 +33,49 @@ export const  getCity = () => dispatch => {
       .then(res => 
         dispatch({
             type: CITY,
+            payload: res.data
+          })
+        )
+      .catch(err =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+      );
+    
+  };
+
+  export const  deleteCity = (id, history) => async dispatch => {
+   try {
+         const res = await  axios.get(`/api/admin/deleteCity/${id}`);
+
+         console.log(res.data)
+
+        await history.push('/admin/cities')
+
+         await toast.success('City Deleted')
+
+         dispatch({
+          type: CITY,
+          payload: res.data
+        })
+
+   }
+   catch(err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    })
+   }
+  };
+
+  export const  getCityProfile = (userdata) => dispatch => {
+    console.log(userdata)
+    axios
+      .get(`/api/admin/getCityProfile/${userdata}`)
+      .then(res => 
+        dispatch({
+            type: CITYPROFILE,
             payload: res.data
           })
         )
@@ -56,19 +106,30 @@ export const  getCity = () => dispatch => {
     
   };
 
-  export const postCategory = (userData) => dispatch => {
-    axios
-      .post("/api/admin/postCategory", userData)
-      .then(res => 
-          dispatch({
-              type: CATEGORY,
-              payload: res.data
-            }))
-      .catch(err =>
-        dispatch({
-          type: GET_ERRORS,
-          payload: err.response.data
-        })
-      );
-  };
-  
+  export const addCategory = (userData , toggle) =>  async dispatch => {
+
+    try {
+      const res = await  axios.post("/api/admin/addCategory", userData)
+      await toast.success('Categoty Added')
+      await toggle()
+
+      dispatch({
+        type: CATEGORY,
+        payload: res.data
+      })
+
+    }
+catch(err) {
+ dispatch({
+   type: GET_ERRORS,
+   payload: err.response.data
+ })
+}
+};
+
+
+
+
+
+
+

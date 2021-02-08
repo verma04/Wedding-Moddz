@@ -26,8 +26,7 @@ class Login extends Component {
       this.props.history.push("/admin/dashboard");
 
     }
-    await this.props.getCatgory();
-    await this.props.getCity();
+    
    await window.scrollTo(0, 0);
 
   }

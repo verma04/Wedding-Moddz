@@ -10,7 +10,7 @@ import {colors } from './color';
  export default   createGlobalStyle`
 
  @font-face {
-  font-family: Comfortaa ;
+           font-family: "Comfortaa" ;
   src: url(${pala}) format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -18,10 +18,15 @@ import {colors } from './color';
 button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   transform: scale(1.1); 
+ 
+
 
 }
 button {
   transition: transform .8s;
+  background-color :  ${colors.primary.pink1};
+  border: none;
+  color:white;
 }
   
 a { 
@@ -36,15 +41,15 @@ p {
   line-height: 1.6;
     font-size: 1.3rem;
     text-align: center;
-    font-family: Comfortaa ;
+             font-family: "Comfortaa" ;
     color :  ${colors.primary.dark};
    
 }
   body {
       background-color:#fbfbfb;
-     font-family: Comfortaa ;
+              font-family: "Comfortaa" ;
      
-      font-family: Comfortaa ;
+               font-family: "Comfortaa" ;
       ::-webkit-scrollbar {
   width: 10px;
 }
@@ -69,7 +74,7 @@ p {
     li {
   
     cursor: pointer;
- font-family: Comfortaa ;
+          font-family: "Comfortaa" ;
     color :  ${colors.primary.dark}
 
   }
@@ -125,11 +130,11 @@ button {
     color:${colors.primary.dark1};
   }
   select {
-   font-family: Comfortaa ;
+            font-family: "Comfortaa" ;
   }
   
   .date {
-   font-family: Comfortaa ;
+            font-family: "Comfortaa" ;
   }
   .card {
     border-radius:10px;
@@ -140,13 +145,13 @@ border-radius:5px;
 font-family:Quata;
   }
   input {
-   font-family: Comfortaa ;
+    font-family: "Comfortaa" ;
     border:1px solid #EFEAE4;
     background-color:#FFFFFF;
     color:${colors.primary.dark1};
   }
   span {
-   font-family: Comfortaa ;
+            font-family: "Comfortaa" ;
   }
   i {
     color:${colors.button.darkBrown};
@@ -180,10 +185,10 @@ font-family:Quata;
   a { 
     text-decoration: none; 
     color:${colors.button.darkBrown};
-   font-family: Comfortaa ;
+            font-family: "Comfortaa" ;
 } 
 button {
- font-family: Comfortaa ;
+          font-family: "Comfortaa" ;
 }
 
 li {

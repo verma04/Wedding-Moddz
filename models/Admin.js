@@ -23,16 +23,8 @@ const AdminSchema = new Schema({
     type: String,
   },
 
-  cities: [
-    {
-      city :{
-        type: String,
-        required: true
-      },
-    
-  }
-]
-,
+
+
 
 });
 

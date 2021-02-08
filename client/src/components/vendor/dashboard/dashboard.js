@@ -23,11 +23,7 @@ import { getVenueVendor , getVerfication }  from '../../../actions/VednorAction'
 
     const { user } = this.props.auth;
                const { type } = this.props.vendors;
-    if( type === ""){
-        return (
-        <Redirect to='/additional-information' ></Redirect>
-        )
-    }
+  
       
         return (
             <React.Fragment>
