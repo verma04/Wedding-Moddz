@@ -150,6 +150,47 @@ dispatch({
 }
 };
 
+export const deleteuser  = (id) => dispatch => {
+
+  console.log(id)
+  
+        axios.get(`/api/admin/deleteUser/${id}` )
+            .then(res => 
+                
+              dispatch({
+                type: REQUEST,
+                payload: res.data
+              })
+              
+              )
+              .then(
+                toast.error("User Deleted")
+              )
+            .catch(err =>
+             console.log(err)
+            );
+        };
+  
+        export const approveRequest  = (id) => dispatch => {
+  
+          console.log(id)
+          
+                axios.get(`/api/admin/approveRequest/${id}` )
+                    .then(res => 
+                        
+                      dispatch({
+                        type: REQUEST,
+                        payload: res.data
+                      }).then(
+                        toast.success("User Verfied")
+                      )
+                      
+                      )
+                    .catch(err =>
+                     console.log(err)
+                    );
+                };
+
 
 
 

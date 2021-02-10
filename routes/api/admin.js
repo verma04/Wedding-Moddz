@@ -277,6 +277,28 @@ router.get("/getvendor",
 
 });
 
+router.get("/approveRequest/:id",    passport.authenticate('jwt', { session: false }),
+
+async  (req, res) => {
+  console.log(req.params.id)
+  
+  
+
+    await User.findOneAndUpdate({_id:req.params.id} , {$set:{ verified: "done"  }}).then(booking => {
+        console.log(booking)
+       
+      });
+
+    
+    await User.find({}).then(users => {
+      const user  = users.reverse();
+
+   res.json(user)
+   });
+   
+
+
+});
 
 
 

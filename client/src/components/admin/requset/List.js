@@ -2,7 +2,7 @@ import React from 'react'
 ;
 
 
-const List = ({ number }) => {
+const List = ({ number , approveRequest , deleteuser }) => {
  
    
     return (
@@ -28,8 +28,8 @@ const List = ({ number }) => {
        </div> 
 
        <div className='edit' >
-       <button  >Approve</button>
-       <button >Reject</button>
+       <button  onClick={()=> approveRequest(number._id) } >Approve</button>
+       <button onClick={()=> deleteuser(number._id) }  >Reject</button>
          </div>
                  
               </div>

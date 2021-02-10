@@ -5,14 +5,14 @@ import Navbar from '../Navbar/Navbar';
 import  { Section  } from './Style';
 import Sidebar  from '../sidebar/Sidebar';
 import   { connect} from 'react-redux';
-import { getCity } from "../../../actions/adminActions";
+import { getCity ,  deleteuser , approveRequest } from "../../../actions/adminActions";
 
 import Form from '../form/addcity/Form'
 import Edit from '../form/editform/edit'
 import Loading from '../../layout/Loading/Loading';
 import List from './List'
 
-const  Request = ({getCity , history, admin:{request}}) => {
+const  Request = ({getCity , history,  deleteuser , approveRequest, admin:{request}}) => {
 
 
   
@@ -70,7 +70,7 @@ return (
 <div  className='mid' >
 {request.map(number =>
 
-<List  number={number} />
+<List  approveRequest={approveRequest} deleteuser={deleteuser} number={number} />
 
 
 )
@@ -124,5 +124,5 @@ const mapStateToProps = state => ({
   
   export default connect(
     mapStateToProps,
-    { getCity  }
+    { getCity  , deleteuser , approveRequest }
   )(Request);
