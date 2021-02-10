@@ -101,7 +101,12 @@ import { ToastContainer, toast } from 'react-toastify';
                     img:this.state.img1,
                     about:this.state.about,
                     pincode:this.state.pincode,
-                    user:this.props.auth.user.id
+                    user:this.props.auth.user.id,
+                    VendorCategory:this.props.auth.user.VendorCategory,
+                    city:this.props.auth.user.city,
+                    vendorName:this.props.auth.user.name,
+                    vendorSlug:this.state.vendorSlug
+                    
                 }
 
                 console.log(userData)
@@ -152,7 +157,8 @@ import { ToastContainer, toast } from 'react-toastify';
                             }, 
                             about: '',
                             address: "",
-                            pincode: ""
+                            pincode: "",
+                            vendorSlug:(this.props.auth.user.name.replace(/\s/g, '-').toLowerCase())
 
 
 

@@ -8,7 +8,7 @@ class Serach extends Component {
 
         const { current} = this.props.user;
  
-        if ( current === "found"){
+        if ( current.success === true){
             return (
                 <Section>
                 <div className="flex" >

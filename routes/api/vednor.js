@@ -14,7 +14,8 @@ const validateLoginInput = require("../../validation/login");
 const User = require("../../models/User");
 
 
-const List = require('../../models/List')
+const List = require('../../models/List');
+const { findByIdAndUpdate } = require("../../models/List");
 
 
 // @route POST api/users/register
@@ -189,7 +190,7 @@ router.post("/VenueVendor" ,  passport.authenticate('jwt', { session: false }), 
 
   List.create(req.body ).then(vendor => {
 
-    console.log(vendor.value)
+    res.json(vendor.value)
  
  });
  
@@ -414,6 +415,66 @@ router.post("/groomVendor" ,  passport.authenticate('jwt', { session: false }), 
 res.json(req.user.value)
 
 });
+
+
+
+
+
+router.get("/VendorListing/:id" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+ 
+ 
+
+  List.findOne({ user: req.params.id }).then(list => {
+  
+ 
+ res.json(list)
+
+
+  });
+
+
+
+
+
+});
+
+router.post("/uploadImages" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+
+
+
+  List.findOneAndUpdate({user:  req.body.id} ,{$push: { "photos": req.body  }},  { new: true, upsert: true },function(err, result) {
+
+ 
+  res.json(result)
+     
+     
+       });
+
+
+
+});
+
+router.put("/uploadCover" ,  passport.authenticate('jwt', { session: false }), (req, res)   => {
+
+
+  console.log(req.body)
+
+
+
+  List.findOneAndUpdate({user:  req.body.id} ,{$set: { "img": req.body.img  }},  { new: true, upsert: true },function(err, result) {
+
+ 
+  res.json(result)
+     
+     
+       });
+
+
+
+});
+
 
 
 

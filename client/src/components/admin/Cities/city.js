@@ -9,6 +9,7 @@ import { getCity } from "../../../actions/adminActions";
 
 import Form from '../form/addcity/Form'
 import Edit from '../form/editform/edit'
+import Loading from '../../layout/Loading/Loading';
 
 const  City = ({getCity , history, user: {city}}) => {
 
@@ -26,7 +27,9 @@ useEffect(() => {
     getCity()
   },[getCity]);
 if(city === null){
-    return null
+    return (
+        <Loading/>
+    )
 }
 
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { ToastContainer, toast } from 'react-toastify';
-import { GET_ERRORS, CITY ,CITYPROFILE, CATEGORY } from "./types";
+import { GET_ERRORS, CITY , REQUEST ,CITYPROFILE, CATEGORY } from "./types";
 
 // Register User
 export const addCity = (userData , toggle) => async  dispatch => {
@@ -128,6 +128,27 @@ catch(err) {
 };
 
 
+
+export const getvendor = ( ) =>  async dispatch => {
+
+  try {
+    const res = await  axios.get("/api/admin/getvendor")
+
+   
+
+    dispatch({
+      type: REQUEST,
+      payload: res.data
+    })
+
+  }
+catch(err) {
+dispatch({
+ type: GET_ERRORS,
+ payload: err.response.data
+})
+}
+};
 
 
 

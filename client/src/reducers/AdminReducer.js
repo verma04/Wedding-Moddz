@@ -1,11 +1,12 @@
-import { CITY  , CATEGORY ,CITYPROFILE} from "../actions/types";
+import { CITY  , CATEGORY ,CITYPROFILE , REQUEST} from "../actions/types";
 
 
 
 const initialState = {
     city:null,
     category:null,
-    cityProfie:null
+    cityProfie:null,
+    request:null
 };
 
 export default function(state = initialState, action) {
@@ -28,6 +29,13 @@ export default function(state = initialState, action) {
             cityProfie:  action.payload,
          
           };
+
+          case REQUEST:
+            return {
+              ...state,
+              request:  action.payload,
+           
+            };
       
    
     default:

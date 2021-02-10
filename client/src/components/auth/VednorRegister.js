@@ -157,7 +157,7 @@ class Register extends Component {
               {city.map((number) =>
               
               
-              <option  id="city" value={number.city}>{number.city}</option>
+              <option  id="city" value={number.cityName}>{number.cityName}</option>
             
          
                      

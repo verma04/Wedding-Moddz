@@ -56,30 +56,15 @@ import Loading from '../Loading/Loading'
               <Carousel   showThumbs={false} showStatus={false} useKeyboardArrows  autoPlay interval="2000">
                   <div className="img-1">
               <div className="img-wrapper" >
-                    <Img alt="sdd"    cache    src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758229/wedding%20Moodz/Image3_p8wirh.jpg'}/>
+                    <Img alt="sdd"    cache    src={current.data.cityimg}/>
                    
 
                 </div>
            
                 </div>
-                <div className="img-1">
-                <div className="img-wrapper" >
-                    <Img alt="sdd"    cache  src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758229/wedding%20Moodz/Image2_lobp0z.jpg'}/>
-                   
-
-                </div>
-         
-                </div>
-              
-                <div className="img-1">
-              <div className="img-wrapper" >
-              <Img  alt="sdd"    cache   src={'https://res.cloudinary.com/dzcmadjl1/image/upload/v1607758222/wedding%20Moodz/Image1_ayre8n.jpg'} />
-                  
-                   
-
-                </div>
              
-                </div>
+              
+            
                 
             </Carousel>
 

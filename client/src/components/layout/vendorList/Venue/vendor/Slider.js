@@ -13,6 +13,7 @@ export const  Item = styled.div`
    @media (max-width: 767px) {
     .center{
      width:100%;
+     border: 1px solid red;
      .img-wrapper {
        display:flex;
         justify-content:center;
@@ -54,23 +55,25 @@ export const  Item = styled.div`
  @media (min-width: 1281px) {
    display:flex;
    justify-content:center;
-   text-align:center;
+   align-items:center;
   flex-direction:column;
   width:100%;
   
    .center{
      width:95%;
-     
+  
      .img-wrapper {
        display:flex;
         justify-content:center;
         border-radius:10px;
         padding-bottom:3rem;
+        height:15rem;
+      
        img {
          position:relative;
        
   width:80%;
-  height:50%;
+  height:100%;
   border-radius:10px;
   background-color: rgba(0,0,0,0.5);
   -webkit-box-shadow: 0 1rem 6px -6px grey;

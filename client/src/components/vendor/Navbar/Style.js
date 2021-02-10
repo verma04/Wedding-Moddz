@@ -18,6 +18,7 @@ justify-content:center;
    justify-content:center;
    position:fixed;
    top:0;
+   z-index:1;
    width:100%;
    -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
@@ -58,6 +59,8 @@ justify-content:center;
        }
        img {
         width: 4rem;
+        height:4rem;
+        border-radius:60%;
        }
    }
 

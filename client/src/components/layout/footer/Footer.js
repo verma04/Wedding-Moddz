@@ -27,32 +27,41 @@ import {  Link } from 'react-router-dom';
                     <div className="flex-11" >
                     
   
-                    <h3>dssddssss</h3>
+                    <h3>Home</h3>
                <ul>
-                   <li>wweew</li>
-                   <li>wewe</li>
-                   <li>wewe</li>
+                   <li>About Us</li>
+                   <li>Privacy Policy</li>
+                   <li>FAQs</li>
+
+                   <li>Terms & Conditions</li>
                </ul>
 
                     </div>
                     <div className="flex-11" >
                     
-                    <h3>dssddssss</h3>
+                    <h3>Planning</h3>
                <ul>
-                   <li>wweew</li>
-                   <li>wewe</li>
-                   <li>wewe</li>
+                   <li>By Vendors</li>
+                   <li>By Location</li>
+                   <li>By Ideas</li>
                </ul>
 
 
                     </div>
                     <div className="flex-11" >
                     
-                    <h3>dssddssss</h3>
+                    <h3>Venues</h3>
                <ul>
-                   <li>wweew</li>
-                   <li>wewe</li>
-                   <li>wewe</li>
+                   <li>Hyatt Regency</li>
+                   <li>Budha Mal Castle</li>
+                   <li>Hotel the woodz</li>
+
+
+                   <li>Sarover Resort</li>
+                   <li>The Bliss</li>
+
+                 <li>Villa Camellia</li>  
+<li>Infinitea Resort</li>
                </ul>
 
 
@@ -78,42 +87,41 @@ import {  Link } from 'react-router-dom';
                     <div className="flex-11" >
                     
   
-                    <h3>dssddssss</h3>
+                    <h3>Vendors</h3>
                <ul>
-                   <li>wweew</li>
-                   <li>wewe</li>
-                   <li>wewe</li>
+                   <li>Photographers</li>
+                   <li>Pandit Ji</li>
+                   <li>Bridal Make-Up</li>
+                   <li>Caterers</li>
+                   <li>DJs, Music & Sound</li>
+                   <li>Bridal Wear</li>
+                   <li>Jewellery</li>
+                 
                </ul>
 
                     </div>
                     <div className="flex-11" >
                     
-                    <h3>dssddssss</h3>
+                    <h3>Ideas</h3>
                <ul>
-                   <li>wweew</li>
-                   <li>wewe</li>
-                   <li>wewe</li>
+                   <li>Himachali</li>
+                   <li>Garwali</li>
+                   <li>Punjabi</li>
+                   <li>Modern</li>
+                   <li>Kumaun</li>
+                   <li>Kinnauri</li>
+                   <li>Gaddi</li>
                </ul>
 
 
                     </div>
                     <div className="flex-11" >
                     
-                    <h3>dssddssss</h3>
+                    <h3>Gallery</h3>
                <ul>
-                   <li>wweew</li>
-                   <li>wewe</li>
-                   {(() => {
-        if (isAuthenticated === true) {
-          return (
-            <li  onClick={() => this.props.logoutUser()} >Logout</li>
-          )
-           } else {
-          return (
-            <li> <Link to="/login">Login </Link></li>
-          )
-        }
-      })()}
+                   <li>Accessories</li>
+                   <li>Venues</li>
+           <li> Heena </li>
                </ul>
 
 

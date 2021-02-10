@@ -1,12 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 
 import { Side  } from './Style'
 import { NavLink } from 'react-router-dom';
 import { connect } from "react-redux";
 import { logoutUser  } from "../../../actions/authActions";
+import { getvendor  } from "../../../actions/adminActions";
+import Loading from '../../layout/Loading/Loading';
 
- class Sidebar extends Component {
-    render() {
+   
+
+
+
+const Sidebar = ({getvendor, admin:{request}}) => {
+   
+  useEffect(()=> {
+    getvendor()
+  })
+
+  if( request  === null ){
+    return (
+      <Loading/>
+    )
+  }
+   
+
+   
         return (
             <Side>
                   
@@ -45,7 +63,7 @@ import { logoutUser  } from "../../../actions/authActions";
       className="navbar__link"
       to="/admin/request"
     >
-    <i className="fas fa-bell"></i> <h3>Requset</h3> 
+    <i className="fas fa-bell"></i> <h3>Requset  ({request.length})</h3> 
     </NavLink>
     <NavLink
       activeClassName="navbar__link--active"
@@ -101,15 +119,16 @@ import { logoutUser  } from "../../../actions/authActions";
 
             </Side>
         )
-    }
+    
 }
 
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
+  admin: state.admin
 });
 export default connect(
   mapStateToProps,
-  { logoutUser   }
+  { logoutUser , getvendor  }
 )(Sidebar );

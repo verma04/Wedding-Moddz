@@ -66,7 +66,7 @@ class List extends Component {
 
                <div className="flex-1" >
          {vendorlist.map((number) =>
-               <div onClick={() => this.props.history.push(`/wedding-venues/${number.id}`)}  className="list" >  
+               <div onClick={() => this.props.history.push(`/wedding-venues/${number.vendorSlug}`)}  className="list" >  
                     <div className="up" >
 
                     <div className="wrapper" >

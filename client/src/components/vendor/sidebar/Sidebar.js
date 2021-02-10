@@ -28,7 +28,7 @@ import { logoutUser  } from "../../../actions/authActions";
     <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
-      to="/admin/cities"
+      to="/vendor-photos"
     >
    <i className="fas fa-images"></i> <h3>Projects</h3>
     </NavLink>

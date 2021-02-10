@@ -261,6 +261,24 @@ router.post("/addCategory",   passport.authenticate('jwt', { session: false }),
 
 
 
+router.get("/getvendor",  
+
+(req, res) => {
+ 
+  User.find({  }).then( async user => {
+   
+    
+    const arr = user.filter(item => item.verified === "none"  );
+     
+    res.json(arr)
+   
+  });
+
+
+});
+
+
+
 
 
 

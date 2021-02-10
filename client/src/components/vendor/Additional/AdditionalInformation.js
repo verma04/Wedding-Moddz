@@ -39,7 +39,7 @@ import GroomWear from './GroomWear';
                 <Navbar/>
             
                 {(() => {
-         if  ((user.VendorCategory === 'Wedding Venue') ) {
+         if  ((user.VendorCategory === 'wedding-venue') ) {
           return (
             <Venues/>
           )

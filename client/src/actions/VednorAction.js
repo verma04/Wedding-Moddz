@@ -1,6 +1,6 @@
 import axios from "axios";
-
-import { GET_ERRORS , OTP , TYPE} from "./types";
+import { ToastContainer, toast } from 'react-toastify';
+import { GET_ERRORS , VEN_LIST , OTP , TYPE , IMAGE} from "./types";
 export const verifyOtp = (userData , history) => dispatch => {
     axios
       .post("/api/vendor/verifyOtp", userData)
@@ -164,6 +164,62 @@ export const verifyOtp = (userData , history) => dispatch => {
       .post("/api/vendor/groomVendor" , data)
       .then(res => 
            history.push('/vendor/dashboard')
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
+
+
+
+  export const VendorListing = (id) => dispatch => {
+    axios
+      .get(`/api/vendor/VendorListing/${id}` )
+      .then(res => 
+        dispatch({
+          type: VEN_LIST,
+          payload: res.data
+        })
+      
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
+
+  export const uploadImages = (id , toggle) => dispatch => {
+    axios
+      .post(`/api/vendor/uploadImages/`, id )
+      .then(res => 
+        dispatch({
+          type: VEN_LIST,
+          payload: res.data
+        })
+      
+        ).then (
+      toggle()
+        ).then(
+     toast.success("Image added")
+        )
+      .catch(err =>
+       console.log(err)
+      );
+  };
+
+
+
+  export const updateCover = ( userData ) => dispatch => {
+  
+    axios
+      .put(`/api/vendor/uploadCover` , userData)
+      .then(res => 
+        dispatch({
+          type: VEN_LIST,
+          payload: res.data
+        })
+      
+        ).then(
+     toast.success("Cover Update")
         )
       .catch(err =>
        console.log(err)

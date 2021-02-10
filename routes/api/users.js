@@ -13,6 +13,8 @@ const nodemailer = require("nodemailer");
 // Load User model
 const User = require("../../models/User");
 const List = require("../../models/List");
+const Category =   require("../../models/Category");
+const { json } = require("body-parser");
 
 
 
@@ -99,6 +101,10 @@ router.post("/vednorregister", (req, res) => {
         if (user) {
           return res.status(400).json({ phone: "phone already exists" });
         }
+
+  
+        console.log(req.body)
+
         var val = Math.floor(1000 + Math.random() * 9000);
       const newUser = new User({
         vendorName: req.body.name,
@@ -125,28 +131,7 @@ router.post("/vednorregister", (req, res) => {
       });
      
 
-      var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: 'vermapankaj619@gmail.com', // here use your real email
-          pass: 'Garbh@619' // put your password correctly (not in this question please)
-        }
-      })
-      
-      var mailOptions = {
-        from: 'WedddingMoodz',
-        to:  req.body.email,
-        subject: 'WedddingMoodz',
-        html: "  <style>div { background-color: coral; }</style><div class='dd' >  <h1>Welcome to WeddingMoodz </h1><h2>Your one times Email Verifictaion  code</h2> <p>43221</p> </div>"  + val,
-      };
-      
-      transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
+    
 
      
      
@@ -251,29 +236,30 @@ router.post("/VednorLogin", (req, res) => {
       return res.status(404).json({ emailnotfound: "Invalid  Email" });
     }
 
-    
-    User.findOne({ role: "admin" }).then(data => {
+    else if (user.verified === 'none' ) {
+      return res.status(404).json({ emailnotfound: "Account  Not Verfied yet" });
+    }
 
- 
-       const  category = data.category;
-
-       const filtered = category.filter(element => element.id ===  user.VendorCategory  );
     
-     console.log(filtered[0].category)
+    Category.findOne({ _id: user.VendorCategory }).then(data => {
+
+      console.log(data)
+
+      
      bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        // User matched
-        // Create JWT Payload
+     
         const payload = {
           id: user.id,
-          name: user.name,
+          name: user.vendorName,
           email:user.email,
           role: user.role,
           Verfictaion:user.Emaillverified,
-          VendorCategory:filtered[0].category
+          VendorCategory:data.categorySlug ,
+          city: user.city
         };
 
-        // Sign token
+       
         jwt.sign(
           payload,
           keys.secretOrKey,
@@ -333,9 +319,9 @@ router.get("/getCategoryHome",(req, res) => {
 
 
 
-  User.findOne({role: "admin" }).then(user => {
+  Category.find({}).then(category => {
 
-    res.json(user.category)
+    res.json(category)
       
 
   });
@@ -353,14 +339,29 @@ router.post("/currentCity",(req, res) => {
   console.log(req.body)
 
 
-  User.findOne({ _id:'5fd44d49f5533d00176af805' }).then(user => {
+  User.findOne({  role:'admin' }).then(user => {
 
        const city =user.cities
 
-    if(city.some(person => person.city === req.body.city)){
-      res.json("found");
+    if(city.some(person => person.cityName === req.body.city)){
+       const data = city.filter(person => person.cityName === req.body.city)
+
+      const dataa = {
+        success: true,
+        data:  data[0]
+      }
+
+       res.json(
+
+        dataa
+       )
   } else{
-      res.json("Not found.");
+
+    const dataa = {
+      success: false,
+   
+    }
+      
   }
       
 
@@ -430,65 +431,14 @@ router.post("/vendorList",(req, res) => {
   
  
 
- console.log(req.body.Indoor)
+  List.find({ city:req.body.city , VendorCategory: req.body.category }).then(data => {
 
-  User.findOne({ _id: "5fd44d49f5533d00176af805" }).then(data => {
-
+  res.json(data)
  
-   
-//  console.log()
+   })
 
 
 
- User.find({ city:req.body.city }).then(user => {
-  
-
-      
-  const  category = data.category;
-
-  const filterr= category.filter(element => element.category ===  req.body.category  );
-  let  filter  = user
-  const filtered = filter.filter(element => element.VendorCategory ===   filterr[0].id);
-
-   console.log(filtered)
-
-  const arr = []
- 
-
-  filtered.forEach(element => {
-     
-     
-
-    const data = {
-    id:element.id,
-    name:element.vendorName,
-    VendorCategory:element.VendorCategory,
-    img:element.img,
-    pricePerPlate:element.pricePerPlate,
-    about:element.aboutus,
-    pricePerPlate:element.pricePerPlate,
-    totalguests:element.totalguests,
-    priceCaterers:element.priceCaterers,
-    typeCaterers:element.typeCaterers
-
-    }
-    arr.push(data)
-  
-  
-
-   
-
- });
-
- res.json(arr)
-
-
-
-
-
-
-
- })
 
 
   
@@ -496,7 +446,6 @@ router.post("/vendorList",(req, res) => {
      
      
 
-   });
 
            
 
@@ -515,18 +464,10 @@ router.post("/vendorList",(req, res) => {
 
 router.post("/vendorDetials",(req, res) => {
   
+  console.log(req.body)
  
-  User.findOne({ _id: req.body.id }).then(vendor => {
+  List.findOne({ vendorSlug: req.body.id }).then(vendor => {
   
-
-
-    delete vendor.password  
-    delete vendor.email
-    delete vendor.phone
-    delete otp  
- 
-  
-
     res.json(vendor)
   });
  
@@ -546,6 +487,24 @@ router.post("/vendorDetials",(req, res) => {
 
   
  
+   function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+  };
+  
+  router.post('/search', function(req, res) {
+   console.log(req.body.search)
+    if (req.body.search) {
+       const regex = new RegExp(escapeRegex(req.body.search), 'gi');
+       List.find({ $or: [{HotelName: regex},{"Scehedule.Dish": regex}] }, function(err, foundjobs) {
+           if(err) {
+               console.log(err);
+           } else {
+             res.json(foundjobs)
+             console.log(foundjobs)
+           }
+       }); 
+    }
+  });
   
   
   

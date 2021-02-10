@@ -1,11 +1,36 @@
-import React, { Component } from 'react';
+
+
+
+
+import React , { useEffect} from 'react';
+
 import { Nav } from './Style'
+import   { connect} from 'react-redux'
+import {  VendorListing } from '../../../actions/VednorAction'
+import Loading from '../../layout/Loading/Loading';
+import { Redirect } from 'react-router';
 
+function Navbar({auth:{user} , VendorListing , vendor:{list}}) {
 
-export default class Navbar extends Component {
-    render() {
+    useEffect(() => {
+        VendorListing(user.id)
+   
+      });
+
+      if(list === ''){
+          return (
+              <Loading/>
+          )
+      }
+
+      if(list === null){
         return (
-            <Nav>
+            <Redirect to='/additional-information'/>
+        )
+    }
+    return (
+        <div>
+              <Nav>
               <div className="flex" >
               
 
@@ -16,13 +41,27 @@ export default class Navbar extends Component {
 
               <div className="flex-2" >
                   <div className="right" >
-              <img src={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1607148101/icons8-life-cycle-100_txrr9k.png"} ></img> 
-             <span>Pankaj</span>
+              <img src={list.img} ></img> 
+             <span>{user.name}</span>
              </div>
               </div>
            
               </div>
             </Nav>
-        )
-    }
+        </div>
+    )
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    vendor:state.vendors
+
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { VendorListing }
+  )(Navbar);
+  
+
+

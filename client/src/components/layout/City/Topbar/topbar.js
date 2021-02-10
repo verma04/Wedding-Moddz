@@ -128,7 +128,7 @@ AllCity
       
 
           <ul>
-            <li onClick={() => this.send('All Cities')} >All Cities</li>
+            {/* <li onClick={() => this.props.history.push('/')} >All Cities</li> */}
              <li onClick={() => this.send('Chamba')} >Chamba</li>
              <li onClick={() => this.send('Dalhoiuse')} >Dalhoiuse</li>
              <li onClick={() => this.send('Una')} >Una</li>

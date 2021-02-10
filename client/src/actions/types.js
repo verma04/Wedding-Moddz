@@ -12,7 +12,7 @@ export const CITYPROFILE = "CITYPROFILE"
 
 
 export const SET_ALERT = "SET_ALERT"
-
+export const REQUEST = 'REQUEST';
 export const REMOVE_ALERT  = "REMOVE_ALERT "
 export const CITY = "CITY";
 export const CATEGORY = "CATEGORY";
@@ -20,3 +20,7 @@ export const OTP = "OTP";
 export const CURRENT_CITY = "CURRENT_CITY";
 export const VENUE = "VENUE";
 
+// Vendor
+
+export const VEN_LIST = "VEN_LIST";
+export const IMAGE = "IMAGE"

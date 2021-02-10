@@ -223,66 +223,17 @@ import Loading from '../../../Loading/Loading';
 
 <Carousel responsive={responsive}>
 
-<div >
+{vendordet.photos.map((number) =>   
 <div className='img-wrapper'   >
-   <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606986731/wedding%20Moodz/wdmdz_7website_dcs3sm.jpg"}  cache  alt="sdd"  ></Img>
+   <Img src={number.photo}  cache  alt="sdd"  ></Img>
    <div className="fade" >
 {/* <h2>number.category</h2> */}
 </div>
    </div>
+)
+}
 
-   
-</div>
-<div >
-<div className='img-wrapper'   >
-   <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606986731/wedding%20Moodz/wdmdz_7website_dcs3sm.jpg"}  cache  alt="sdd"  ></Img>
-   <div className="fade" >
-{/* <h2>number.category</h2> */}
-</div>
-   </div>
 
-   
-</div>
-<div >
-<div className='img-wrapper'   >
-   <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606986731/wedding%20Moodz/wdmdz_7website_dcs3sm.jpg"}  cache  alt="sdd"  ></Img>
-   <div className="fade" >
-{/* <h2>number.category</h2> */}
-</div>
-   </div>
-
-   
-</div>
-<div >
-<div className='img-wrapper'   >
-   <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606986731/wedding%20Moodz/wdmdz_7website_dcs3sm.jpg"}  cache  alt="sdd"  ></Img>
-   <div className="fade" >
-{/* <h2>number.category</h2> */}
-</div>
-   </div>
-
-   
-</div>
-<div >
-<div className='img-wrapper'   >
-   <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606986731/wedding%20Moodz/wdmdz_7website_dcs3sm.jpg"}  cache  alt="sdd"  ></Img>
-   <div className="fade" >
-{/* <h2>number.category</h2> */}
-</div>
-   </div>
-
-   
-</div>
- <div >
-<div className='img-wrapper'   >
-   <Img  placeholder={"https://res.cloudinary.com/dzcmadjl1/image/upload/v1606986731/wedding%20Moodz/wdmdz_7website_dcs3sm.jpg"}  cache  alt="sdd"  ></Img>
-   <div className="fade" >
-{/* <h2>number.category</h2> */}
-</div>
-   </div>
-
-   
-</div>
 
 
 </Carousel>

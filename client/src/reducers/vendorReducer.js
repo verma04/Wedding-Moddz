@@ -1,29 +1,32 @@
-import {OTP, TYPE} from "../actions/types";
+import {IMAGE, VEN_LIST} from "../actions/types";
 
 
 
 
 const initialState = {
- otp:null,
- type:null
+ list:'',
+
+ 
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
  
       
-    case OTP:
+    case VEN_LIST:
       return {
         ...state,
         loading: true,
-        otp:action.payload
+        list:action.payload
       };
-      case TYPE:
+
+      case IMAGE:
         return {
           ...state,
-          loading: true,
-          type:action.payload
+      
+          image:action.payload
         };
+    
     default:
       return state;
   }

@@ -21,7 +21,7 @@ import {  CATEGORY  , CITY ,VENUE, GET_ERRORS, CURRENT_CITY , VENDOR_DET , VENDO
           payload: err.response.data
         })
       );
-    console.log()
+  
   };
 
   export const  getCity = () => dispatch => {

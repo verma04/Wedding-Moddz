@@ -37,8 +37,9 @@ import Food from './components/layout/vendorList/Food/List';
 import vendorDashboard from './components/vendor/dashboard/dashboard';
 import vedndoInformation from './components/vendor/Information/information';
 import packages from './components/vendor/packages/packages';
-
+import VendorPhotos from './components/vendor/photos/photos'
 import { ToastContainer, toast } from 'react-toastify';
+
 
 //admin
 import adminDashboard from './components/admin/dashboard/dashboard';
@@ -57,7 +58,8 @@ import additional from './components/vendor/Additional/AdditionalInformation'
 import Alert from './components/vendor/Additional/alert/alert'
 import VednorRoute from "./components/private-route/VednorRoute";
 import photos from "./components/layout/vendorList/Venue/vendor/photos";
-import cityprofile from './components/admin/Cities/CityProfile/cityProfile'
+import cityprofile from './components/admin/Cities/CityProfile/cityProfile';
+import Request from './components/admin/requset/request'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -107,7 +109,7 @@ class App extends Component {
            
             <Route exact path="/Contactus" component={ContactUS} /> 
             <Route exact path="/Contactus/new" component={Contact2} /> 
-            <Route exact path="/wedding-venues/:id/:vendor" component={List} /> 
+            <Route exact path="/wedding/:id/:vendor" component={List} /> 
             <Route exact path="/wedding-venues/:id" component={vendor} />
             <Route exact path="/photos/:id" component={vednorPhotos} />
             <Route exact path="/food/:id/:vendor" component={Food} /> 
@@ -115,7 +117,7 @@ class App extends Component {
             <AdminRoute exact path="/admin/dashboard" component={adminDashboard} /> 
            
             <AdminRoute exact path="/admin/categories" component={adminCategory} /> 
-           
+            <AdminRoute exact path="/admin/request" component={Request} /> 
             <AdminRoute exact path="/admin/cities" component={adminCities} /> 
             <AdminRoute exact path="/admin/cities/:city" component={cityprofile} />
             <Route exact path="/admin/vendor" component={adminVendor} /> 
@@ -127,6 +129,8 @@ class App extends Component {
 
             <VendorRoute exact path="/vendor/dashboard" component={vendorDashboard} /> 
             <VednorRoute exact path="/verify-account" component={EmailVerify} /> 
+
+            <VednorRoute exact path="/vendor-photos" component={VendorPhotos} /> 
             <VednorRoute exact path="/additional-information" component={additional} /> 
             <Route exact path="/vendor/information" component={vedndoInformation} /> 
             <Route exact path="/vendor/packages" component={packages} /> 

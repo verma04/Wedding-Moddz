@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 // Create Schema
 const ListSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User'},
+  vendorName: {
+    type: String,
+   
+  },
+
   img: {
     type: String,
    
@@ -12,6 +17,36 @@ const ListSchema = new Schema({
     type: String,
    
   },
+
+  VendorCategory: {
+    type: String,
+   
+  } ,
+
+  vendorSlug: {
+    type: String,
+   
+  } ,
+
+  city: {
+    type: String,
+   
+  },
+
+  photos: [
+    {
+      photo :{
+        type: String,
+        required: true,
+      },
+     
+  },
+
+
+
+]
+,
+ 
   pincode: {
     type: String,
    
